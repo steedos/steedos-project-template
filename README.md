@@ -1,1 +1,1 @@
-# 快速安装模板
+# Steedos Project Template
