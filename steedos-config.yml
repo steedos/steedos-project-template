@@ -2,14 +2,13 @@ datasources:
   default:
     connection:
       url: ${MONGO_URL}
-    objectFiles: 
+    objectFiles:
       - "./steedos-app/**"
 public:
   cfs:
-    store: "local"
-    local: 
-      folder: "./storage"
-  templateSpaceId: 'template'
+    store: ${STEEDOS_CFS_STORE}
+    local:
+      folder: ${STEEDOS_STORAGE_DIR}
 email:
   host:
   port: 465
@@ -21,7 +20,7 @@ tenant:
   _id:
   name: 华炎魔方
   logo_url:
-  background_url: 
+  background_url:
   enable_register: true
   enable_forget_password: false
   enable_create_tenant: true
