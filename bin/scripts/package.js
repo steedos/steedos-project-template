@@ -18,7 +18,7 @@ console.log("VERSION: ", VERSION);
 console.log("cwd: ", cwd);
 
 console.log(`${os}: zip start!`);
-execSync(`7z a -tzip dist/steedos-mini-${os}-${VERSION}.zip * -x!.git -x!dist`);
+execSync(`7z a -tzip dist/steedos-mini-${os}-${VERSION}.zip * -x!.git -x!dist -x!.env.local`);
 console.log(`${os}: zip done!`);
 
 console.log(`${os}: upload to aliyun!`);
