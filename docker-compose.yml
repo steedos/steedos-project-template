@@ -1,0 +1,45 @@
+version: "3"
+
+services:
+  steedos:
+    image: steedos/steedos-project-template:1.23.0-alpha.18
+    restart: unless-stopped
+    ports:
+      - "5080:5080"
+    volumes:
+      - ./docker-volumes/steedos/storage:/app/storage
+    environment:
+      - PORT=5080
+      - ROOT_URL=http://localhost:5080
+      - MONGO_URL=mongodb://mongo:27017/steedos
+      - STEEDOS_CFS_STORE=local
+      - STEEDOS_STORAGE_DIR=/app/storage
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:4.2
+    restart: unless-stopped
+    volumes:
+      - ./docker-volumes/mongo/data/db:/data/db
+    command: mongod --oplogSize 128 --profile=1 --slowms=500 --replSet rs0
+    ports:
+      - "27017:27017"
+
+  # this container's job is just run the command to initialize the replica set.
+  # it will run the command and remove himself (it will not stay running)
+  mongo-init-replica:
+    image: mongo:4.2
+    command: >
+      bash -c
+        "for i in `seq 1 30`; do
+          mongo mongo/steedos --eval \"
+            rs.initiate({
+              _id: 'rs0',
+              members: [ { _id: 0, host: 'localhost:27017' } ]})\" &&
+          s=$$? && break || s=$$?;
+          echo \"Tried $$i times. Waiting 5 secs...\";
+          sleep 5;
+        done; (exit $$s)"
+    depends_on:
+      - mongo

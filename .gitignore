@@ -20,3 +20,4 @@ bin/mongodb-4.2.11
 bin/nodejs-12.20.1
 **/db
 **/dist
+**/docker-volumes
