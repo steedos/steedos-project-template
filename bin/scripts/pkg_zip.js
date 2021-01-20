@@ -19,12 +19,12 @@ let cwd = process.cwd();
 console.log("*  VERSION: ", VERSION);
 console.log("*  cwd: ", cwd);
 
-const ZIP_VERSION = `steedos-v${os}-${VERSION}-x64.zip`;
+const ZIP_VERSION = `steedos-v${VERSION}-${os}-x64.zip`;
 console.log(`*  ${os}: zip start!`);
 execSync(`7z a -tzip dist/${ZIP_VERSION} * -x!.git -x!dist -x!.env.local -x!docker-volumes`);
 console.log(`*  ${os}: zip done!`);
 
 console.log(`*  ${os}: upload to aliyun!`);
-execSync(`ossutil --force cp dist/${ZIP_VERSION} ${ossFold}`);
+execSync(`ossutil64 --force cp dist/${ZIP_VERSION} ${ossFold}`);
 console.log(`*  ${os}: upload done!`);
 console.log("*******************************************************************ZIP");
