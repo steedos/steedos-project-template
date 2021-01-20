@@ -9,15 +9,8 @@ public:
     store: ${STEEDOS_CFS_STORE}
     local:
       folder: ${STEEDOS_STORAGE_DIR}
-email:
-  host:
-  port: 465
-  username:
-  password:
-  secure: true
-  from:
 tenant:
-  _id:
+  _id: ${STEEDOS_TENANT_ID}
   name: 华炎魔方
   logo_url:
   background_url:
@@ -32,3 +25,18 @@ plugins:
   - "@steedos/metadata-api"
   - "@steedos/plugin-enterprise"
   - "@steedos/word-template"
+  - "@steedos/plugin-qywx"
+sms:
+  qcloud:
+    smsqueue_interval: 1000
+    sdkappid: ${STEEDOS_SMS_QCLOUD_SDKAPPID}
+    appkey: ${STEEDOS_SMS_QCLOUD_APPKEY}
+    signname: ${STEEDOS_SMS_QCLOUD_SIGNNAME}
+email:
+  from: ${MAIL_FROM}
+  url: ${MAIL_URL}
+cron:
+  instancerecordqueue_interval: 10000
+  mailqueue_interval: 10000
+  push_interval: 1000
+  webhookqueue_interval: 1000

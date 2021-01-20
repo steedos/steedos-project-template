@@ -8,6 +8,7 @@ services:
       - "5080:5080"
     volumes:
       - ./docker-volumes/steedos/storage:/app/storage
+      - ./docker-volumes/steedos/steedos-packages:/app/steedos-packages
     environment:
       - PORT=5080
       - ROOT_URL=http://localhost:5080
