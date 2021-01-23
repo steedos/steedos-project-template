@@ -32,7 +32,7 @@ console.log(`*  ${os}: zip start!`);
 if (fs.existsSync(`dist/${ZIP_VERSION}`)) {
   fs.unlinkSync(`dist/${ZIP_VERSION}`);
 }
-execSync(`7z a -tzip dist/${ZIP_VERSION} * -x!.git -x!dist -x!.env.local -x!docker-volumes -x!bin/mongodb -x!.ossutil_checkpoint -x!docker-compose.yml -x!Dockerfile`);
+execSync(`7z a -tzip dist/${ZIP_VERSION} .vscode bin node_modules public steedos-app .env .gitignore .npmignore 在线帮助.url db.js package.json server.js steedos-config.yml yarn.lock -x!bin/mongodb`);
 console.log(`*  ${os}: zip done!`);
 
 console.log(`*  ${os}: upload to aliyun!`);

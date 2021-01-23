@@ -1,7 +1,6 @@
-require('./db').startDB().then(function () {
+require('dotenv-flow').config();
 
-  
-  require('dotenv-flow').config();
+require('./db').startDB().then(function () {
 
   var server = require('@steedos/meteor-bundle-runner');
   var steedos = require('@steedos/core')
