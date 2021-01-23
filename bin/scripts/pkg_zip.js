@@ -21,7 +21,7 @@ console.log("*  cwd: ", cwd);
 
 const ZIP_VERSION = `steedos-v${VERSION}-${os}-x64.zip`;
 console.log(`*  ${os}: zip start!`);
-execSync(`7z a -tzip dist/${ZIP_VERSION} * -x!.git -x!dist -x!.env.local -x!docker-volumes -x!bin/mongodb`);
+execSync(`7z a -tzip dist/${ZIP_VERSION} * -x!.git -x!dist -x!.env.local -x!docker-volumes -x!bin/mongodb -x!docker-compose.yml -x!Dockerfile`);
 console.log(`*  ${os}: zip done!`);
 
 console.log(`*  ${os}: upload to aliyun!`);
