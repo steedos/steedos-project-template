@@ -30,7 +30,5 @@ exports.startDB = async function startDB() {
     }
   };
   const replSet = await MongoMemoryReplSet.create(opts);
-  const uri = await replSet.getUri();
-  console.log('****************uri: ', uri);
   return replSet;
 };
