@@ -16,7 +16,7 @@ storage/**
 
 .env.local
 
-bin/mongodb-4.2.11
+bin/mongodb
 bin/nodejs-12.20.1
 db
 dist

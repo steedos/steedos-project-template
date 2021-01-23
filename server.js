@@ -1,17 +1,23 @@
-require('dotenv-flow').config();
+require('./db').startDB().then(function () {
 
-var server = require('@steedos/meteor-bundle-runner');
-var steedos = require('@steedos/core')
+  
+  require('dotenv-flow').config();
 
-server.Fiber(function () {
+  var server = require('@steedos/meteor-bundle-runner');
+  var steedos = require('@steedos/core')
+
+  server.Fiber(function () {
     try {
-        server.Profile.run("Server startup", function () {
-            server.loadServerBundles();
-            steedos.init();
-            server.callStartupHooks();
-            server.runMain();
-        })
+      server.Profile.run("Server startup", function () {
+        server.loadServerBundles();
+        steedos.init();
+        server.callStartupHooks();
+        server.runMain();
+      })
     } catch (error) {
-       console.error(error.stack)
+      console.error(error.stack)
     }
-}).run()
+  }).run()
+});
+
+
