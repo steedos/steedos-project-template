@@ -17,7 +17,7 @@ storage/**
 .env.local
 
 bin/mongodb
-bin/nodejs-12.20.1
+bin/nodejs
 db
 dist
 docker-volumes

@@ -3,6 +3,10 @@ const { MongoMemoryReplSet } = pkg;
 const path = require('path');
 
 exports.startDB = async function startDB() {
+  if (process.env.MONGO_URL) {
+    return;
+  }
+
   let dbPath = path.join(process.cwd(), 'db');
   let downloadDir = path.join(process.cwd(), 'bin/mongodb');
   const opts = {
@@ -20,7 +24,7 @@ exports.startDB = async function startDB() {
     replSet: {
       name: 'rsSteedos',
       auth: false,
-      args: [],
+      args: ['--bind_ip_all'],
       count: 1,
       dbName: 'steedos',
       ip: '127.0.0.1',
@@ -30,5 +34,6 @@ exports.startDB = async function startDB() {
     }
   };
   const replSet = await MongoMemoryReplSet.create(opts);
+  process.env.MONGO_URL = replSet.getUri();
   return replSet;
 };

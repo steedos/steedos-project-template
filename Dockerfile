@@ -7,7 +7,7 @@ ADD steedos-app /app
 ADD .env /app
 ADD package.json /app
 ADD server.js /app
-ADD db.js /app
+ADD mongodb.js /app
 ADD steedos-config.yml /app
 ADD yarn.lock /app
 
