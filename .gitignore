@@ -16,9 +16,11 @@ storage/**
 
 .env.local
 
-bin/mongodb-4.2.11
-bin/nodejs-12.20.1
+bin/mongodb
+bin/nodejs
 db
 dist
 docker-volumes
 .ossutil_checkpoint
+steedos-packages/**/**
+!/steedos-packages/*.package

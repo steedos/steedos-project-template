@@ -3,6 +3,6 @@
 
 %1 mshta vbscript:CreateObject("Shell.Application").ShellExecute("cmd.exe","/c %~s0 ::","","runas",1)(window.close)&&exit
 
-setx -m PATH "%~dp0nodejs-12.20.1\;%~dp0mongodb-4.2.11\bin;%PATH%"
+setx -m PATH "%~dp0nodejs\12.20.1\;%~dp0mongodb\4.2.11\bin;%PATH%"
 
 pause
