@@ -12,9 +12,9 @@
    - bin
      - nodejs
        - 12.20.1
-3. 安装并配置[阿里云命令行工具 ossutil](https://help.aliyun.com/document_detail/120075.html)，将 ossutil64 添加进 PATH。
+3. 安装并配置[阿里云命令行工具 ossutil](https://help.aliyun.com/document_detail/120075.html)，将 ossutil64.exe 添加进 PATH。
    .env.local 中配置 STEEDOS_PKG_OSS_PLATFORM_FOLD。
-4. 安装[压缩工具 7-zip](https://www.7-zip.org/)，将 7-zip 添加进 PATH。
+4. 安装[压缩工具 7-zip](https://www.7-zip.org/)，将 7z.exe 添加进 PATH。
 5. 安装[Docker Desktop for Windows](https://docs.docker.com/get-docker/)。
 
 ### 打包并上传
