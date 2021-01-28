@@ -15,7 +15,6 @@
   "license": "ISC",
   "dependencies": {
     "@steedos/accounts": "1.23.0-alpha.18",
-    "@steedos/metadata-api": "1.23.0-alpha.17",
     "@steedos/mongodb-memory-server-core": "^7.0.0-beta.14",
     "@steedos/plugin-enterprise": "1.23.0-alpha.18",
     "@steedos/plugin-qywx": "^0.0.17",
