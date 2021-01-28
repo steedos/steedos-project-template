@@ -1,26 +1,79 @@
-# Steedos Project Template
+# 华炎魔方项目快速向导
 
-## 打包发布说明
+本项目用于管理华炎魔方的元数据配置文件。并可以在元数据的基础上，进一步编写代码。
 
-基于 windows 操作系统执行打包命令
+## 运行项目
 
-### 环境准备
+本项目是一个标准的nodejs项目，运行前需要安装依赖包。如果你安装依赖包遇到问题，可以从华炎魔方官网[下载快速安装版](https://www.steedos.com/help/deploy/)，已经预装了所有的依赖包。
 
-1. git clone 本项目至本地。
+```
+yarn
+yarn start
+```
 
-2. 下载 [nodejs-12.20.1.zip](https://www-steedos-com.oss-cn-beijing.aliyuncs.com/steedos/platform/bin/nodejs-12.20.1.zip) 并解压到项目 bin 文件夹下：
-   - bin
-     - nodejs
-       - 12.20.1
-3. 安装并配置[阿里云命令行工具 ossutil](https://help.aliyun.com/document_detail/120075.html)，将 ossutil64.exe 添加进 PATH。
-   .env.local 中配置 STEEDOS_PKG_OSS_PLATFORM_FOLD。
-4. 安装[压缩工具 7-zip](https://www.7-zip.org/)，将 7z.exe 添加进 PATH。
-5. 安装[Docker Desktop for Windows](https://docs.docker.com/get-docker/)。
+## 数据库
 
-### 打包并上传
+华炎魔方使用 mongodb 4.2+ 数据库，可以通过配置 MONGO_URL 环境变量，指定数据库连接。
 
-1. 在项目下执行 `yarn`, 安装依赖 node_modules。
+如果未指定数据库连接，华炎魔方会自动下载并安装 mongodb 本项目的 bin/mongodb 下。下载完成后自动启动数据库。数据库保存于 db 文件夹中。
 
-2. 执行 `yarn start` 测试服务是否能正常启动，使用；测试完成后停掉服务。
+## 附件
 
-3. 在项目下执行 `yarn pkg`，等待完成即可。
+华炎魔方中上传的附件默认保存在本项目的 storage 文件夹中。也可以通过修改 steedos-config 更改保存路径，或是保存到阿里云或S3存储中。
+
+## 关于元数据
+
+元数据是华炎魔方技术架构的核心。华炎魔方使用元数据定义对象，字段，配置，代码，逻辑和页面布局，并基于这些元数据自动生成系统的数据结构以及Steedos应用程序的用户界面和自动化逻辑。
+
+元数据可以导入到华炎魔方中，可以在可视化界面中进行修改，也可以通过Steedos DX工具与代码同步。具体请参考[开发文档](https://www.steedos.com/developer)。
+
+## 项目目录
+
+```sh
+steedos-project-root
+├── steedos-app/main/default
+│   ├── applications
+│   │   └── custom-app.app.yml
+│   └── objects
+│       └── custom-object
+│           ├── buttons
+│           │   └── custom-button.button.yml
+│           │   └── custom-button.button.js
+│           ├── fields
+│           │   └── name.field.yml
+│           │   └── custom-field.field.yml
+│           │   └── ...
+│           ├── listviews
+│           │   └── all.listview.yml
+│           │   └── recent.listview.yml
+│           │   └── custom_listview.listview.yml
+│           ├── permissions
+│           │   └── user.permission.yml
+│           │   └── admin.permission.yml
+│           │   └── custom_permission.permission.yml
+│           └── custom-object.object.yml
+│           └──...
+├── steedos-packages
+├── .env
+├── .gitignore
+├── package.json
+├── README.md
+├── server.js
+├── steedos-config.yml
+└── yarn.lock
+```
+
+- .env: 环境变量配置文件，可以配置端口、URL等环境变量。
+- .env.local: 可以手工创建此文件，用于保存本地开发环境的配置。此文件不会上传到GitHub中。
+- steedos-app: 用于保存项目元数据和源码，华炎魔方启动是会自动加载其中的元数据。使用华炎魔方DX工具同步元数据时，默认同步到此文件夹中。
+- steedos-packages: 当你的项目需要分包管理时，可以使用此文件夹。你也可以把第三方软件包复制到此文件夹中，华炎魔方启动时会自动加载其中的元数据。
+- steedos-config.yml: 华炎魔方配置文件，具体参考 (官方文档)[https://www.steedos.com/help/deploy/steedos-config]。
+- package.json: 用于配置本项目依赖的npm包。如果需要升级 steedos 内核版本，也是修改此文件。
+
+## 了解更多
+
+- [视频](https://www.steedos.com/videos/)
+- [安装部署](https://www.steedos.com/help/deploy/)
+- [设置与维护华炎魔方](https://www.steedos.com/help/admin)
+- [开发文档](https://www.steedos.com/developer)
+- [华炎魔方平台源码](https://github.com/steedos/steedos-platform/)
