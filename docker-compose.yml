@@ -2,13 +2,12 @@ version: "3"
 
 services:
   steedos:
-    image: steedos/steedos-project-template:1.23.0-alpha.18
+    image: steedos/steedos-project-template:1.23
     restart: always
     ports:
       - "3000:3000"
     volumes:
       - "./docker-volumes/steedos/storage:/app/storage"
-      # - "./docker-volumes/steedos/steedos-packages:/app/steedos-packages"
     environment:
       - PORT=3000
       - ROOT_URL=http://localhost:3000
