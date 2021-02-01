@@ -1,13 +1,19 @@
 const pkg = require('@steedos/mongodb-memory-server-core');
 const { MongoMemoryReplSet } = pkg;
 const path = require('path');
+const fs = require('fs');
+const dbDirectoryName = 'db';
 
 exports.startDB = async function startDB() {
   if (process.env.MONGO_URL) {
     return;
   }
 
-  let dbPath = path.join(process.cwd(), 'db');
+  if (!fs.existsSync(dbDirectoryName)) {
+    fs.mkdirSync(dbDirectoryName);
+  }
+
+  let dbPath = path.join(process.cwd(), dbDirectoryName);
   let downloadDir = path.join(process.cwd(), 'bin/mongodb');
   const opts = {
     autoStart: true,
