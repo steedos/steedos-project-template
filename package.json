@@ -11,8 +11,10 @@
     "start": "node server.js",
     "pkg": "node bin/scripts/package.js",
     "pkg_zip": "node bin/scripts/pkg_zip.js",
+    "pkg_image": "node bin/scripts/pkg_image.js",
     "upload": "node bin/scripts/upload.js",
-    "upload_zip": "node bin/scripts/upload_zip.js"
+    "upload_zip": "node bin/scripts/upload_zip.js",
+    "upload_image": "node bin/scripts/upload_image.js"
   },
   "author": "",
   "license": "ISC",

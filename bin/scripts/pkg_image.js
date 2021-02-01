@@ -13,7 +13,4 @@ execSync(`docker rmi ${IMAGE_VERSION} --force`);
 execSync(`docker build --no-cache=true -t ${IMAGE_VERSION} .`);
 console.log(`*  image: build done!`);
 
-console.log(`*  image: push to docker hub start!`);
-execSync(`docker push ${IMAGE_VERSION}`);
-console.log(`*  image: push done!`);
 console.log("*******************************************************************IMAGE");
