@@ -8,7 +8,7 @@
   },
   "scripts": {
     "debug": "nodemon server.js",
-    "start": "node server.js",
+    "start": "node server.js 2>server.log",
     "pkg": "node bin/scripts/package.js",
     "pkg_zip": "node bin/scripts/pkg_zip.js",
     "pkg_image": "node bin/scripts/pkg_image.js",
