@@ -25,6 +25,7 @@ plugins:
   - "@steedos/plugin-enterprise"
   - "@steedos/word-template"
   - "@steedos/plugin-qywx"
+  - "@steedos/metadata-api"
 sms:
   qcloud:
     smsqueue_interval: 1000
