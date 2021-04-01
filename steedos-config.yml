@@ -9,6 +9,12 @@ public:
     store: ${STEEDOS_CFS_STORE}
     local:
       folder: ${STEEDOS_STORAGE_DIR}
+cfs:
+  aliyun:
+    region: ${ENV_CFS_ALIYUN_REGION}
+    bucket: ${ENV_CFS_ALIYUN_BUCKET}
+    accessKeyId: ${ENV_CFS_ALIYUN_ACCESSKEYID}
+    secretAccessKey: ${ENV_CFS_ALIYUN_SECRETACCESSKEY}
 tenant:
   _id: ${STEEDOS_TENANT_ID}
   name: 华炎魔方
