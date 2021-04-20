@@ -22,6 +22,6 @@ db
 dist
 docker-volumes
 .ossutil_checkpoint
-steedos-packages/**/**
+# steedos-packages/**/**
 !/steedos-packages/*.package
 server.log
