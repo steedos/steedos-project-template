@@ -2,7 +2,7 @@ version: "3"
 
 services:
   steedos:
-    image: steedos/steedos-project-template:1.23
+    image: steedos/steedos-project-template:1.23.26
     restart: always
     ports:
       - "3000:3000"
@@ -12,6 +12,7 @@ services:
       - PORT=3000
       - ROOT_URL=http://localhost:3000
       - MONGO_URL=mongodb://mongo:27017/steedos
+      - MONGO_OPLOG_URL=mongodb://mongo:27017/local
       - STEEDOS_CFS_STORE=local
       - STEEDOS_STORAGE_DIR=/app/storage
     depends_on:

@@ -4,7 +4,7 @@ WORKDIR /app
 
 ADD public ./public/
 ADD steedos-app ./steedos-app/
-ADD steedos-packages/*.package ./steedos-packages/
+ADD steedos-packages ./steedos-packages/
 ADD .env .
 ADD package.json .
 ADD server.js .
