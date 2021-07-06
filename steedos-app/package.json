@@ -1,0 +1,8 @@
+{
+    "name": "steedos-project-template",
+    "version": "2.0.32",
+    "description": "A Steedos App",
+    "main": "package.service.js",
+    "license": "MIT",
+    "private": true
+  }

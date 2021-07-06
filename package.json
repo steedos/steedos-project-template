@@ -1,14 +1,12 @@
 {
   "name": "steedos-project-template",
-  "version": "1.23.36",
+  "version": "2.0.32",
   "description": "",
-  "main": "server.js",
   "engines": {
     "node": ">=12"
   },
   "scripts": {
-    "debug": "nodemon server.js",
-    "start": "node server.js 2>server.log",
+    "start": "moleculer-runner services",
     "pkg": "node bin/scripts/package.js",
     "pkg_zip": "node bin/scripts/pkg_zip.js",
     "pkg_image": "node bin/scripts/pkg_image.js",
@@ -19,23 +17,37 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@steedos/accounts": "^1.23.36",
-    "@steedos/mongodb-memory-server-core": "7.0.0-beta.14",
-    "@steedos/plugin-enterprise": "^1.23.36",
-    "@steedos/plugin-qywx": "^0.0.17",
-    "@steedos/steedos-plugin-workflow": "2.1.1",
-    "@steedos/word-template": "1.23.0-alpha.17",
+    "@steedos/app-admin": "2.0.32",
+    "@steedos/app-contracts": "2.0.32",
+    "@steedos/app-crm": "2.0.32",
+    "@steedos/app-oa": "2.0.32",
+    "@steedos/app-okr-management": "2.0.32",
+    "@steedos/app-project-management": "2.0.32",
+    "@steedos/service-charts": "2.0.32",
+    "@steedos/service-mongodb-server": "2.0.32",
+    "@steedos/service-package-loader": "2.0.32",
+    "@steedos/service-metadata-server": "2.0.32",
+    "@steedos/service-steedos-server": "2.0.32",
+    "cross-env": "^7.0.3",
     "aliyun-sdk": "^1.12.3",
     "dotenv-flow": "^3.1.0",
+    "moleculer": "^0.14.12",
+    "moleculer-cli": "^0.7.1",
     "mssql": "5.1.2",
     "mysql": "2.18.1",
     "oracledb": "4.0.1",
     "pg": "7.18.2",
-    "sqlite3": "4.2.0",
-    "steedos-server": "^1.23.36"
+    "sqlite3": "4.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.7.0",
+    "jest": "^26.4.2",
+    "jest-cli": "^26.4.2",
+    "moleculer-repl": "^0.6.4"
   },
   "homepage": "https://www.steedos.com",
   "resolutions": {
+    "**/globby": "9.2.0",
     "**/lodash": "^4.17.15",
     "**/handlebars": "^4.3.0",
     "**/debug": "^3.1.0",
@@ -45,6 +57,8 @@
     "**/samlp": "3.4.1",
     "**/xmldom": "0.2.1",
     "**/tslib": "1.11.2",
-    "**/fibers": "^4.0.3"
+    "**/fibers": "^4.0.3",
+    "**/cookies": "0.6.2",
+    "**/@babel/runtime": "7.12.0"
   }
 }

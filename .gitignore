@@ -25,3 +25,4 @@ docker-volumes
 # steedos-packages/**/**
 !/steedos-packages/*.package
 server.log
+logs
