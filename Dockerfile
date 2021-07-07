@@ -2,13 +2,13 @@ FROM node:12.16.3
 
 WORKDIR /app
 
+ADD services ./services/
 ADD public ./public/
 ADD steedos-app ./steedos-app/
 ADD steedos-packages ./steedos-packages/
 ADD .env .
 ADD package.json .
-ADD server.js .
-ADD mongodb.js .
+ADD moleculer.config.js .
 ADD steedos-config.yml .
 ADD yarn.lock .
 
