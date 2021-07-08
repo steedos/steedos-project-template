@@ -80,21 +80,10 @@ module.exports = {
 	// More info: https://moleculer.services/docs/0.14/networking.html
 	// Note: During the development, you don't need to define it because all services will be loaded locally.
 	// In production you can set it via `TRANSPORTER=nats://localhost:4222` environment variable.
-	transporter: {
-		type: "TCP",
-		options: {
-			maxPacketSize: 20971520
-		}
-	},
+	transporter: process.env.TRANSPORTER,
 
 	// Define a cacher.
 	// More info: https://moleculer.services/docs/0.14/caching.html
-	cacher: {
-		type: "Memory",
-		options: {
-			clone: true // 必须存在
-		}
-	},
 
 	// Define a serializer.
 	// Available values: "JSON", "Avro", "ProtoBuf", "MsgPack", "Notepack", "Thrift".
