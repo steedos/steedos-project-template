@@ -21,7 +21,7 @@ console.log(`*  ${os}: zip start!`);
 if (fs.existsSync(`dist/${ZIP_VERSION}`)) {
   fs.unlinkSync(`dist/${ZIP_VERSION}`);
 }
-execSync(`7z a -tzip dist/${ZIP_VERSION} .vscode bin node_modules public steedos-app steedos-packages/*.package .env .gitignore .npmignore 在线帮助.url mongodb.js package.json README.md server.js steedos-config.yml yarn.lock -x!bin/mongodb -x!bin/scripts`);
+execSync(`7z a -tzip dist/${ZIP_VERSION} .vscode bin node_modules public services steedos-app steedos-packages/*.package .env .gitignore .npmignore 在线帮助.url mongodb.js moleculer.config.js package.json README.md server.js steedos-config.yml yarn.lock -x!bin/mongodb -x!bin/scripts`);
 console.log(`*  ${os}: zip done!`);
 
 console.log("*******************************************************************ZIP");
