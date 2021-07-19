@@ -11,6 +11,8 @@ ADD moleculer.config.js .
 ADD steedos-config.yml .
 ADD yarn.lock .
 
+RUN mkdir -p /dev/disk/by-id/
+
 RUN npm config set registry http://registry.npm.taobao.org/
 
 RUN yarn config set registry http://registry.npm.taobao.org/
