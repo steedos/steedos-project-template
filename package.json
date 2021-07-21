@@ -1,6 +1,6 @@
 {
   "name": "steedos-project-template",
-  "version": "2.0.42",
+  "version": "2.0.45",
   "description": "",
   "engines": {
     "node": ">=12"
