@@ -2,14 +2,13 @@ version: "3"
 
 services:
   steedos:
-    image: steedos/steedos-project-template:2.0.47
+    image: steedos/steedos-project-template:2.0.51
     restart: always
     ports:
       - "3000:3000"
     volumes:
       - "./docker-volumes/steedos/storage:/app/storage"
     environment:
-      - PORT=3000
       - ROOT_URL=http://localhost:3000
       - MONGO_URL=mongodb://mongo:27017/steedos
       - MONGO_OPLOG_URL=mongodb://mongo:27017/local

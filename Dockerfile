@@ -21,12 +21,13 @@ RUN yarn config set registry http://registry.npm.taobao.org/
 
 RUN yarn install --production
 
-RUN yarn global add code-server@3.10.2
+# RUN yarn global add code-server@3.10.2
 
-RUN npm install pm2 -g
+# RUN npm install pm2 -g
 
-EXPOSE 8080
+# EXPOSE 8080
 
 ENV NODE_ENV=production
 
-CMD ["/bin/sh","-c","pm2 start --interpreter bash --name steedos yarn -- start && code-server"]
+CMD ["yarn", "start"]
+# CMD ["/bin/sh","-c","pm2 start --interpreter bash --name steedos yarn -- start && code-server"]
