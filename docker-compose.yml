@@ -2,7 +2,7 @@ version: "3"
 
 services:
   steedos:
-    image: steedos/steedos-project-template:2.0.51
+    image: steedos/steedos-project-template:2.0.57
     restart: always
     ports:
       - "3000:3000"
