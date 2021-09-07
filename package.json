@@ -1,6 +1,6 @@
 {
   "name": "steedos-project-template",
-  "version": "1.23.37",
+  "version": "1.23.33",
   "description": "",
   "main": "server.js",
   "engines": {
