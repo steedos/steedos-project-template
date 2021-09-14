@@ -1,6 +1,7 @@
 "use strict";
 
 require('dotenv-flow').config(process.cwd());
+const LokiTransport = require("winston-loki");
 
 /**
  * Moleculer ServiceBroker configuration file
@@ -29,9 +30,9 @@ require('dotenv-flow').config(process.cwd());
  */
 module.exports = {
 	// Namespace of nodes to segment your nodes on the same network.
-	namespace: "steedos",
+	namespace: "steedos-apps",
 	// Unique node identifier. Must be unique in a namespace.
-	nodeID: "steedos-project-template",
+	nodeID: process.env.NODEID, //"steedos-project-pcmes",
 	// Custom metadata store. Store here what you want. Accessing: `this.broker.metadata`
 	metadata: {},
 
@@ -56,7 +57,7 @@ module.exports = {
 		type: "File",
 		options: {
 			// Logging level
-			level: "info",
+			level: "warn",
 			// Folder path to save files. You can use {nodeID} & {namespace} variables.
 			folder: "./logs",
 			// Filename template. You can use {date}, {nodeID} & {namespace} variables.
@@ -70,7 +71,25 @@ module.exports = {
 			// File appending interval in milliseconds.
 			interval: 1 * 1000
 		},
-	}],
+	},
+	process.env.LOKI_URL && {
+		type: "Winston",
+		options: {
+			// Logging level
+			level: "info",
+			// Folder path to save files. You can use {nodeID} & {namespace} variables.
+			winston: {
+				// More settings: https://github.com/winstonjs/winston#creating-your-own-logger
+				transports: [
+					new LokiTransport({ 
+						host: process.env.LOKI_URL,
+						labels: { project: 'pcmes' }
+					})
+				]
+			}
+		},
+	}
+	],
 
 	// Default log level for built-in console logger. It can be overwritten in logger options above.
 	// Available values: trace, debug, info, warn, error, fatal
@@ -80,7 +99,7 @@ module.exports = {
 	// More info: https://moleculer.services/docs/0.14/networking.html
 	// Note: During the development, you don't need to define it because all services will be loaded locally.
 	// In production you can set it via `TRANSPORTER=nats://localhost:4222` environment variable.
-	transporter: process.env.TRANSPORTER,
+	transporter: process.env.TRANSPORTER, //process.env.STEEDOS_TRANSPORTER,
 
 	// Define a cacher.
 	// More info: https://moleculer.services/docs/0.14/caching.html
@@ -91,7 +110,7 @@ module.exports = {
 	serializer: "JSON",
 
 	// Number of milliseconds to wait before reject a request with a RequestTimeout error. Disabled: 0
-	requestTimeout: 60 * 1000,
+	requestTimeout: 0,
 
 	// Retry policy settings. More info: https://moleculer.services/docs/0.14/fault-tolerance.html#Retry
 	retryPolicy: {
