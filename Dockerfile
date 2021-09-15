@@ -13,7 +13,7 @@ ADD steedos-config-k8s.yml ./steedos-config.yml
 # RUN npm config set registry http://registry.npm.taobao.org/
 # RUN yarn config set registry http://registry.npm.taobao.org/
 
-RUN yarn install --production
+RUN yarn
 
 ENV NODE_ENV=production
 

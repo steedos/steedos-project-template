@@ -26,7 +26,8 @@
     "build-steedos-app-ts": "cd steedos-app && tsc",
     "ver": "lerna version --force-publish --exact",
     "pub": "lerna publish from-package --registry https://registry.npmjs.org",
-    "pub_next": "lerna publish from-package --registry https://registry.npmjs.org --dist-tag next"
+    "pub_next": "lerna publish from-package --registry https://registry.npmjs.org --dist-tag next",
+    "postinstall": "cd .steedos && yarn"
   },
   "keywords": [
     "steedos",
