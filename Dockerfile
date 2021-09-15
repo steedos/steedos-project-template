@@ -5,10 +5,9 @@ WORKDIR /app
 ADD .steedos ./.steedos/
 ADD services ./services/
 ADD steedos-app ./steedos-app/
-ADD steedos-packages ./steedos-packages/
+# ADD steedos-packages ./steedos-packages/
 ADD package.json .
 ADD moleculer.config.js .
-ADD package.json .
 ADD steedos-config-k8s.yml ./steedos-config.yml
 
 # RUN npm config set registry http://registry.npm.taobao.org/
