@@ -27,7 +27,9 @@
     "ver": "lerna version --force-publish --exact",
     "pub": "lerna publish from-package --registry https://registry.npmjs.org",
     "pub_next": "lerna publish from-package --registry https://registry.npmjs.org --dist-tag next",
-    "postinstall": "cd .steedos && yarn"
+    "postinstall": "cd .steedos && yarn",
+    "pm2-start": "pm2 start --interpreter bash --name steedos yarn -- start",
+    "restart": "pm2 delete steedos && yarn pm2-start"
   },
   "keywords": [
     "steedos",
