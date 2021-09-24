@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@steedos-labs/oa@2.1.9":
-  version "2.1.9"
-  resolved "https://registry.nlark.com/@steedos-labs/oa/download/@steedos-labs/oa-2.1.9.tgz#c51592d62ac867d9b9de019c6a031480b88ec35b"
-  integrity sha1-xRWS1irIZ9m53gGcagMUgLiOw1s=
+"@steedos-labs/oa@2.1.16":
+  version "2.1.16"
+  resolved "https://registry.npmmirror.com/@steedos-labs/oa/download/@steedos-labs/oa-2.1.16.tgz#d8f6677252ea76a6eb73f24a27fbd06c92233fb4"
+  integrity sha1-2PZnclLqdqbrc/JKJ/vQbJIjP7Q=
   dependencies:
     "@steedos/app-contracts" "2.0.51"
     "@steedos/app-crm" "2.0.51"

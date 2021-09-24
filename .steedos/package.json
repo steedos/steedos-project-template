@@ -4,6 +4,6 @@
     "description": "",
     "author": "",
     "dependencies": {
-        "@steedos-labs/oa": "2.1.9"
+        "@steedos-labs/oa": "2.1.16"
     }
 }
