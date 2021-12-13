@@ -1,0 +1,17 @@
+image:
+  file: .gitpod.Dockerfile
+
+# List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
+tasks:
+  - command: |
+      mongod
+  - command: |
+      redis-server
+  - init: |
+      yarn install
+    command: |
+      yarn start
+
+vscode:
+  extensions:
+    - dbaeumer.vscode-eslint
