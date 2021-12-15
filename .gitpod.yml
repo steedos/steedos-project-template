@@ -7,9 +7,9 @@ ports:
     onOpen: open-preview
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - command: |
+  - init: |
       mongod --replSet rs0
-  - command: |
+    command: |
       mongo steedos --eval "rs.initiate()"
   - command: |
       redis-server --save ""
