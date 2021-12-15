@@ -8,12 +8,14 @@ ports:
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - init: |
-      mongod --replSet rs0 --fork --logpath /var/log/mongod.log
+      mongod --replSet rs0 &&
+      gp sync-done dbStarted
     command: |
       mongo steedos --eval "rs.initiate()"
   - command: |
       redis-server --save ""
   - init: |
+      gp sync-await dbStarted &&
       yarn install
     command: |
       yarn start
