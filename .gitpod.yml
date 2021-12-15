@@ -7,17 +7,18 @@ ports:
     onOpen: open-preview
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: |
-      mongod --replSet rs0 &&
-      gp sync-done dbStarted
-    command: |
+  - command: |
+      mongod --replSet rs0
+  - command: |
+      gp await-port 27017
       mongo steedos --eval "rs.initiate()"
   - command: |
       redis-server --save ""
   - init: |
-      gp sync-await dbStarted &&
       yarn install
     command: |
+      gp await-port 27017
+      gp await-port 6379
       yarn start
 
 vscode:
