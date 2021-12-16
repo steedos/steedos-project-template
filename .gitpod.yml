@@ -8,7 +8,7 @@ ports:
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - command: |
-      mongod --replSet rs0
+      mongod --replSet rs0 --dbpath /workspace/mongodb/data/db
   - command: |
       gp await-port 27017
       mongo steedos --eval "rs.initiate()"

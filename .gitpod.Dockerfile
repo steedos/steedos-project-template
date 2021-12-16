@@ -11,8 +11,8 @@ RUN mkdir -p /tmp/mongodb && \
     cd mongodb-* && \
     sudo cp bin/* /usr/local/bin/ && \
     rm -rf /tmp/mongodb && \
-    sudo mkdir -p /data/db && \
-    sudo chown gitpod:gitpod -R /data/db
+    sudo mkdir -p /workspace/mongodb/data/db && \
+    sudo chown gitpod:gitpod -R /workspace/mongodb/data/db
 
 # Install node
 USER gitpod
