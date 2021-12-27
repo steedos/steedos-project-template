@@ -19,11 +19,10 @@ tasks:
       redis-server --save ""
   - init: |
       yarn install
-    env:
-      ROOT_URL: "$(gp url 5000)"
     command: |
       gp await-port 27017
       gp await-port 6379
+      export ROOT_URL=$(gp url 5000)
       yarn start
 
 vscode:
