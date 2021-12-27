@@ -12,6 +12,8 @@ public:
     jsreport:
       url: ${JSREPORT_URL}
       urlProvideForJsreport: ${JSREPORT_TO_ACQUIRE_DATA_URL}
+    app_exchange:
+      url: ${STEEDOS_APP_EXCHANGE_URL}
 cfs:
   store: ${STEEDOS_CFS_STORE}
   aliyun:
@@ -33,13 +35,14 @@ cfs:
     accessKeyId: ${STEEDOS_CFS_CLOUD_ACCESSKEYID}
     secretAccessKey: ${STEEDOS_CFS_CLOUD_SECRETACCESSKEY}
 tenant:
-  _id: ${STEEDOS_TENANT_ID}
+  _id: ${STEEDOS_CLOUD_SPACE_ID}
   name: 华炎魔方
-  logo_url:
+  logo_url: ${STEEDOS_CLOUD_LOGO_URL}
+  logo_square_url: ${STEEDOS_CLOUD_LOGO_SQUARE_URL}
   background_url:
   enable_register: ${STEEDOS_TENANT_CONFIG_ENABLE_REGISTER} # 启用注册功能 true / false
   enable_forget_password: false
-  enable_create_tenant: true
+  enable_create_tenant: false
   enable_password_login: true
   enable_bind_email: false
   enable_bind_mobile: false
@@ -52,6 +55,7 @@ sms:
 email:
   from: ${MAIL_FROM}
   url: ${MAIL_URL}
+  signname: ${MAIL_SIGNNAME}
 cron:
   instancerecordqueue_interval: 10000
   mailqueue_interval: 10000
