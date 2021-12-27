@@ -7,7 +7,9 @@ ports:
     onOpen: open-preview
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - command: |
+  - init: |
+      mkdir -p /workspace/mongodb/data/db
+    command: |
       mongod --replSet rs0 --dbpath /workspace/mongodb/data/db
   - command: |
       gp await-port 27017
