@@ -26,3 +26,8 @@ docker-volumes
 !/steedos-packages/*.package
 server.log
 logs
+
+.npmrc
+.yarnrc
+
+jsreport-app/data/**

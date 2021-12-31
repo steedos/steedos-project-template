@@ -30,9 +30,9 @@ const LokiTransport = require("winston-loki");
  */
 module.exports = {
 	// Namespace of nodes to segment your nodes on the same network.
-	namespace: "steedos-apps",
+	namespace: "steedos-project-template",
 	// Unique node identifier. Must be unique in a namespace.
-	nodeID: process.env.NODEID, //"steedos-project-pcmes",
+	nodeID: process.env.NODEID,
 	// Custom metadata store. Store here what you want. Accessing: `this.broker.metadata`
 	metadata: {},
 
