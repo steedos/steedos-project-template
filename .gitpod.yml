@@ -38,3 +38,5 @@ tasks:
 vscode:
   extensions:
     - dbaeumer.vscode-eslint
+    - redhat.vscode-yaml
+    - steedos.steedosdx-vscode
