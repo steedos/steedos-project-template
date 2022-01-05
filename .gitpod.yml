@@ -1,16 +1,19 @@
-image:
-  file: .gitpod.Dockerfile
+image: steedos/gitpod-workspace-base:latest
 
 # List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/config-ports/
 ports:
   - port: 5000
-    onOpen: open-preview
+    onOpen: open-browser
     visibility: public
+  - port: 6379
+    onOpen: ignore
+  - port: 27017
+    onOpen: ignore
   - port: 5488 # jsreport-app
-    onOpen: open-preview
+    onOpen: open-browser
     visibility: public
   - port: 1880 # node-red-app
-    onOpen: open-preview
+    onOpen: open-browser
     visibility: public
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
