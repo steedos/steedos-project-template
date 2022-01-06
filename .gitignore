@@ -31,3 +31,5 @@ logs
 .yarnrc
 
 jsreport-app/data/**
+
+yarn.lock
