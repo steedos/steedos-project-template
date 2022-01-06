@@ -17,8 +17,7 @@ ports:
     visibility: public
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: |
-      mkdir -p /workspace/mongodb/data/db
+  - init: sh ./.scripts/setup.sh
     command: |
       mongod --replSet rs0 --dbpath /workspace/mongodb/data/db
   - command: |
@@ -27,7 +26,6 @@ tasks:
   - command: |
       redis-server --save "" --appendonly no --client-output-buffer-limit replica 0 0 0 --client-output-buffer-limit pubsub 0 0 0 --client-output-buffer-limit slave 0 0 0
   - init: |
-      sh ./.scripts/setup.sh
       yarn install
     command: |
       gp await-port 27017
