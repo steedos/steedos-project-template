@@ -61,7 +61,7 @@ jobs:
           IMAGE_TAG: ${{ steps.docker_meta.outputs.tags }}
         run: |
           docker pull steedos/steedos-project-template:latest
-          docker tag steedos/steedos-project-template:latest ${{ env.ECR_REGISTRY }}/ivscode/steedos/steedos-project-template:${{github.ref_name}}
-          docker tag steedos/steedos-project-template:latest ${{ env.ECR_REGISTRY }}/ivscode/steedos/steedos-project-template:latest
-          docker push ${{ env.ECR_REGISTRY }}/ivscode/steedos/steedos-project-template:latest
-          docker push ${{ env.ECR_REGISTRY }}/ivscode/steedos/steedos-project-template:${{github.ref_name}}
+          docker tag steedos/steedos-project-template:latest ${{ env.ECR_REGISTRY }}/dockerhub/steedos/steedos-project-template:${{github.ref_name}}
+          docker tag steedos/steedos-project-template:latest ${{ env.ECR_REGISTRY }}/dockerhub/steedos/steedos-project-template:latest
+          docker push ${{ env.ECR_REGISTRY }}/dockerhub/steedos/steedos-project-template:latest
+          docker push ${{ env.ECR_REGISTRY }}/dockerhub/steedos/steedos-project-template:${{github.ref_name}}
