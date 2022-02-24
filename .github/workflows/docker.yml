@@ -1,4 +1,4 @@
-name: Docker publish to docker.io and ecr, deploy to k8s
+name: Docker publish to docker.io and ecr
 
 on:
   push:
