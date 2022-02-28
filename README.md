@@ -11,9 +11,7 @@
 
 ## 开发前准备
 
-- **开通华炎魔方云服务**：请按该 [教程](https://www.steedos.cn/docs/deploy/deploy-cloud) 开通华炎魔方云服务。
-
-- **激活华炎魔方**：请参考该 [文档](https://www.steedos.cn/docs/deploy/deploy-activate)，准备好后续运行项目时激活华炎魔方依赖的两个环境变量。
+- **激活华炎魔方**：请参考该 [文档](https://www.steedos.cn/docs/deploy/deploy-activate)，注册华炎魔方门户账户，并准备好后续运行项目时激活华炎魔方依赖的两个环境变量。
 
 - **注册GitPod账户**：如果没有 [Github](https://github.com/) 账户和 [GitPod](https://gitpod.io/) 账户，请分别注册并使用浏览器登录它们。
 
