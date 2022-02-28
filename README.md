@@ -15,8 +15,7 @@
 
 - **激活华炎魔方**：请参考该 [文档](https://www.steedos.cn/docs/deploy/deploy-activate)，准备好后续运行项目时激活华炎魔方依赖的两个环境变量。
 
-- **注册GitPod账户**：我们推荐使用GitPod来在线开发华炎魔方项目，这样可以免去安装开发环境的繁琐过程。
-如果没有 [Github](https://github.com/) 账户和 [GitPod](https://gitpod.io/) 账户，请分别注册并使用浏览器登录它们。
+- **注册GitPod账户**：如果没有 [Github](https://github.com/) 账户和 [GitPod](https://gitpod.io/) 账户，请分别注册并使用浏览器登录它们。
 
 - **Fork项目**：请Fork本项目到本地，后续我们使用GitPod在线开发Fork后的项目的话就可以把开发后的代码提交到Git仓库。
 也可以执行以下命令来创建一个新项目，然后把该项目提交到Git仓库，而不是Fork本项目来创建自己的魔方项目。```npx create-steedos-app my-app```
