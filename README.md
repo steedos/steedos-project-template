@@ -2,6 +2,13 @@
 
 该项目是通过`steedos cli`命令行创建魔方项目时会自动生成的模板项目，比如执行`npx create-steedos-app my-app`会自动创建一个名为`my-app`的项目。
 
+## 开发环境
+
+我们推荐使用GitPod来在线开发华炎魔方项目，这样可以免去安装开发环境的繁琐过程，如果需要本地搭建开发环境可以参考以下Gitpod配置文件，它们分别描述了部署开发环境及启动华炎魔方项目的具体过程：
+
+- [.gitpod.Dockerfile](.gitpod.Dockerfile)
+- [.gitpod.yml](.gitpod.yml)
+
 ## 开发前准备
 
 - **开通华炎魔方云服务**：请按该 [教程](https://www.steedos.cn/docs/deploy/deploy-cloud) 开通华炎魔方云服务。
