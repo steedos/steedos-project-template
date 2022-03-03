@@ -5,7 +5,7 @@
   "repository": "https://github.com/steedos/steedos-project-template.git",
   "description": "",
   "engines": {
-    "node": "12.22.x"
+    "node": "^12.22.0"
   },
   "scripts": {
     "start": "yarn flushCacherDB && moleculer-runner services !services/sidecar-server.service.js",
