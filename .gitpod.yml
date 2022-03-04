@@ -20,10 +20,10 @@ tasks:
   - name: MongoDB
     init: sh ./.scripts/setup.sh
     command: |
-      mongod --replSet rs0 --bind_ip 0.0.0.0 --dbpath /workspace/mongodb/data/db
+      mongod --replSet rs0 --bind_ip_all --dbpath /workspace/mongodb/data/db
   - command: |
       gp await-port 27017
-      mongo steedos --eval "rs.initiate()"
+      mongo steedos --eval "rs.initiate();conf = rs.conf();conf.members[0].host=\"127.0.0.1\";rs.reconfig(conf, {force:true});"
       exit
   - name: Redis
     command: |
