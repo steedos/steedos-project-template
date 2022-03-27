@@ -12,11 +12,11 @@ services:
       - "./.steedos:/app/.steedos"
     environment:
       - ROOT_URL=http://localhost:5000
-      - MONGO_URL=mongodb://mongo:27018/steedos
+      - MONGO_URL=mongodb://mongo:27017/steedos
       - STEEDOS_CFS_STORE=local
       - STEEDOS_STORAGE_DIR=/app/storage
-      - TRANSPORTER=redis://redis:6389
-      - CACHER=redis://redis:6389/2
+      - TRANSPORTER=redis://redis:6379
+      - CACHER=redis://redis:6379/2
     depends_on:
       - redis
       - mongo
