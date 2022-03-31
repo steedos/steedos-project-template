@@ -6,7 +6,6 @@
     "dependencies": {
         "@steedos-labs/master": "2.1.46",
         "@steedos-labs/oa": "2.1.46",
-        "@steedos-labs/workflow": "2.1.46",
-        "@steedos/webapp-accounts": "^2.2.12"
+        "@steedos-labs/workflow": "2.1.46"
     }
 }
