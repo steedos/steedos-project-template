@@ -35,6 +35,12 @@ jobs:
         with: 
           ref: '2.2'
       
+      # checkout branch 2.1
+      - uses: actions/checkout@v2
+        if: steps.tag-name.outputs.result == '2.1'
+        with: 
+          ref: '2.1'
+
       - uses: docker/setup-qemu-action@v1
       - uses: docker/setup-buildx-action@v1
         with:
