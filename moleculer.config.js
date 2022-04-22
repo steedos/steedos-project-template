@@ -1,7 +1,7 @@
 "use strict";
 
 require('dotenv-flow').config(process.cwd());
-const LokiTransport = require("winston-loki");
+// const LokiTransport = require("winston-loki");
 
 /**
  * Moleculer ServiceBroker configuration file
@@ -30,9 +30,9 @@ const LokiTransport = require("winston-loki");
  */
 module.exports = {
 	// Namespace of nodes to segment your nodes on the same network.
-	namespace: "steedos-apps",
+	namespace: "steedos-project-template",
 	// Unique node identifier. Must be unique in a namespace.
-	nodeID: process.env.NODEID, //"steedos-project-pcmes",
+	nodeID: process.env.NODEID,
 	// Custom metadata store. Store here what you want. Accessing: `this.broker.metadata`
 	metadata: {},
 
@@ -71,24 +71,24 @@ module.exports = {
 			// File appending interval in milliseconds.
 			interval: 1 * 1000
 		},
-	},
-	process.env.LOKI_URL && {
-		type: "Winston",
-		options: {
-			// Logging level
-			level: "info",
-			// Folder path to save files. You can use {nodeID} & {namespace} variables.
-			winston: {
-				// More settings: https://github.com/winstonjs/winston#creating-your-own-logger
-				transports: [
-					new LokiTransport({ 
-						host: process.env.LOKI_URL,
-						labels: { project: 'pcmes' }
-					})
-				]
-			}
-		},
 	}
+	// process.env.LOKI_URL && {
+	// 	type: "Winston",
+	// 	options: {
+	// 		// Logging level
+	// 		level: "info",
+	// 		// Folder path to save files. You can use {nodeID} & {namespace} variables.
+	// 		winston: {
+	// 			// More settings: https://github.com/winstonjs/winston#creating-your-own-logger
+	// 			transports: [
+	// 				new LokiTransport({ 
+	// 					host: process.env.LOKI_URL,
+	// 					labels: { project: 'pcmes' }
+	// 				})
+	// 			]
+	// 		}
+	// 	},
+	// }
 	],
 
 	// Default log level for built-in console logger. It can be overwritten in logger options above.
@@ -263,5 +263,6 @@ module.exports = {
 	// Called after broker stopped.
 	async stopped(broker) {
 
-	}
+	},
+	skipProcessEventRegistration: true
 };

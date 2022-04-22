@@ -1,6 +1,6 @@
 **/.DS_Store
 **/.idea
-
+yarn.lock
 **/node_modules
 **/package-lock.json
 
@@ -26,3 +26,10 @@ docker-volumes
 !/steedos-packages/*.package
 server.log
 logs
+
+.npmrc
+.yarnrc
+
+jsreport-app/data/**
+
+yarn.lock
