@@ -36,6 +36,9 @@ tasks:
       gp await-port 27017
       gp await-port 6379
       yarn start
+  - name: Steedos-cli
+    init: |
+      npm i steedos-cli --global
 
 vscode:
   extensions:
