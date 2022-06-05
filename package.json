@@ -5,7 +5,7 @@
   "repository": "https://github.com/steedos/steedos-project-template.git",
   "description": "",
   "engines": {
-    "node": "^12.22.0"
+    "node": ">=12.22"
   },
   "scripts": {
     "start": "yarn start:community",
@@ -24,8 +24,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@steedos/service-community": "^2.2.26",
-    "@steedos/service-enterprise": "^2.2.26"
+    "@steedos/service-community": "^2.2",
+    "@steedos/service-enterprise": "^2.2"
   },
   "devDependencies": {
     "eslint": "^7.7.0",
