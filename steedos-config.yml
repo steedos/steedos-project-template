@@ -47,6 +47,8 @@ tenant:
   enable_forget_password: false
   enable_create_tenant: false
   enable_password_login: true
+  enable_mobile_code_login: false
+  enable_email_code_login: false
   enable_bind_email: false
   enable_bind_mobile: false
 sms:
