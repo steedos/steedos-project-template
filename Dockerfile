@@ -5,7 +5,7 @@ WORKDIR /app
 ADD .steedos ./.steedos/
 ADD services ./services/
 ADD steedos-app ./steedos-app/
-# ADD steedos-packages ./steedos-packages/
+ADD steedos-packages ./steedos-packages/
 ADD package.json .
 ADD moleculer.config.js .
 ADD steedos-config.yml ./steedos-config.yml
