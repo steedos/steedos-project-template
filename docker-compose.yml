@@ -13,6 +13,7 @@ services:
     environment:
       - ROOT_URL=http://localhost:5000
       - MONGO_URL=mongodb://mongo:27018/steedos
+      - MONGO_OPLOG_URL=mongodb://mongo:27018/local
       - STEEDOS_CFS_STORE=local
       - STEEDOS_STORAGE_DIR=/app/storage
       - TRANSPORTER=redis://redis:6389
