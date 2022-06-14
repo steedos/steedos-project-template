@@ -10,6 +10,7 @@ services:
       - "./storage:/app/storage"
       - "./.steedos:/app/.steedos"
     environment:
+      - PORT=5000
       - ROOT_URL=http://localhost:5000
       - MONGO_URL=mongodb://mongo:27017/steedos
       - MONGO_OPLOG_URL=mongodb://mongo:27017/local
