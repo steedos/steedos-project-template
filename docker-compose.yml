@@ -5,13 +5,15 @@ services:
     image: steedos/steedos-project-template:2.2
     restart: always
     ports:
-      - "5000:5000"
+      - "3000:3000"
     volumes:
       - "./storage:/app/storage"
       - "./.steedos:/app/.steedos"
     environment:
-      - PORT=5000
-      - ROOT_URL=http://localhost:5000
+      - STEEDOS_CLOUD_SPACE_ID= #在此填入私有部署记录中的魔方ID
+      - STEEDOS_CLOUD_API_KEY= #在此填入私有部署记录中的API Key
+      - ROOT_URL=http://localhost:3000 #在此填入服务运行的正式网址，包含端口号3000
+      - PORT=3000
       - MONGO_URL=mongodb://mongo:27017/steedos
       - MONGO_OPLOG_URL=mongodb://mongo:27017/local
       - STEEDOS_PUBLIC_PAGE_ASSETURLS=https://unpkg.com/@steedos-ui/builder-widgets@2.2.21/dist/assets.json
@@ -24,7 +26,7 @@ services:
       - mongo
     
   redis:
-    image: redis:6.2.4
+    image: redis:6.2
     restart: always
     volumes:
       - "./docker-volumes/redis/data:/data"
