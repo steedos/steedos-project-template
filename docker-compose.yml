@@ -1,4 +1,4 @@
-version: "3"
+version: "3.9"
 
 services:
   steedos:
@@ -7,16 +7,13 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - "./storage:/app/storage"
-      - "./.steedos:/app/.steedos"
+      - "steedos-data:/app/storage"
     environment:
-      - STEEDOS_CLOUD_SPACE_ID= #在此填入私有部署记录中的魔方ID
-      - STEEDOS_CLOUD_API_KEY= #在此填入私有部署记录中的API Key
-      - ROOT_URL=http://localhost:3000 #在此填入服务运行的正式网址，包含端口号3000
-      - PORT=3000
+      - ROOT_URL=http://127.0.0.1:3000 #在此填入客户端访问服务输入的域名（或IP）和端口
+      - PORT=3000 #在此填入服务运行的端口
       - MONGO_URL=mongodb://mongo:27017/steedos
       - MONGO_OPLOG_URL=mongodb://mongo:27017/local
-      - STEEDOS_PUBLIC_PAGE_ASSETURLS=https://unpkg.com/@steedos-ui/builder-widgets@2.2.21/dist/assets.json
+      - STEEDOS_PUBLIC_PAGE_ASSETURLS=https://unpkg.com/@steedos-ui/builder-widgets@2.2.20/dist/assets.json
       - STEEDOS_CFS_STORE=local
       - STEEDOS_STORAGE_DIR=/app/storage
       - TRANSPORTER=redis://redis:6379
@@ -28,8 +25,6 @@ services:
   redis:
     image: redis:6.2
     restart: always
-    volumes:
-      - "./docker-volumes/redis/data:/data"
     command: ["/bin/sh","-c", "redis-server --save \"\" --appendonly no"]
     ports:
       - "6379:6379"
@@ -38,7 +33,7 @@ services:
     image: mongo:4.2
     restart: always
     volumes:
-      - "./docker-volumes/mongo/data/db:/data/db"
+      - mongo-data:/data/db
     command: mongod --oplogSize 128 --profile=1 --slowms=500 --replSet rs0 --bind_ip_all
     ports:
       - "27017:27017"
@@ -61,3 +56,8 @@ services:
         done; (exit $$s)"
     depends_on:
       - mongo
+
+
+volumes:
+  mongo-data:
+  steedos-data:

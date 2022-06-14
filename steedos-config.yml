@@ -19,6 +19,8 @@ public:
     unpkgUrl: ${STEEDOS_PUBLIC_PAGE_UNPKGURL}
 cfs:
   store: ${STEEDOS_CFS_STORE}
+  local:
+    folder: ${STEEDOS_STORAGE_DIR}
   aliyun:
     region: ${STEEDOS_CFS_ALIYUN_REGION}
     bucket: ${STEEDOS_CFS_ALIYUN_BUCKET}
