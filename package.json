@@ -1,7 +1,7 @@
 {
   "name": "steedos-project-template",
   "version": "1.0.0",
-  "private": trye,
+  "private": true,
   "repository": "https://github.com/steedos/steedos-project-template.git",
   "description": "",
   "engines": {
