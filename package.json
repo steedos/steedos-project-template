@@ -1,16 +1,14 @@
 {
-  "name": "@steedos/steedos-project-template",
+  "name": "steedos-project-template",
   "version": "1.0.0",
-  "private": false,
+  "private": true,
   "repository": "https://github.com/steedos/steedos-project-template.git",
   "description": "",
   "engines": {
     "node": ">=12.22"
   },
   "scripts": {
-    "start": "yarn start:community",
-    "start:community": "yarn flushCacherDB && moleculer-runner services/community.service.js",
-    "start:enterprise": "yarn flushCacherDB && moleculer-runner services/enterprise.service.js",
+    "start": "yarn flushCacherDB && moleculer-runner services/community.service.js",
     "start:console": "cross-env NODEID=STEEDOS-CONSOLE moleculer connect --config ./moleculer.config.js",
     "flushCacherDB": "node .scripts/flush_cacher_db.js",
     "postinstall": "cd .steedos && yarn"
@@ -21,16 +19,13 @@
     "microservices",
     "moleculer"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "steedos",
+  "license": "MIT",
   "dependencies": {
-    "@steedos/service-community": "^2.2",
-    "@steedos/service-enterprise": "^2.2"
+    "@steedos/service-community": "^2.2"
   },
   "devDependencies": {
     "eslint": "^7.7.0",
-    "jest": "^26.4.2",
-    "jest-cli": "^26.4.2",
     "moleculer-cli": "^0.8.0",
     "moleculer-repl": "^0.7.1",
     "nodemon": "^2.0.7"
