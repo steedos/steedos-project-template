@@ -4,7 +4,7 @@
     "steedos-app",
     "steedos-packages/**"
   ],
-  "version": "2.1.9",
+  "version": "0.0.1",
   "useWorkspaces": true,
   "npmClient": "yarn"
 }
