@@ -33,9 +33,7 @@ tasks:
       npm i steedos-cli@next --global
       exit
   - name: Steedos
-    init: |
-      gp env ROOT_URL=$(gp url 3000)
-      gp env METADATA_SERVER=$(gp url 3000)
+    init: sh ./.scripts/env.sh
     command: |
       yarn install
       gp await-port 27017
