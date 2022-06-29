@@ -31,11 +31,13 @@ tasks:
   - name: Steedos-cli
     command: |
       npm i steedos-cli@next --global
+      exit
   - name: Steedos
     init: |
-      yarn install
+      gp env ROOT_URL=$(gp url 3000)
+      gp env METADATA_SERVER=$(gp url 3000)
     command: |
-      sh ./.scripts/env.sh
+      yarn install
       gp await-port 27017
       gp await-port 6379
       yarn start
