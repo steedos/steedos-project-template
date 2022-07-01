@@ -8,9 +8,8 @@
     "node": ">=12.22"
   },
   "scripts": {
-    "start": "yarn flushCacherDB && moleculer-runner services/community.service.js",
+    "start": "node .scripts/flush_cacher_db.js && moleculer-runner services/community.service.js",
     "start:console": "cross-env NODEID=STEEDOS-CONSOLE moleculer connect --config ./moleculer.config.js",
-    "flushCacherDB": "node .scripts/flush_cacher_db.js",
     "postinstall": "cd .steedos && yarn"
   },
   "keywords": [
