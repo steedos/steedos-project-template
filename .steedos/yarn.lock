@@ -2,25 +2,25 @@
 # yarn lockfile v1
 
 
-"@steedos-labs/contract@2.1.62":
-  version "2.1.62"
-  resolved "https://registry.yarnpkg.com/@steedos-labs/contract/-/contract-2.1.62.tgz#f43c197bc5153e78e3607cd5d1b41110c23bbfae"
-  integrity sha512-Mdu4/Nb52MfjdtL30uhnYCx/1k0QIhQ/e8sj8vOMdq2T11GuUqMFTVq8PDhCLnChy5Jmrjsz6zKjmaIp05zppw==
+"@steedos-labs/contract@2.1.64":
+  version "2.1.64"
+  resolved "https://registry.yarnpkg.com/@steedos-labs/contract/-/contract-2.1.64.tgz#6ef84eb1810bd58441a3f8e3bb4c94767f35d3fd"
+  integrity sha512-oKd17LkGKEbrBtab9JutX87wrpbzfKBT0oQNmVmmDR6UPCvvK8L6DSeGet5TifkAIfXTaw1RmTqlBn6uAVERrg==
 
-"@steedos-labs/master@2.1.62":
-  version "2.1.62"
-  resolved "https://registry.yarnpkg.com/@steedos-labs/master/-/master-2.1.62.tgz#036cb4f0901bb0709b247e968c8cc90a212193c8"
-  integrity sha512-Dr3YuNwcHWf+97LTO3n/yQtFSaO39WNXL3yP3G9lV9iaDc0iJVgALMFDB7/PQlYnSU9BwjlPiUpsyVHy3jNN0w==
+"@steedos-labs/master@2.1.65":
+  version "2.1.65"
+  resolved "https://registry.yarnpkg.com/@steedos-labs/master/-/master-2.1.65.tgz#a1a18a4db3bff7bc65adfb184439d567fc3234a1"
+  integrity sha512-gSdGRKCg2BPPKMvG+AtrH/6+oOJi8VLM7YDCqE1CYefSsEL1/ChRPP5FzxWmSMXEwX69FJF/LZkTNA8b9/xoQQ==
 
-"@steedos-labs/oa@2.1.62":
-  version "2.1.62"
-  resolved "https://registry.yarnpkg.com/@steedos-labs/oa/-/oa-2.1.62.tgz#e9a7c20ac97bcaed24ce80cd97741916793324a5"
-  integrity sha512-sVaLl4Cw9nhhYucViyNv99GG2CXb67nqZdvMjmiIpyiLuOPFtITTZUv8DeqcTds2GOQcgypIN93TnAx+ol/IhQ==
+"@steedos-labs/oa@2.1.65":
+  version "2.1.65"
+  resolved "https://registry.yarnpkg.com/@steedos-labs/oa/-/oa-2.1.65.tgz#0c450f0264efc7d0687c8ac9c297da5c96ffaa03"
+  integrity sha512-iPKsS37hBwKZuqQoyyod3tan5mWjB+7jnZMXY7HqK1n0YWDgvNzNGous5X1JdCAULfHWjArjmRp124xY0qeCqA==
 
-"@steedos-labs/project@2.1.62":
-  version "2.1.62"
-  resolved "https://registry.yarnpkg.com/@steedos-labs/project/-/project-2.1.62.tgz#18ebafd383bb3b4814d6da96697202645ad47a57"
-  integrity sha512-MvLijB5UsxbfAtIzO1uxM1DWDgQ2XDGx8r+hHp4AA0ZmpZ160kkCaNtZAvVQiWWjzH8Tws9uJ4i2r5758fThBQ==
+"@steedos-labs/project@2.1.63":
+  version "2.1.63"
+  resolved "https://registry.yarnpkg.com/@steedos-labs/project/-/project-2.1.63.tgz#8558efca56dd5c551b12cf841a92b1149f1f04db"
+  integrity sha512-xZ4HHomxi0Hichzq7soAVJIMW4i2NHk9+3FN9IJw7tZNUnqJK3mBqXBRQ9T2cUPFN837RN2AO24XoMX9uQvofA==
 
 "@steedos-labs/workflow@2.1.62":
   version "2.1.62"
