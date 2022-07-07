@@ -6,7 +6,7 @@
     "start": "steedos start"
   },
   "dependencies": {
-    "@steedos/service-community": "next"
+    "@steedos/service-community": "^2.2"
   },
   "devDependencies": {
   }
