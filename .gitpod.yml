@@ -9,11 +9,6 @@ ports:
     onOpen: ignore
   - port: 27017
     onOpen: ignore
-  - port: 5488 # jsreport-app
-    onOpen: open-browser
-    visibility: public
-  - port: 1880 # node-red-app
-    onOpen: open-browser
     visibility: public
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
