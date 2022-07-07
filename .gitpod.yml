@@ -25,11 +25,11 @@ tasks:
       redis-server --protected-mode no --save "" --appendonly no --client-output-buffer-limit replica 0 0 0 --client-output-buffer-limit pubsub 0 0 0 --client-output-buffer-limit slave 0 0 0
   - name: Steedos
     init: |
+      git config --global pull.rebase false
+    command: |
       echo "ROOT_URL=$(gp url 5000)" >> .env.local
       echo "METADATA_SERVER=$(gp url 5000)" >> .env.local
-      git config --global pull.rebase false
       yarn global add steedos-cli@next 
-    command: |
       yarn install
       gp await-port 27017
       gp await-port 6379
