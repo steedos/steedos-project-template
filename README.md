@@ -2,11 +2,16 @@ This is a [Steedos](https://www.steedos.com/) project bootstrapped with [`create
 
 ## Getting Started
 
-First, run the development server:
+### Start mongodb & redis service
 
 ```bash
-npm run start
-# or
+docker-compose up
+```
+
+### Start steedos service
+
+```bash
+yarn
 yarn start
 ```
 
