@@ -3,13 +3,13 @@ version: "3.9"
 services:
 
   redis:
-    image: redis:6.2
+    image: ecr.aws.steedos.cn/dockerhub/bitnami/redis:6.2
     command: "redis-server --save \"\" --appendonly no --loglevel warning"
     ports:
       - "6379:6379"
   
   mongodb:
-    image: 'bitnami/mongodb:4.4'
+    image: 'ecr.aws.steedos.cn/dockerhub/bitnami/mongodb:4.4'
     restart: on-failure
     ports:
       - 27017:27017
