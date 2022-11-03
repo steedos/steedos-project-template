@@ -7,8 +7,8 @@
     "start:ee": "steedos start -c steedos-ee.config.js"
   },
   "dependencies": {
-    "@steedos/service-community": "^2.2",
-    "@steedos/service-enterprise": "^2.2"
+    "@steedos/service-community": "^2.3",
+    "@steedos/service-enterprise": "^2.3"
   },
   "devDependencies": {
   }
