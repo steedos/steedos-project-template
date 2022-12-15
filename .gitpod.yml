@@ -5,6 +5,9 @@ ports:
   - port: 5000
     onOpen: open-browser
     visibility: public
+  - port: 3100
+    onOpen: ignore
+    visibility: public
   - port: 6379
     onOpen: ignore
   - port: 27017
@@ -20,6 +23,7 @@ tasks:
       git config --global pull.rebase false
     command: |
       echo "ROOT_URL=$(gp url 5000)" >> .env.local
+      echo "STEEDOS_EXPERIENCE_URL=$(gp url 3100)" >> .env.local
       echo "METADATA_SERVER=$(gp url 5000)" >> .env.local
       npm config set registry https://registry.npmmirror.com
       yarn config set registry https://registry.npmmirror.com

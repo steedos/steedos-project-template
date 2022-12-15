@@ -8,6 +8,7 @@
     "inspect": "cross-env NODE_OPTIONS='--inspect' && steedos start"
   },
   "dependencies": {
+    "@steedos/ee_experience": "^1.0.7",
     "@steedos/service-community": "^2.3",
     "@steedos/service-enterprise": "^2.3"
   },
