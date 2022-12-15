@@ -31,7 +31,7 @@ tasks:
       yarn install
       gp await-port 27017
       gp await-port 6379
-      yarn start
+      yarn start:ee
 
 vscode:
   extensions:
