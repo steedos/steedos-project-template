@@ -2,6 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
+  "workspaces": ["steedos-packages/*"],  
   "scripts": {
     "start": "steedos start",
     "start:ee": "steedos start -c steedos-ee.config.js",
