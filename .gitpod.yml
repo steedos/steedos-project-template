@@ -1,4 +1,4 @@
-image: ecr.aws.steedos.cn/dockerhub/steedos/gitpod-workspace-base:2.2.2
+image: ecr.aws.steedos.cn/dockerhub/steedos/gitpod-workspace-base:2.2.3
 
 # List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/config-ports/
 ports:
@@ -25,8 +25,6 @@ tasks:
       echo "ROOT_URL=$(gp url 5000)" >> .env.local
       echo "STEEDOS_EXPERIENCE_URL=$(gp url 3100)" >> .env.local
       echo "METADATA_SERVER=$(gp url 5000)" >> .env.local
-      npm config set registry https://registry.npmmirror.com
-      yarn config set registry https://registry.npmmirror.com
       npm i steedos-cli --global 
       yarn install
       gp await-port 27017
