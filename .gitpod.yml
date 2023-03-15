@@ -17,7 +17,7 @@ ports:
 tasks:
   - name: MongoDB & Redis
     command: |
-      docker-compose up
+      docker-compose -f docker-compose-db.yml up
   - name: Steedos
     init: |
       git config --global pull.rebase false
