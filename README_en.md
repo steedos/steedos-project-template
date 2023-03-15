@@ -27,7 +27,7 @@ docker-compose up
 ```
 
 ### 访问远程开发环境
-打开浏览器，访问 http://127.0.0.1:3000/?folder=/home/workspace/steedos-project-template ，进入VS Code远程开发环境。
+打开浏览器，访问 http://127.0.0.1:5555/?folder=/home/workspace/steedos-project-template ，进入VS Code远程开发环境。
 在 VS Code 中打开文件夹 /home/workspace/steedos-project-template
 
 ### 启动项目
