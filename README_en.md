@@ -1,4 +1,4 @@
-华炎魔方模版项目
+Steedos Project Template
 ===
 
 <p align="center">
