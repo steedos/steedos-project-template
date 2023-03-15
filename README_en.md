@@ -34,11 +34,6 @@ docker-compose up
 
 在 VS Code 中进入控制台，输入启动命令。 
 
-```
-yarn
-yarn start
-```
-
 ```bash
 yarn
 yarn start

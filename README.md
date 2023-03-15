@@ -20,6 +20,8 @@
 
 ## 快速向导
 
+推荐使用 docker 运行华炎魔方。
+
 ### 启动数据库 & 远程开发环境
 
 ```bash
@@ -33,11 +35,6 @@ docker-compose up
 ### 启动项目
 
 在 VS Code 中进入控制台，输入启动命令。 
-
-```
-yarn
-yarn start
-```
 
 ```bash
 yarn
