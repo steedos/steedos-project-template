@@ -22,19 +22,20 @@
 
 推荐使用 docker 运行华炎魔方。
 
-### 启动数据库 & 远程开发环境
+### 启动数据库 & VSCode Server
 
 ```bash
 docker-compose up
 ```
 
-### 访问远程开发环境
+### 访问VSCode Server
+
 打开浏览器，访问 http://127.0.0.1:5555/?folder=/home/workspace/steedos-project-template ，进入VS Code远程开发环境。
 在 VS Code 中打开文件夹 /home/workspace/steedos-project-template
 
 ### 启动项目
 
-在 VS Code 中进入控制台，输入启动命令。 
+在 VS Code Server 中进入控制台，输入启动命令。 
 
 ```bash
 yarn
