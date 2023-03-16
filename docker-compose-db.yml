@@ -3,12 +3,12 @@ version: "3.9"
 services:
 
   redis:
-    image: ecr.aws.steedos.cn/dockerhub/redis:6.2
+    image: redis:6.2
     ports:
       - "6379:6379"
   
   mongodb:
-    image: ecr.aws.steedos.cn/dockerhub/mongo:4.4
+    image: mongo:4.4
     ports:
       - 27017:27017
     command: --replSet steedos
