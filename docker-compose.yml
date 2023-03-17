@@ -3,7 +3,7 @@ version: "3.9"
 services:
 
   vscode:
-    image: steedos/vscode-server
+    image: steedos/vscode-server:1.76
     ports:
       - "5555:3000"
       - "5100:5100"
@@ -15,7 +15,7 @@ services:
       - TRANSPORTER=redis://redis:6379/1
       - CACHER=redis://redis:6379
     volumes:
-      - '.:/home/workspace/steedos-project-template'
+      - '.:/home/workspace/steedos-project-template:cached'
       
   redis:
     image: redis:6.2
