@@ -5,7 +5,8 @@
   "workspaces": ["steedos-packages/*"],  
   "scripts": {
     "start": "steedos start",
-    "inspect": "cross-env NODE_OPTIONS='--inspect' && steedos start"
+    "inspect": "cross-env NODE_OPTIONS='--inspect' && steedos start",
+    "source:retrieve": "steedos source:retrieve"
   },
   "dependencies": {
     "@steedos/service-community": "^2.4.2"
