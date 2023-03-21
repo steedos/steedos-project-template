@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "workspaces": ["steedos-packages/*"],  
+  "workspaces": ["steedos-packages/*", "steedos-app"],  
   "scripts": {
     "start": "steedos start",
     "inspect": "cross-env NODE_OPTIONS='--inspect' && steedos start",
