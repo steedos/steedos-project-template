@@ -11,14 +11,23 @@ services:
     image: mongo:4.4
     ports:
       - 27017:27017
-    command: --replSet steedos
+    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "steedos" ]
     healthcheck:
-      test: echo 'rs.initiate(); db.runCommand("ping").ok' | mongo --quiet | grep 1
+      test: echo 'db.runCommand("ping").ok' | mongo --quiet | grep 1
       interval: 10s
       timeout: 10s
       retries: 5
     volumes:
       - 'steedos-mongo-data:/data/db'
+
+  mongodb-init:
+    image: mongo:4.4
+    restart: "no"
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    command: >
+      mongo --host mongodb:27017 --eval "rs.initiate({ _id: 'steedos', members: [{_id: 0, host: 'mongodb:27017'}]})"
 
 volumes:
   steedos-mongo-data:
