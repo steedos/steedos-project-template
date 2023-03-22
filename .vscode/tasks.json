@@ -4,7 +4,7 @@
     {
       "label": "Run Steedos",
       "type": "shell",
-      "command": "echo Getting Started: docker-compose up",
+      "command": "echo Getting Started: README.md",
       "linux": {
         "command": "yarn stop && yarn && yarn start",
       },
