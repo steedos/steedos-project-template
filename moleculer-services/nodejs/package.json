@@ -1,0 +1,13 @@
+{
+  "name": "@my-moleculer-service/example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "repl": "moleculer-runner --repl",
+    "start": "moleculer-runner services --hot"
+  },
+  "devDependencies": {
+    "moleculer-repl": "^0.7.3"
+  }
+}

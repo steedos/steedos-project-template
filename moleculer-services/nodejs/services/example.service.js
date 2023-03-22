@@ -1,14 +1,13 @@
 
 module.exports = {
-  name: "example",
-  version: 3,
+  name: "nodejs-example",
 
   actions: {
     hello: {
       rest: { method: 'GET', path: '/hello/:name' },
       handler(ctx) {
         return {
-          data: 'Welcome 33' + ctx.params.name
+          data: 'Welcome ' + ctx.params.name
         }
       }
     },

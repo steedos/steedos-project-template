@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "workspaces": [
+    "moleculer-services/*",
     "steedos-packages/*",
     "steedos-app"
   ],
@@ -18,12 +19,9 @@
     "source:retrieve": "steedos source:retrieve",
     "source:deploy": "steedos source:deploy",
     "moleculer:repl": "moleculer-runner --repl",
-    "moleculer:start": "moleculer-runner moleculer-services --hot"
+    "moleculer:start": "moleculer-runner moleculer-services/**/ --hot"
   },
   "dependencies": {
     "@steedos/service-community": "^2.4.4"
-  },
-  "devDependencies": {
-    "moleculer-repl": "^0.7.3"
   }
 }
