@@ -1,33 +1,37 @@
 {
-    "version": "2.0.0",
-    "tasks": [
-      {
-        "label": "Nodejs",
-        "type": "shell",
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Steedos",
+      "type": "shell",
+      "command": "echo Getting Started: docker-compose up",
+      "linux": {
         "command": "yarn stop && yarn && yarn start",
-        "presentation": {
-          "reveal": "always",
-          "panel": "new"
-        },
-        "runOptions": {
-          "runOn": "folderOpen"
-        }
       },
-      {
-        "label": "Install Steedos DX",
-        "type": "shell",
-        "command": "echo OK",
-        "linux": {
-          "command": "npx json5 .vscode/extensions.json | npx json-cli-tool --path=recommendations --output=newline | xargs -L 1 code --install-extension",
-        },
-        "presentation": {
-          "reveal": "always",
-          "panel": "new",
-          "close": true
-        },
-        "runOptions": {
-          "runOn": "folderOpen"
-        }
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "close": false
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
       }
-    ]
-  }
+    },
+    {
+      "label": "Install Steedos DX",
+      "type": "shell",
+      "command": "echo Please Install Steedos DX Extensions",
+      "linux": {
+        "command": "npx json5 .vscode/extensions.json | npx json-cli-tool --path=recommendations --output=newline | xargs -L 1 code --install-extension",
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new",
+        "close": false
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    }
+  ]
+}
