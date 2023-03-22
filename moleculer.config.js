@@ -1,3 +1,5 @@
+require('dotenv-flow').config({});
+
 module.exports = {
 	// Namespace of nodes to segment your nodes on the same network.
 	namespace: "steedos",
@@ -5,7 +7,7 @@ module.exports = {
 	// Available values: trace, debug, info, warn, error, fatal
 	logLevel: "warn",
 
-    transporter: process.env.STEEDOS_TRANSPORTER,
+  transporter: process.env.STEEDOS_TRANSPORTER,
 
 	cacher: process.env.STEEDOS_CACHER,
 

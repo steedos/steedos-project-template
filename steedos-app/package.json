@@ -1,5 +1,5 @@
 {
-  "name": "@my-orgnization/package1",
+  "name": "my-packages",
   "version": "0.0.1",
   "description": "",
   "main": "package.service.js",

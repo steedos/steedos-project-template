@@ -2,7 +2,10 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "workspaces": ["steedos-packages/*", "steedos-app"],  
+  "workspaces": [
+    "steedos-packages/*",
+    "steedos-app"
+  ],
   "scripts": {
     "start": "steedos start",
     "stop": "kill -9 $(lsof -ti:5000) | echo OK",
@@ -12,11 +15,14 @@
     "docker:db": "docker-compose -f docker-compose-db.yml up",
     "source:config": "steedos source:config",
     "source:retrieve": "steedos source:retrieve",
-    "source:deploy": "steedos source:deploy"
+    "source:deploy": "steedos source:deploy",
+    "moleculer:repl": "moleculer-runner --repl",
+    "moleculer:start": "moleculer-runner steedos-app/package.service.js steedos-packages/*/package.service.js"
   },
   "dependencies": {
     "@steedos/service-community": "^2.4.4"
   },
   "devDependencies": {
+    "moleculer-repl": "^0.7.3"
   }
 }
