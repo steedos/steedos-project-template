@@ -14,6 +14,7 @@ services:
     # for dev
     entrypoint: ["/bin/sh", "-c" , "yarn && yarn start"]
     volumes:
+      - './steedos-app/:/app/steedos-app/:cached'
       - './steedos-packages/:/app/steedos-packages/:cached'
       - './.env:/app/.env:cached'
       - './package.json:/app/package.json:cached'
