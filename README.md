@@ -37,9 +37,17 @@ yarn
 yarn start
 ```
 
-## 使用 VSCode Server 在 docker 中启动华炎魔方
+### 使用 docker 启动华炎魔方
 
 对于 windows 和 mac 用户，推荐使用此方法。
+
+```bash
+docker-compose -f docker-compose-steedos.yml up
+```
+
+## 使用 VSCode Server 远程调试华炎魔方
+
+可以在服务器上部署远程开发环境，实现远程开发。
 
 ```bash
 docker-compose -f docker-compose-vscode.yml up
