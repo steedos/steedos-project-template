@@ -4,7 +4,19 @@
       {
         "label": "Nodejs",
         "type": "shell",
-        "command": "yarn && yarn start",
+        "command": "yarn stop && yarn && yarn start",
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "runOptions": {
+          "runOn": "folderOpen"
+        }
+      },
+      {
+        "label": "Install Steedos DX",
+        "type": "shell",
+        "command": "code --install-extension steedos.steedosdx-vscode",
         "presentation": {
           "reveal": "always",
           "panel": "new"

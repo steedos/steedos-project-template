@@ -5,11 +5,12 @@
   "workspaces": ["steedos-packages/*", "steedos-app"],  
   "scripts": {
     "start": "steedos start",
+    "stop": "kill -9 $(lsof -ti:5000) | echo OK",
     "inspect": "cross-env NODE_OPTIONS='--inspect' && steedos start",
     "source:retrieve": "steedos source:retrieve"
   },
   "dependencies": {
-    "@steedos/service-community": "^2.4.2"
+    "@steedos/service-community": "^2.4.4"
   },
   "devDependencies": {
   }

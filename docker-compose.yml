@@ -3,7 +3,7 @@ version: "3.9"
 services:
 
   vscode:
-    image: steedos/vscode-server:1.76
+    image: steedos/vscode-server:1.76.2
     ports:
       - "5555:3000"
       - "5000:5000"
