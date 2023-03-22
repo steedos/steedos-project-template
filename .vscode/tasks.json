@@ -14,9 +14,12 @@
         }
       },
       {
-        "label": "Steedos DX Extensions",
+        "label": "Install Steedos DX",
         "type": "shell",
-        "command": "npx json5 .vscode/extensions.json | npx json-cli-tool --path=recommendations --output=newline | xargs -L 1 code --install-extension",
+        "command": "echo OK",
+        "linux": {
+          "command": "npx json5 .vscode/extensions.json | npx json-cli-tool --path=recommendations --output=newline | xargs -L 1 code --install-extension",
+        },
         "presentation": {
           "reveal": "always",
           "panel": "new",
