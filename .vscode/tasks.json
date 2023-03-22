@@ -14,12 +14,13 @@
         }
       },
       {
-        "label": "Install Steedos DX",
+        "label": "Steedos DX Extensions",
         "type": "shell",
-        "command": "code --install-extension steedos.steedosdx-vscode",
+        "command": "npx json5 .vscode/extensions.json | npx json-cli-tool --path=recommendations --output=newline | xargs -L 1 code --install-extension",
         "presentation": {
           "reveal": "always",
-          "panel": "new"
+          "panel": "new",
+          "close": true
         },
         "runOptions": {
           "runOn": "folderOpen"
