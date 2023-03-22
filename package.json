@@ -18,7 +18,7 @@
     "source:retrieve": "steedos source:retrieve",
     "source:deploy": "steedos source:deploy",
     "moleculer:repl": "moleculer-runner --repl",
-    "moleculer:start": "moleculer-runner steedos-app/package.service.js steedos-packages/*/package.service.js"
+    "moleculer:start": "moleculer-runner moleculer-services --hot"
   },
   "dependencies": {
     "@steedos/service-community": "^2.4.4"
