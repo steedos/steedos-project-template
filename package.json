@@ -10,6 +10,7 @@
     "docker:steedos": "docker-compose -f docker-compose-steedos.yml up",
     "docker:vscode": "docker-compose -f docker-compose-vscode.yml up",
     "docker:db": "docker-compose -f docker-compose-db.yml up",
+    "source:config": "steedos source:config",
     "source:retrieve": "steedos source:retrieve",
     "source:deploy": "steedos source:deploy"
   },
