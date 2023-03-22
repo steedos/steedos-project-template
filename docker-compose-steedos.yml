@@ -12,7 +12,7 @@ services:
       - TRANSPORTER=redis://host.docker.internal:6379/1
       - CACHER=redis://host.docker.internal:6379
     # for dev
-    entrypoint: ["/bin/sh", "-c" , "yarn && yarn start"]
+    entrypoint: ["/bin/sh", "-c" , "yarn && yarn dev"]
     volumes:
       - './steedos-app/:/app/steedos-app/:cached'
       - './steedos-packages/:/app/steedos-packages/:cached'

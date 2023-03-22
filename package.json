@@ -8,6 +8,7 @@
   ],
   "scripts": {
     "start": "steedos start",
+    "dev": "steedos start --hot",
     "stop": "kill -9 $(lsof -ti:5000) | echo OK",
     "inspect": "NODE_OPTIONS=' --inspect' && steedos start",
     "docker:steedos": "docker-compose -f docker-compose-steedos.yml up",
