@@ -13,6 +13,7 @@ ports:
   - port: 27017
     onOpen: ignore
     visibility: public
+    
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
   - name: MongoDB & Redis
@@ -33,7 +34,6 @@ tasks:
 
 vscode:
   extensions:
-    - dbaeumer.vscode-eslint
     - redhat.vscode-yaml
     - steedos.steedosdx-vscode
     - steedos.steedosdx-vscode-core

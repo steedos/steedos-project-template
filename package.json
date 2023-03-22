@@ -7,6 +7,8 @@
     "start": "steedos start",
     "stop": "kill -9 $(lsof -ti:5000) | echo OK",
     "inspect": "cross-env NODE_OPTIONS='--inspect' && steedos start",
+    "docker:vscode": "docker-compose -f docker-compose-vscode.yml up",
+    "docker:db": "docker-compose -f docker-compose-db.yml up",
     "source:retrieve": "steedos source:retrieve"
   },
   "dependencies": {
