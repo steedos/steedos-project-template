@@ -4,15 +4,17 @@
     // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "启动程序",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "program": "${workspaceFolder}/server.js",
-            "runtimeArgs": ["--max-old-space-size=2048", "--stack_trace_limit=200"]
-        }
+    {
+        "name": "Steedos",
+        "request": "launch",
+        "runtimeArgs": [
+            "start",
+        ],
+        "runtimeExecutable": "yarn",
+        "skipFiles": [
+            "<node_internals>/**"
+        ],
+        "type": "node"
+    }
     ]
 }
