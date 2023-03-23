@@ -36,7 +36,9 @@ module.exports = {
             }
           `},
           // 如果查询 GraphQL 需要带上当前用户的权限，需要传入 meta
-          ctx.meta
+          {
+            user: ctx.meta.user
+          }
         )
       },
     },
