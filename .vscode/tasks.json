@@ -2,22 +2,6 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Run Steedos",
-      "type": "shell",
-      "command": "echo Getting Started: README.md",
-      "linux": {
-        "command": "yarn stop && yarn && yarn start",
-      },
-      "presentation": {
-        "reveal": "always",
-        "panel": "new",
-        "close": false
-      },
-      "runOptions": {
-        "runOn": "folderOpen"
-      }
-    },
-    {
       "label": "Install Steedos DX",
       "type": "shell",
       "command": "echo Please Install Steedos DX Extensions",
@@ -26,8 +10,7 @@
       },
       "presentation": {
         "reveal": "always",
-        "panel": "new",
-        "close": false
+        "panel": "new"
       },
       "runOptions": {
         "runOn": "folderOpen"
