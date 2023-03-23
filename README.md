@@ -20,7 +20,7 @@
 
 ## 快速向导
 
-### 启动数据库
+### 使用 docker 启动数据库
 
 华炎魔方运行依赖 mongodb 和 redis，需先在本地安装运行相关服务。
 
@@ -28,7 +28,7 @@
 docker-compose -f docker-compose-db.yml up
 ```
 
-### 本地启动华炎魔方
+### 使用本地 nodejs 启动华炎魔方
 
 运行华炎魔方需要在本地安装 nodejs 14 和 python 等编译环境，如果本地有环境，可以本地启动华炎魔方。
 

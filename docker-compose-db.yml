@@ -29,6 +29,12 @@ services:
     command: >
       mongo --host mongodb:27017 --eval "rs.initiate({ _id: 'steedos', members: [{_id: 0, host: 'mongodb:27017'}]})"
 
+  # Micro Service Transporter
+  nats:
+    image: bitnami/nats
+    ports:
+      - "4222:4222"
+      - "8222:8222" # monitor port
 volumes:
   steedos-mongo-data:
     driver: local

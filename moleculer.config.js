@@ -7,7 +7,7 @@ module.exports = {
 	// Available values: trace, debug, info, warn, error, fatal
 	logLevel: "warn",
 
-  transporter: process.env.STEEDOS_TRANSPORTER,
+  transporter: process.env.TRANSPORTER,
 
 	// Called after broker started.
 	started(broker) {

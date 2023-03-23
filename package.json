@@ -17,11 +17,12 @@
     "source:config": "steedos source:config",
     "source:retrieve": "steedos source:retrieve",
     "source:deploy": "steedos source:deploy",
-    "moleculer:repl": "moleculer-runner --repl",
-    "moleculer:start": "moleculer-runner moleculer-services/**/ --hot",
-    "project:start": "moleculer-runner steedos-app/package.service.js steedos-packages/*/package.service.js --hot"
+    "service:repl": "moleculer-runner --repl",
+    "service:start": "moleculer-runner steedos-services/**/ --hot",
+    "package:start": "moleculer-runner steedos-app/package.service.js steedos-packages/*/package.service.js --hot"
   },
   "dependencies": {
-    "@steedos/service-community": "^2.4.5"
+    "@steedos/service-community": "^2.4.5",
+    "nats": "^2.13.1"
   }
 }
