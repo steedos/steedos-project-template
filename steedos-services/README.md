@@ -3,4 +3,6 @@
 
 开发需单独部署的高并发微服务，例如AI、短信、邮件、文件转换等。
 
-生产环境需单独打包 docker 部署。
+参考
+
+- [Moleculer Nodejs](https://moleculer.services/zh/)
