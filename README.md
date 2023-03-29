@@ -80,7 +80,8 @@ yarn source:retrieve
 - 修改 `package.json` 中的软件包名称和版本号
 - 使用 [npm publish](https://docs.npmjs.com/cli/v8/commands/npm-publish) 命令可以把软件包发布到仓库。
 
-### 安装软件包
+
+## 安装软件包
 
 已发布的软件包，可以安装到另一个华炎魔方环境（例如生产环境）
 
