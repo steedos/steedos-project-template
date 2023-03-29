@@ -18,15 +18,17 @@
 </h3>
 
 
-## 快速向导
+# 快速向导
 
-### 使用 docker 启动数据库
+## 使用 docker 启动数据库
 
 华炎魔方运行依赖 mongodb 和 redis，需先在本地安装运行相关服务。
 
 ```bash
 docker-compose -f docker-compose-db.yml up
 ```
+
+## 启动华炎魔方
 
 ### 使用本地 nodejs 启动华炎魔方
 
@@ -45,19 +47,7 @@ yarn start
 docker-compose -f docker-compose-steedos.yml up
 ```
 
-## 使用 VSCode Server 远程调试华炎魔方
-
-可以在服务器上部署远程开发环境，实现远程开发。
-
-```bash
-docker-compose -f docker-compose-vscode.yml up
-```
-
-打开浏览器，访问 http://127.0.0.1:5555/?folder=/home/workspace/steedos-project-template ，进入VS Code远程开发环境。
-
-此时可以在浏览器中操作 VS Code，运行华炎魔方。
-
-## 访问华炎魔方
+### 访问华炎魔方
 
 打开浏览器，访问 http://127.0.0.1:5000，进入华炎魔方。
 
@@ -66,9 +56,20 @@ docker-compose -f docker-compose-vscode.yml up
 - 创建应用
 - 创建微页面
 
-## 元数据同步
+## 开发软件包
 
-在界面上定义的元数据可以同步为源码。
+### 以微服务方式启动软件包
+
+可以使用微服务的方式扩展华炎魔方。可以参考 services 文件夹下的例子。
+
+```bash
+yarn
+yarn start:services
+```
+
+### 元数据同步
+
+在界面上定义的元数据可以同步为源码。例如可以同步到 services/steedos-app
 
 ```
 yarn source:retrieve
