@@ -5,9 +5,6 @@ ports:
   - port: 5000
     onOpen: ignore
     visibility: public
-  - port: 3100
-    onOpen: ignore
-    visibility: public
   - port: 6379
     onOpen: ignore
   - port: 27017
