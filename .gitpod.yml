@@ -13,6 +13,10 @@ ports:
   - port: 27017
     onOpen: ignore
     visibility: public
+  - port: 4222
+    onOpen: ignore
+  - port: 8222
+    onOpen: ignore
     
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
