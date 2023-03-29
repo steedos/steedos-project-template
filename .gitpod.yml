@@ -32,6 +32,10 @@ tasks:
       gp await-port 27017
       gp await-port 6379
       yarn start
+  - name: Services
+    command: |
+      gp await-port 5000
+      yarn start:services
 
 vscode:
   extensions:

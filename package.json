@@ -3,13 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "workspaces": [
-    "steedos-services/*",
+    "services/*",
     "steedos-packages/*",
     "steedos-app"
   ],
   "scripts": {
     "start": "steedos start",
-    "dev": "steedos start --hot",
+    "start:services": "moleculer-runner services/*/package.service.js --hot --repl",
     "inspect": "NODE_OPTIONS=' --inspect' && steedos start",
     "repl": "moleculer-runner --repl",
     "docker:steedos": "docker-compose -f docker-compose-steedos.yml up",
@@ -17,9 +17,7 @@
     "docker:db": "docker-compose -f docker-compose-db.yml up",
     "source:config": "steedos source:config",
     "source:retrieve": "steedos source:retrieve",
-    "source:deploy": "steedos source:deploy",
-    "service:start": "moleculer-runner steedos-services/**/ --hot",
-    "package:start": "moleculer-runner steedos-app/package.service.js steedos-packages/*/package.service.js --hot"
+    "source:deploy": "steedos source:deploy"
   },
   "dependencies": {
     "@steedos/service-community": "^2.4.8"

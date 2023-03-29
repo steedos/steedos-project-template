@@ -1,10 +1,10 @@
 module.exports = {
-  name: "example-graphql",
+  name: "example-service",
 
   actions: {
     hello: {
       // 使用微服务方式定义 API 接口。
-      // 访问地址： GET /service/api/example-graphql/hello/:name
+      // 访问地址： GET /service/api/example-service/hello/:name
       rest: { method: 'GET', path: '/hello/:name' },
       handler(ctx) {
         return {
