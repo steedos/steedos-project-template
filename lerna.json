@@ -1,7 +1,7 @@
 {
     "packages": [
       "steedos-app",
-      "moleculer-services/*",
+      "steedos-services/*",
       "steedos-packages/*"
     ],
     "version": "0.0.1",

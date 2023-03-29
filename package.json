@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "workspaces": [
-    "moleculer-services/*",
+    "steedos-services/*",
     "steedos-packages/*",
     "steedos-app"
   ],
