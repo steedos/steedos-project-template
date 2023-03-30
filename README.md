@@ -56,7 +56,7 @@ docker-compose -f docker-compose-steedos.yml up
 - 创建应用
 - 创建微页面
 
-## 开发软件包
+## 使用 nodejs 开发软件包
 
 ### 以微服务方式启动软件包
 
@@ -67,7 +67,7 @@ yarn
 yarn start:services
 ```
 
-### 元数据同步
+### 同步元数据
 
 在界面上定义的元数据可以同步为源码。例如可以同步到 services/steedos-app
 
@@ -88,3 +88,8 @@ yarn source:retrieve
 - 选择菜单：设置 - 软件包
 - 点击“手动安装软件包”
 - 输入软件包名称，点击“确认”
+
+
+## 使用 Node-RED 开发软件包
+
+参考 [nodered-app](./nodered-app)

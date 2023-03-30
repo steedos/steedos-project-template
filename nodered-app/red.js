@@ -6,6 +6,7 @@ const RED = require("node-red");
 var settings = {
 	flowFile: 'flows.json',
 	userDir: __dirname,
+    credentialSecret: process.env.NODERED_CREDENTIAL_SECRET || 'steedos',
 	functionGlobalContext: {
 	}    // enables global context
 };
