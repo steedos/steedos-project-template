@@ -4,7 +4,6 @@
     "version": "0.0.1",
     "private": true,
     "dependencies": {
-        "@steedos/node-red-contrib-steedos": "~2.0.2",
-        "node-red-contrib-moleculer": "~0.5.2"
+        "@steedos/node-red-contrib-steedos": "~2.0.2"
     }
 }
