@@ -201,7 +201,7 @@
         "type": "function",
         "z": "2276d6559d8cdc4c",
         "name": "function me",
-        "func": "msg.emit(\"api.me.called\", msg.payload);\n\nmsg.payload = msg.meta.user\nconsole.log(msg)\nreturn msg",
+        "func": "msg.emit(\"api.me.called\", msg.payload);\n\nmsg.payload = msg.meta.user\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
