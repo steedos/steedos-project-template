@@ -1,5 +1,7 @@
 require('dotenv-flow').config({});
 
+// Moleculer Configuration
+// https://moleculer.services/docs/0.14/configuration.html
 module.exports = {
 	// Namespace of nodes to segment your nodes on the same network.
 	namespace: "steedos",
