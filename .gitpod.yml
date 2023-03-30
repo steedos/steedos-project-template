@@ -32,14 +32,14 @@ tasks:
       gp await-port 6379
       gp await-port 4222
       yarn start
-  - name: Services
-    command: |
-      gp await-port 5000
-      yarn start:services
   - name: Nodered
     command: |
       gp await-port 5000
       yarn nodered
+  - name: Services
+    command: |
+      gp await-port 5000
+      yarn start:services
 
 vscode:
   extensions:
