@@ -1,6 +1,7 @@
 {
     "packages": [
       "services/*",
+      "nodered-app",
       "steedos-app",
       "steedos-packages/*"
     ],

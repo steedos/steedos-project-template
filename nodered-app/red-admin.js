@@ -15,11 +15,11 @@ var server = http.createServer(app);
 // Create the settings object - see default settings.js file for other options
 var settings = {
     httpAdminRoot:"/",
-    httpNodeRoot: false,
+    httpNodeRoot: "/",
     flowFile: 'flows.json',
     userDir: __dirname,
+    credentialSecret: process.env.NODERED_CREDENTIAL_SECRET || 'steedos',
     functionGlobalContext: {
-        broker: this.broker
     }    // enables global context
 };
 

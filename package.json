@@ -5,17 +5,19 @@
   "workspaces": [
     "services/*",
     "steedos-packages/*",
-    "steedos-app"
+    "steedos-app",
+    "nodered-app"
   ],
   "scripts": {
     "start": "steedos start",
     "start:services": "moleculer-runner services/*/package.service.js --hot --repl",
     "inspect": "NODE_OPTIONS=' --inspect' && steedos start",
     "repl": "moleculer-runner --repl",
-    "nodered": "node nodered-app/red-admin",
     "docker:steedos": "docker-compose -f docker-compose-steedos.yml up",
     "docker:vscode": "docker-compose -f docker-compose-vscode.yml up",
     "docker:db": "docker-compose -f docker-compose-db.yml up",
+    "nodered:admin": "node nodered-app/red-admin",
+    "nodered:start": "moleculer-runner nodered-app/package.service.js --repl",
     "source:config": "steedos source:config",
     "source:retrieve": "steedos source:retrieve",
     "source:deploy": "steedos source:deploy"
