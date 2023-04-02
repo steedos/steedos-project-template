@@ -1,4 +1,6 @@
+const graphqlQuerySpaceUsers = require('./api/graphqlQuerySpaceUsers');
 const objectqlQuerySpaceUsers = require('./api/objectqlQuerySpaceUsers');
+
 const spaceUsersBeforeUpdate = require('./triggers/spaceUsersBeforeUpdate');
 
 module.exports = {
