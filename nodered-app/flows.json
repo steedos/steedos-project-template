@@ -134,7 +134,7 @@
         "type": "function",
         "z": "2276d6559d8cdc4c",
         "name": "function hello",
-        "func": "msg.emit(\"api.hello.called\", msg.payload);\n\nmsg.payload = {data: 'Welcome2 ' + msg.payload.name};\nreturn msg",
+        "func": "msg.emit(\"api.hello.called\", msg.payload);\n\nmsg.payload = {data: `Welcome ${msg.payload.name}, I'm Node-RED.`};\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
