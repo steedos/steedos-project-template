@@ -22,13 +22,15 @@ tasks:
       echo "ROOT_URL=$(gp url 5000)" >> .env.local
       echo "METADATA_SERVER=$(gp url 5000)" >> .env.local
       docker-compose up
-  - name: Nodered
-    command: |
-      yarn nodered
   - name: My Services
     command: |
       gp await-port 5000
+      yarn
       yarn start
+  - name: Nodered
+    command: |
+      gp await-port 5000
+      yarn nodered
 
 vscode:
   extensions:
