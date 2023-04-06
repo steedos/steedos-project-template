@@ -31,7 +31,7 @@ tasks:
       gp await-port 27017
       gp await-port 6379
       gp await-port 4222
-      yarn start
+      yarn start:steedos
   - name: Nodered
     command: |
       gp await-port 5000
@@ -39,7 +39,7 @@ tasks:
   - name: Services
     command: |
       gp await-port 5000
-      yarn start:services
+      yarn start
 
 vscode:
   extensions:

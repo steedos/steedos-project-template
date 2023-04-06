@@ -36,7 +36,7 @@ docker-compose -f docker-compose-db.yml up
 
 ```bash
 yarn
-yarn start
+yarn start:steedos
 ```
 
 ### 使用 docker 启动华炎魔方
@@ -47,7 +47,7 @@ yarn start
 docker-compose -f docker-compose-steedos.yml up
 ```
 
-### 访问华炎魔方
+## 访问华炎魔方
 
 打开浏览器，访问 http://127.0.0.1:5000，进入华炎魔方。
 
@@ -56,40 +56,26 @@ docker-compose -f docker-compose-steedos.yml up
 - 创建应用
 - 创建微页面
 
-## 使用 nodejs 开发软件包
 
-### 以微服务方式启动软件包
+## 开发软件包
 
 可以使用微服务的方式扩展华炎魔方。可以参考 services 文件夹下的例子。
 
 ```bash
 yarn
-yarn start:services
+yarn start
 ```
 
-### 同步元数据
+## 使用 Node-RED
 
-在界面上定义的元数据可以同步为源码。例如可以同步到 services/steedos-app
+[Node-Red](https://nodered.org/) 是 IBM 开源的服务端低代码开发工具，提供了可视化的开发环境，开发华炎魔方微服务。
 
+- 创建定时任务
+- 自定义微服务
+- 自定义API
+- 自定义触发器
+- 接收和推送消息
+
+```bash
+yarn nodered
 ```
-yarn source:retrieve
-```
-
-### 软件包发布
-
-- 修改 `package.json` 中的软件包名称和版本号
-- 使用 [npm publish](https://docs.npmjs.com/cli/v8/commands/npm-publish) 命令可以把软件包发布到仓库。
-
-
-## 安装软件包
-
-已发布的软件包，可以安装到另一个华炎魔方环境（例如生产环境）
-
-- 选择菜单：设置 - 软件包
-- 点击“手动安装软件包”
-- 输入软件包名称，点击“确认”
-
-
-## 使用 Node-RED 开发软件包
-
-参考 [nodered-app](./nodered-app)
