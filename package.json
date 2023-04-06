@@ -13,7 +13,7 @@
     "db": "docker-compose -f docker-compose-db.yml up"
   },
   "dependencies": {
-    "@steedos/service-package-loader": "^2.4.9",
+    "@steedos/service-package-loader": "^2.4.10",
     "@steedos/node-red-contrib-steedos": "~2.0.2",
     "dotenv-flow": "^3.2.0",
     "moleculer-repl": "^0.7.3",
