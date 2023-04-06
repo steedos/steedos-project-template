@@ -9,7 +9,7 @@
     "nodered-app"
   ],
   "scripts": {
-    "docker": "docker-compose -f docker-compose-db.yml -f docker-compose-steedos.yml up",
+    "docker": "docker-compose up",
     "start": "moleculer-runner services/*/package.service.js --hot --repl",
     "repl": "moleculer-runner --repl",
     "red": "node-red --settings nodered.config.js -u nodered-app",

@@ -19,14 +19,14 @@ ports:
 tasks:
   - name: Steedos
     command: |
-      docker-compose -f docker-compose-db.yml up
+      echo "ROOT_URL=$(gp url 5000)" >> .env.local
+      echo "METADATA_SERVER=$(gp url 5000)" >> .env.local
+      docker-compose up
   - name: Nodered
     command: |
       yarn nodered
   - name: My Services
     command: |
-      echo "ROOT_URL=$(gp url 5000)" >> .env.local
-      echo "METADATA_SERVER=$(gp url 5000)" >> .env.local
       gp await-port 5000
       yarn start:services
 
