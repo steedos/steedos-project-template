@@ -14,5 +14,6 @@ logs
 
 .env.local
 .steedos
+.node-red
 
 yarn.lock

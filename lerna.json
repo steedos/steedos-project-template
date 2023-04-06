@@ -1,9 +1,6 @@
 {
     "packages": [
-      "services/*",
-      "steedos-app",
-      "steedos-packages/*",
-      "nodered-app"
+      "services/*"
     ],
     "version": "0.0.1",
     "useNx": false

@@ -3,20 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "workspaces": [
-    "services/*",
-    "steedos-packages/*",
-    "steedos-app",
-    "nodered-app"
+    "services/*"
   ],
   "scripts": {
     "docker": "docker-compose up",
     "start": "moleculer-runner services/*/package.service.js --hot --repl",
     "repl": "moleculer-runner --repl",
-    "red": "node-red --settings nodered.config.js -u nodered-app",
+    "nodered": "node-red --settings nodered.config.js",
     "db": "docker-compose -f docker-compose-db.yml up"
   },
   "dependencies": {
     "@steedos/service-package-loader": "^2.4.9",
+    "@steedos/node-red-contrib-steedos": "~2.0.2",
     "dotenv-flow": "^3.2.0",
     "moleculer-repl": "^0.7.3",
     "node-red": "^3.0.2"
