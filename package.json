@@ -9,20 +9,16 @@
     "nodered-app"
   ],
   "scripts": {
-    "start": "steedos start",
-    "start:services": "moleculer-runner services/*/package.service.js --hot --repl",
-    "inspect": "NODE_OPTIONS=' --inspect' && steedos start",
+    "docker": "docker-compose -f docker-compose-db.yml -f docker-compose-steedos.yml up",
+    "start": "moleculer-runner services/*/package.service.js --hot --repl",
     "repl": "moleculer-runner --repl",
-    "nodered": "node-red --settings nodered.config.js -u nodered-app",
-    "docker:steedos": "docker-compose -f docker-compose-steedos.yml up",
-    "docker:vscode": "docker-compose -f docker-compose-vscode.yml up",
-    "docker:db": "docker-compose -f docker-compose-db.yml up",
-    "source:config": "steedos source:config",
-    "source:retrieve": "steedos source:retrieve",
-    "source:deploy": "steedos source:deploy"
+    "red": "node-red --settings nodered.config.js -u nodered-app",
+    "db": "docker-compose -f docker-compose-db.yml up"
   },
   "dependencies": {
-    "@steedos/service-community": "^2.4.9",
+    "@steedos/service-package-loader": "^2.4.9",
+    "dotenv-flow": "^3.2.0",
+    "moleculer-repl": "^0.7.3",
     "node-red": "^3.0.2"
   }
 }

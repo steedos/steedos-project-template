@@ -20,31 +20,16 @@
 
 # 快速向导
 
-## 使用 docker 启动数据库
-
-华炎魔方运行依赖 mongodb 和 redis，需先在本地安装运行相关服务。
-
-```bash
-docker-compose -f docker-compose-db.yml up
-```
-
 ## 启动华炎魔方
 
-### 使用本地 nodejs 启动华炎魔方
-
-运行华炎魔方需要在本地安装 nodejs 14 和 python 等编译环境，如果本地有环境，可以本地启动华炎魔方。
-
-```bash
-yarn
-yarn start
-```
 
 ### 使用 docker 启动华炎魔方
 
 对于 windows 和 mac 用户，推荐使用此方法。
 
 ```bash
-docker-compose -f docker-compose-steedos.yml up
+yarn
+yarn docker
 ```
 
 ### 访问华炎魔方
@@ -56,40 +41,17 @@ docker-compose -f docker-compose-steedos.yml up
 - 创建应用
 - 创建微页面
 
-## 使用 nodejs 开发软件包
-
-### 以微服务方式启动软件包
+## 开发软件包
 
 可以使用微服务的方式扩展华炎魔方。可以参考 services 文件夹下的例子。
 
 ```bash
 yarn
-yarn start:services
+yarn start
 ```
 
-### 同步元数据
+## 使用 Node-RED
 
-在界面上定义的元数据可以同步为源码。例如可以同步到 services/steedos-app
-
-```
-yarn source:retrieve
-```
-
-### 软件包发布
-
-- 修改 `package.json` 中的软件包名称和版本号
-- 使用 [npm publish](https://docs.npmjs.com/cli/v8/commands/npm-publish) 命令可以把软件包发布到仓库。
-
-
-## 安装软件包
-
-已发布的软件包，可以安装到另一个华炎魔方环境（例如生产环境）
-
-- 选择菜单：设置 - 软件包
-- 点击“手动安装软件包”
-- 输入软件包名称，点击“确认”
-
-
-## 使用 Node-RED 开发软件包
+Node-RED 提供了可视化的开发环境，也可以扩展开发华炎魔方服务端。
 
 参考 [nodered-app](./nodered-app)
