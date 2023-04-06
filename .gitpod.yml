@@ -24,8 +24,8 @@ tasks:
       docker-compose up
   - name: My Services
     command: |
-      gp await-port 5000
       yarn
+      gp await-port 5000
       yarn start
   - name: Nodered
     command: |
