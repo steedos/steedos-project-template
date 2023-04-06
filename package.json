@@ -9,8 +9,7 @@
     "docker": "docker-compose up",
     "start": "moleculer-runner services/*/package.service.js --hot --repl",
     "repl": "moleculer-runner --repl",
-    "nodered": "node-red --settings nodered.config.js",
-    "db": "docker-compose -f docker-compose-db.yml up"
+    "nodered": "node-red --settings nodered.config.js"
   },
   "dependencies": {
     "@steedos/service-package-loader": "^2.4.10",
