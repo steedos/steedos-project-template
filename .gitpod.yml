@@ -17,29 +17,20 @@ ports:
     
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - name: MongoDB & Redis
-    command: |
-      docker-compose -f docker-compose-db.yml up
-  - name: Steedos
-    init: |
-      git config --global pull.rebase false
+  - name: Docker
     command: |
       echo "ROOT_URL=$(gp url 5000)" >> .env.local
       echo "METADATA_SERVER=$(gp url 5000)" >> .env.local
-      npm i steedos-cli --global 
-      yarn install
-      gp await-port 27017
-      gp await-port 6379
-      gp await-port 4222
-      yarn start:steedos
-  - name: Nodered
-    command: |
-      gp await-port 5000
-      yarn nodered
-  - name: Services
+      yarn
+      docker-compose up
+  - name: Nodejs Services
     command: |
       gp await-port 5000
       yarn start
+  - name: Node-RED
+    command: |
+      gp await-port 5000
+      yarn nodered
 
 vscode:
   extensions:

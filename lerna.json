@@ -1,8 +1,6 @@
 {
     "packages": [
-      "services/*",
-      "steedos-app",
-      "steedos-packages/*"
+      "services/*"
     ],
     "version": "0.0.1",
     "useNx": false
