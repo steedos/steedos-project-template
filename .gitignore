@@ -17,3 +17,4 @@ logs
 .node-red
 
 yarn.lock
+.backup
