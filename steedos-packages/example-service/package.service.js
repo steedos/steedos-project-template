@@ -57,9 +57,17 @@ module.exports = {
     },
     // 使用微服务定义触发器
     spaceUsersBeforeUpdate: {
-      trigger: { listenTo: 'space_users', when: ['beforeUpdate']},
+      trigger: { listenTo: 'space_users', when: ['beforeUpdate', 'beforeInsert']},
       async handler(ctx) {
-        this.broker.logger.warn('spaceUsersBeforeUpdate', ctx)
+        this.broker.logger.info('spaceUsersBeforeUpdate', ctx)
+      }
+    }
+  },
+  events: {
+    "@space_users.updated": {
+      handler(payload) {
+          // 监听人员修改事件
+          this.broker.logger.info(payload);
       }
     }
   }

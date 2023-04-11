@@ -50,6 +50,15 @@
         "settingsType": "json"
     },
     {
+        "id": "fe0b767ff78b93ca",
+        "type": "steedos-service-config",
+        "name": "example-nodered2",
+        "version": "",
+        "settings": "{}",
+        "rest": "",
+        "settingsType": "json"
+    },
+    {
         "id": "093de831c44358e0",
         "type": "inject",
         "z": "2276d6559d8cdc4c",
@@ -117,6 +126,8 @@
         "topic": "hello",
         "rest": "{\"method\":\"GET\",\"path\":\"/hello/:name\"}",
         "restType": "json",
+        "trigger": "{}",
+        "triggerType": "json",
         "params": "{}",
         "paramsType": "json",
         "x": 100,
@@ -184,6 +195,8 @@
         "topic": "me",
         "rest": "{\"method\":\"GET\",\"path\":\"/me\"}",
         "restType": "json",
+        "trigger": "{}",
+        "triggerType": "json",
         "params": "{}",
         "paramsType": "json",
         "x": 100,
@@ -351,7 +364,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 600,
+        "x": 620,
         "y": 140,
         "wires": []
     },
@@ -365,6 +378,8 @@
         "topic": "objectql",
         "rest": "{\"method\":\"GET\",\"path\":\"/objectql\"}",
         "restType": "json",
+        "trigger": "{}",
+        "triggerType": "json",
         "params": "{}",
         "paramsType": "json",
         "x": 130,
@@ -464,8 +479,8 @@
         "type": "steedos-response-action",
         "z": "1f5cb3eabbf0fd93",
         "name": "",
-        "x": 580,
-        "y": 200,
+        "x": 640,
+        "y": 220,
         "wires": []
     },
     {
@@ -525,5 +540,57 @@
         "x": 130,
         "y": 40,
         "wires": []
+    },
+    {
+        "id": "58656ca612b011ea",
+        "type": "steedos-event",
+        "z": "c4c22c7401ddf469",
+        "broker": "ce147b46c731d342",
+        "service": "5ab5acead56ffaea",
+        "name": "",
+        "topic": "@space_users.updated",
+        "group": "",
+        "x": 190,
+        "y": 280,
+        "wires": [
+            [
+                "2048b352c7787d0c"
+            ]
+        ]
+    },
+    {
+        "id": "bed69637c34939dd",
+        "type": "debug",
+        "z": "c4c22c7401ddf469",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "2048b352c7787d0c",
+        "type": "function",
+        "z": "c4c22c7401ddf469",
+        "name": "function 2",
+        "func": "\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 280,
+        "wires": [
+            [
+                "bed69637c34939dd"
+            ]
+        ]
     }
 ]
