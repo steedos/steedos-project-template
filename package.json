@@ -3,11 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "workspaces": [
-    "services/*"
+    "steedos-packages/*"
   ],
   "scripts": {
     "docker": "docker-compose up",
-    "start": "moleculer-runner services/*/package.service.js --hot --repl",
+    "start": "moleculer-runner steedos-packages/*/package.service.js --hot --repl",
     "repl": "moleculer-runner --repl",
     "nodered": "node-red --settings nodered.config.js"
   },
