@@ -17,7 +17,7 @@
     "docker:db": "docker-compose -f docker-compose-db.yml up"
   },
   "dependencies": {
-    "@steedos/service-community": "^2.4.11",
+    "@steedos/service-community": "^2.4.12-beta.1",
     "@steedos/node-red-contrib-steedos": "^2.4.0",
     "node-red": "^3.0.2"
   }

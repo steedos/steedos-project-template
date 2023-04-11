@@ -1,10 +1,7 @@
-const graphqlQuerySpaceUsers = require('./api/graphqlQuerySpaceUsers');
-const objectqlQuerySpaceUsers = require('./api/objectqlQuerySpaceUsers');
-
-const spaceUsersBeforeUpdate = require('./triggers/spaceUsersBeforeUpdate');
-
 module.exports = {
   name: "example-service",
+
+  mixins: [require('@steedos/service-object-mixin')],
 
   actions: {
     hello: {
@@ -24,8 +21,46 @@ module.exports = {
         return ctx.meta.user
       }
     },
-    graphqlQuerySpaceUsers,
-    objectqlQuerySpaceUsers,
-    spaceUsersBeforeUpdate
+    // 在微服务中调用graphql查询数据库
+    graphqlQuerySpaceUsers: {
+      rest: { method: 'GET', path: '/graphql' },
+      async handler(ctx) {
+        return await this.broker.call('api.graphql', {
+          query: `
+            query {
+              space_users(filters: ["user", "=", "${ctx.meta.user.userId}"]) {
+                name
+                organization__expand {
+                  name
+                }
+              }
+            }
+          `},
+          // 如果查询 GraphQL 需要带上当前用户的权限，需要传入 user 属性。
+          {
+            user: ctx.meta.user
+          }
+        )
+      },
+    },
+    // 在微服务中调用objectql查询数据库, 需要 mixins: [require('@steedos/service-object-mixin')],
+    objectqlQuerySpaceUsers: {
+      rest: { method: 'GET', path: '/objectql' },
+      async handler(ctx) {
+        return await this.getObject('space_users').find(
+            {
+              filters: ['user', '=', ctx.meta.user.userId]
+            },
+            ctx.meta.user
+        )
+      }
+    },
+    // 使用微服务定义触发器
+    spaceUsersBeforeUpdate: {
+      trigger: { objectName: 'space_users', when: ['beforeUpdate']},
+      async handler(ctx) {
+        this.broker.logger.warn('spaceUsersBeforeUpdate', ctx);
+      }
+    }
   }
 }
