@@ -57,7 +57,7 @@ module.exports = {
     },
     // 使用微服务定义触发器
     spaceUsersBeforeUpdate: {
-      trigger: { objectName: 'space_users', when: ['beforeUpdate']},
+      trigger: { listenTo: 'space_users', when: ['beforeUpdate']},
       async handler(ctx) {
         this.broker.logger.warn('spaceUsersBeforeUpdate', ctx)
       }
