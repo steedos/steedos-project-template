@@ -21,9 +21,9 @@ module.exports = {
         return ctx.meta.user
       }
     },
+    // 在微服务中调用graphql查询数据库
     graphqlQuerySpaceUsers: {
       rest: { method: 'GET', path: '/graphql' },
-      // 在微服务中查询数据库
       async handler(ctx) {
         return await this.broker.call('api.graphql', {
           query: `
@@ -43,6 +43,7 @@ module.exports = {
         )
       },
     },
+    // 在微服务中调用objectql查询数据库, 需要 mixins: [require('@steedos/service-object-mixin')],
     objectqlQuerySpaceUsers: {
       rest: { method: 'GET', path: '/objectql' },
       async handler(ctx) {
@@ -54,8 +55,9 @@ module.exports = {
         )
       }
     },
+    // 使用微服务定义触发器
     spaceUsersBeforeUpdate: {
-      trigger: { objectName: 'space_users', when: ['before.update']},
+      trigger: { objectName: 'space_users', when: ['beforeUpdate']},
       async handler(ctx) {
         this.broker.logger.warn('spaceUsersBeforeUpdate', ctx)
       }
