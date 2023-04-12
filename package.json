@@ -13,8 +13,8 @@
   },
   "dependencies": {
     "@steedos/node-red-contrib-steedos": "^2.4.0",
-    "@steedos/service-object-mixin": "^2.4.11",
-    "@steedos/service-package-loader": "^2.4.11",
+    "@steedos/service-object-mixin": "^2.5.0-beta.5",
+    "@steedos/service-package-loader": "^2.5.0-beta.5",
     "dotenv-flow": "^3.2.0",
     "moleculer-repl": "^0.7.3",
     "node-red": "^3.0.2"

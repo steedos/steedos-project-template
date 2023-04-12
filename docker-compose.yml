@@ -3,14 +3,14 @@ version: "3.9"
 services:
 
   steedos:
-    image: steedos/steedos-community:2.4
+    image: steedos/steedos-community:2.5.0-beta.5
     ports:
       - "5000:5000"
     env_file:
       - .env.local
     environment:
       - PORT=5000
-      - MONGO_URL=mongodb://mongodb:27017/steedos
+      - MONGO_URL=mongodb://mongodb:27017/steedos9
       - MONGO_OPLOG_URL=mongodb://mongodb:27017/local
       - TRANSPORTER=nats://nats:4222
       - CACHER=redis://redis:6379
