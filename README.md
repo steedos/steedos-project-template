@@ -60,5 +60,6 @@ yarn start
 - 接收和推送消息
 
 ```bash
-yarn nodered
+cd nodered-app
+yarn start
 ```

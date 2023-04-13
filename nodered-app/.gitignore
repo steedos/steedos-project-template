@@ -1,0 +1,6 @@
+.env.local
+
+.node-red
+*.backup
+
+yarn.lock
