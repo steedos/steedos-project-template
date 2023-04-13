@@ -21,16 +21,17 @@ tasks:
     command: |
       echo "ROOT_URL=$(gp url 5000)" >> .env.local
       echo "METADATA_SERVER=$(gp url 5000)" >> .env.local
-      yarn
       docker-compose up
   - name: Services
     command: |
+      yarn
       gp await-port 5000
       yarn start
   - name: Node-RED
     command: |
       gp await-port 5000
       cd nodered-app
+      yarn
       yarn start
 
 vscode:

@@ -61,5 +61,6 @@ yarn start
 
 ```bash
 cd nodered-app
+yarn
 yarn start
 ```
