@@ -52,7 +52,7 @@ services:
     image: bitnami/nats
     ports:
       - "4222:4222"
-      - "8222:8222" # monitor port
+      # - "8222:8222" # monitor port
 
 volumes:
   steedos-mongo-data:
