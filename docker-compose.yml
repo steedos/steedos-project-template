@@ -14,7 +14,15 @@ services:
       - MONGO_OPLOG_URL=mongodb://mongodb:27017/local
       - TRANSPORTER=nats://nats:4222
       - CACHER=redis://redis:6379
+      - STEEDOS_IDENTITY_OIDC_ENABLED=true
+      - STEEDOS_IDENTITY_OIDC_CONFIG_URL=https://id.steedos.cn/realms/master/.well-known/openid-configuration
+      - STEEDOS_IDENTITY_OIDC_CLIENT_ID=steedos-oidc-public
+      - STEEDOS_IDENTITY_OIDC_CLIENT_SECRET=none
+      - STEEDOS_IDENTITY_OIDC_NAME=Steedos ID
       - STEEDOS_INITIAL_PACKAGES=@steedos-labs/project-ee,@steedos-labs/demo-ee,@steedos-labs/flows
+    volumes:
+      - "steedos-installed-packages:/app/.steedos"
+      - "steedos-data:/app/storage"
     depends_on:
       mongodb:
         condition: service_healthy
@@ -49,11 +57,15 @@ services:
 
   # Micro Service Transporter
   nats:
-    image: bitnami/nats
+    image: nats:2.9
     ports:
       - "4222:4222"
       # - "8222:8222" # monitor port
 
 volumes:
   steedos-mongo-data:
+    driver: local
+  steedos-installed-packages:
+    driver: local
+  steedos-data:
     driver: local
