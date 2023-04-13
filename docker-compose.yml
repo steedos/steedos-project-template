@@ -14,13 +14,24 @@ services:
       - MONGO_OPLOG_URL=mongodb://mongodb:27017/local
       - TRANSPORTER=nats://nats:4222
       - CACHER=redis://redis:6379
+      - STEEDOS_IDENTITY_OIDC_ENABLED=true
+      - STEEDOS_IDENTITY_OIDC_CONFIG_URL=https://id.steedos.cn/realms/master/.well-known/openid-configuration
+      - STEEDOS_IDENTITY_OIDC_CLIENT_ID=steedos-oidc-public
+      - STEEDOS_IDENTITY_OIDC_CLIENT_SECRET=none
+      - STEEDOS_IDENTITY_OIDC_NAME=Steedos ID
       - STEEDOS_INITIAL_PACKAGES=@steedos-labs/project-ee,@steedos-labs/demo-ee,@steedos-labs/flows
+    volumes:
+      - "steedos-installed-packages:/app/.steedos"
+      - "steedos-data:/app/storage"
+      # 使用 docker 启动项目中的软件包
+      # - "./steedos-packages:/app/steedos-packages"
     depends_on:
       mongodb:
         condition: service_healthy
         
   redis:
     image: redis:6.2
+    command: "redis-server --save \"\" --appendonly no --loglevel warning"
     ports:
       - "6379:6379"
   
@@ -28,7 +39,7 @@ services:
     image: mongo:4.4
     ports:
       - 27017:27017
-    entrypoint: [ "/usr/bin/mongod", "--bind_ip_all", "--replSet", "steedos" ]
+    command: "--bind_ip_all --replSet steedos --logpath /var/log/mongodb/mongod.log"
     healthcheck:
       test: echo 'db.runCommand("ping").ok' | mongo --quiet | grep 1
       interval: 10s
@@ -48,11 +59,15 @@ services:
 
   # Micro Service Transporter
   nats:
-    image: bitnami/nats
+    image: nats:2.9
     ports:
       - "4222:4222"
-      - "8222:8222" # monitor port
+      # - "8222:8222" # monitor port
 
 volumes:
   steedos-mongo-data:
+    driver: local
+  steedos-installed-packages:
+    driver: local
+  steedos-data:
     driver: local
