@@ -8,6 +8,14 @@
         "env": []
     },
     {
+        "id": "c10017b236a162fd",
+        "type": "tab",
+        "label": "触发器",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
         "id": "f5a9cdc65266c00c",
         "type": "tab",
         "label": "GraphQL",
@@ -44,15 +52,6 @@
         "id": "5ab5acead56ffaea",
         "type": "steedos-service-config",
         "name": "example-nodered",
-        "version": "",
-        "settings": "{}",
-        "rest": "",
-        "settingsType": "json"
-    },
-    {
-        "id": "fe0b767ff78b93ca",
-        "type": "steedos-service-config",
-        "name": "example-nodered2",
         "version": "",
         "settings": "{}",
         "rest": "",
@@ -274,6 +273,92 @@
         ]
     },
     {
+        "id": "7350d7b42b233ab6",
+        "type": "steedos-request-action",
+        "z": "c10017b236a162fd",
+        "broker": "ce147b46c731d342",
+        "service": "5ab5acead56ffaea",
+        "name": "用户触发器",
+        "topic": "space_users_triggers",
+        "rest": "{}",
+        "restType": "json",
+        "trigger": "{\"listenTo\":\"space_users\",\"when\":[\"beforeInsert\",\"beforeUpdate\"]}",
+        "triggerType": "json",
+        "params": "{}",
+        "paramsType": "json",
+        "x": 100,
+        "y": 120,
+        "wires": [
+            [
+                "0441d3a1237dcd50",
+                "6f988203ee0b8323"
+            ]
+        ]
+    },
+    {
+        "id": "0441d3a1237dcd50",
+        "type": "function",
+        "z": "c10017b236a162fd",
+        "name": "触发器函数",
+        "func": "const doc = msg.payload.doc;\nif (doc.name && doc.name.length < 2) {\n   msg.error = { message: \"姓名最少两位.\" };\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 160,
+        "wires": [
+            [
+                "dd4a70227645def5",
+                "1a4631e22fdbdc5d"
+            ]
+        ]
+    },
+    {
+        "id": "dd4a70227645def5",
+        "type": "debug",
+        "z": "c10017b236a162fd",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "error",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "1a4631e22fdbdc5d",
+        "type": "steedos-response-action",
+        "z": "c10017b236a162fd",
+        "name": "",
+        "x": 700,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "6f988203ee0b8323",
+        "type": "debug",
+        "z": "c10017b236a162fd",
+        "name": "debug 6",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 340,
+        "y": 60,
+        "wires": []
+    },
+    {
         "id": "041b5cf925523d57",
         "type": "debug",
         "z": "f5a9cdc65266c00c",
@@ -300,6 +385,8 @@
         "topic": "graphql",
         "rest": "{\"method\":\"GET\",\"path\":\"/graphql\"}",
         "restType": "json",
+        "trigger": "{}",
+        "triggerType": "json",
         "params": "{}",
         "paramsType": "json",
         "x": 130,
@@ -444,7 +531,7 @@
         "type": "function",
         "z": "1f5cb3eabbf0fd93",
         "name": "objectql function",
-        "func": "const broker = global.get('broker');\n\nbroker.call('objectql.find', \n    {\n        \"objectName\": \"space_users\",\n        \"query\": {\n            \"fields\": [\"name\", \"orgranizations\"]\n        }\n    },\n    { meta: {} }\n).then((data) => {\n    msg.payload = data\n    node.send(msg)\n}).catch((err) => {\n    node.error(err, msg)\n});",
+        "func": "const broker = global.get('broker');\n\nbroker.call('objectql.find', \n    {\n        \"objectName\": \"space_users\",\n        \"query\": {\n            \"fields\": [\"name\", \"organizations\"]\n        }\n    },\n    { meta: {} }\n).then((data) => {\n    msg.payload = data\n    node.send(msg)\n}).catch((err) => {\n    node.error(err, msg)\n});",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -493,6 +580,87 @@
         "location": "global",
         "x": 110,
         "y": 60,
+        "wires": []
+    },
+    {
+        "id": "5a53b89c3935d05d",
+        "type": "steedos-call",
+        "z": "1f5cb3eabbf0fd93",
+        "broker": "ce147b46c731d342",
+        "name": "查询用户信息",
+        "topic": "objectql.find",
+        "options": "{}",
+        "optionsType": "json",
+        "x": 600,
+        "y": 460,
+        "wires": [
+            [
+                "97ea9e8bc0da8a3d"
+            ]
+        ]
+    },
+    {
+        "id": "e7bac5750b865d07",
+        "type": "inject",
+        "z": "1f5cb3eabbf0fd93",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 460,
+        "wires": [
+            [
+                "0d813ebd37fbf532"
+            ]
+        ]
+    },
+    {
+        "id": "0d813ebd37fbf532",
+        "type": "function",
+        "z": "1f5cb3eabbf0fd93",
+        "name": "准备查询参数",
+        "func": "msg.payload = {\n    \"objectName\": \"space_users\",\n    \"query\": {\n        \"fields\": [\"name\", \"organizations\"]\n    }\n}\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 460,
+        "wires": [
+            [
+                "5a53b89c3935d05d"
+            ]
+        ]
+    },
+    {
+        "id": "97ea9e8bc0da8a3d",
+        "type": "debug",
+        "z": "1f5cb3eabbf0fd93",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 460,
         "wires": []
     },
     {

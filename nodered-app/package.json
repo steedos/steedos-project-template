@@ -7,7 +7,7 @@
     "start": "node-red --settings settings.js"
   },
   "dependencies": {
-    "@steedos/node-red-contrib-steedos": "^2.4.0",
+    "@steedos/node-red-contrib-steedos": "^2.4.1",
     "lodash": "^4.17.21",
     "dotenv-flow": "^3.2.0",
     "node-red": "^3.0.2"
