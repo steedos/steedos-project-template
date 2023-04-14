@@ -16,4 +16,4 @@ logs
 .steedos
 
 yarn.lock
-*.backup
+package-lock.json

@@ -12,6 +12,6 @@ Node-RED 模版项目
 
 ```bash
 cd nodered-app
-yarn
-yarn start
+npm i --no-optional 
+npm start
 ```

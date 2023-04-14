@@ -31,8 +31,8 @@ tasks:
     command: |
       gp await-port 4222
       cd nodered-app
-      yarn
-      yarn start
+      npm i --no-optional 
+      npm start
 
 vscode:
   extensions:
