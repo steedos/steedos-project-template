@@ -173,7 +173,7 @@
     {
         "id": "382f4ce997a61699",
         "type": "ui_group",
-        "name": "Default",
+        "name": "Steedos",
         "tab": "8665125dc4ab6298",
         "order": 1,
         "disp": true,
@@ -958,13 +958,13 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "format": "<div ng-bind-html=\"msg.payload.user.name\"></div>",
+        "format": "<div> Welcome \n    <span ng-bind-html=\"msg.payload.username\"></span>\n</div>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 295,
+        "x": 615,
         "y": 300,
         "wires": [
             [
@@ -986,7 +986,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 540,
+        "x": 960,
         "y": 300,
         "wires": []
     },
@@ -1031,7 +1031,7 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1060,
+        "x": 1080,
         "y": 200,
         "wires": []
     },
@@ -1039,20 +1039,21 @@
         "id": "3222eb8b8cdad04d",
         "type": "function",
         "z": "342436a8ef373844",
-        "name": "function 4",
-        "func": "msg.payload = {\n    user: {\n        name: 'Jack'\n    },\n    tab: \"Home\"\n}\nreturn msg;",
+        "name": "Login",
+        "func": "msg.payload.tab = 'Home';\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 560,
+        "x": 550,
         "y": 120,
         "wires": [
             [
-                "719ed74a01b9eefc",
+                "71de26cf9440882d",
                 "0d3abd8e61c58419",
-                "d13e914e6d9b0a4f"
+                "d13e914e6d9b0a4f",
+                "53273a3d2210bb44"
             ]
         ]
     },
@@ -1067,11 +1068,11 @@
         "outputs": 0,
         "ok": "OK",
         "cancel": "",
-        "raw": false,
+        "raw": true,
         "className": "",
         "topic": "",
         "name": "",
-        "x": 970,
+        "x": 1110,
         "y": 120,
         "wires": []
     },
@@ -1081,12 +1082,124 @@
         "z": "342436a8ef373844",
         "name": "",
         "events": "change",
-        "x": 800,
+        "x": 860,
         "y": 200,
         "wires": [
             [
                 "c36e90df7a226449"
             ]
         ]
+    },
+    {
+        "id": "5cb6e95deba4ad45",
+        "type": "ui_button",
+        "z": "342436a8ef373844",
+        "name": "",
+        "group": "382f4ce997a61699",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Logout",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 210,
+        "y": 420,
+        "wires": [
+            [
+                "17662f9cd3c098a5"
+            ]
+        ]
+    },
+    {
+        "id": "17662f9cd3c098a5",
+        "type": "function",
+        "z": "342436a8ef373844",
+        "name": "function 5",
+        "func": "msg.payload.tab = 'Login'\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 420,
+        "wires": [
+            [
+                "a6a46f71707e3d76"
+            ]
+        ]
+    },
+    {
+        "id": "71de26cf9440882d",
+        "type": "debug",
+        "z": "342436a8ef373844",
+        "name": "debug 10",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 800,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "a6a46f71707e3d76",
+        "type": "ui_ui_control",
+        "z": "342436a8ef373844",
+        "name": "",
+        "events": "change",
+        "x": 620,
+        "y": 420,
+        "wires": [
+            [
+                "5eae0b03d7a7bed4"
+            ]
+        ]
+    },
+    {
+        "id": "53273a3d2210bb44",
+        "type": "function",
+        "z": "342436a8ef373844",
+        "name": "Prepare Notifications",
+        "func": "msg.payload = 'Welcome ' + msg.payload.username\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 120,
+        "wires": [
+            [
+                "719ed74a01b9eefc"
+            ]
+        ]
+    },
+    {
+        "id": "5eae0b03d7a7bed4",
+        "type": "debug",
+        "z": "342436a8ef373844",
+        "name": "debug 11",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 420,
+        "wires": []
     }
 ]
