@@ -531,7 +531,7 @@
         "type": "function",
         "z": "1f5cb3eabbf0fd93",
         "name": "objectql function",
-        "func": "const broker = global.get('broker');\n\nbroker.call('objectql.find', \n    {\n        \"objectName\": \"space_users\",\n        \"query\": {\n            \"fields\": [\"name\", \"organizations\"]\n        }\n    },\n    { meta: {} }\n).then((data) => {\n    msg.payload = data\n    node.send(msg)\n}).catch((err) => {\n    node.error(err, msg)\n});",
+        "func": "const broker = global.get('broker');\n\nmsg.payload = await broker.call('objectql.find', \n    {\n        \"objectName\": \"space_users\",\n        \"query\": {\n            \"fields\": [\"name\", \"organizations\"]\n        }\n    },\n    { meta: {} }\n)\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
