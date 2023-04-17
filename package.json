@@ -7,8 +7,8 @@
   ],
   "scripts": {
     "docker": "docker-compose up",
-    "start": "moleculer-runner steedos-packages/*/package.service.js --hot --repl",
-    "repl": "moleculer-runner --repl"
+    "start": "moleculer-runner steedos-packages/*/package.service.js --config steedos.config.js --hot --repl",
+    "repl": "moleculer-runner  --config steedos.config.js --repl"
   },
   "dependencies": {
     "@steedos/service-object-mixin": "^2.4.11",
