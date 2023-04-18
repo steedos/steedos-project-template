@@ -10,7 +10,7 @@ services:
       - .env.local
     environment:
       - PORT=5000
-      - MONGO_URL=mongodb://mongodb:27017/steedos9
+      - MONGO_URL=mongodb://mongodb:27017/steedos
       - MONGO_OPLOG_URL=mongodb://mongodb:27017/local
       - TRANSPORTER=nats://nats:4222
       - CACHER=redis://redis:6379
@@ -19,7 +19,7 @@ services:
       # - STEEDOS_IDENTITY_OIDC_CLIENT_ID=steedos-oidc-public
       # - STEEDOS_IDENTITY_OIDC_CLIENT_SECRET=none
       # - STEEDOS_IDENTITY_OIDC_NAME=Steedos ID
-      # - STEEDOS_INITIAL_PACKAGES=@steedos-labs/project-ee,@steedos-labs/demo-ee,@steedos-labs/flows
+      - STEEDOS_INITIAL_PACKAGES=@steedos-labs/project-ee,@steedos-labs/demo-ee,@steedos-labs/flows
     volumes:
       - "steedos-installed-packages:/app/.steedos"
       - "steedos-data:/app/storage"
