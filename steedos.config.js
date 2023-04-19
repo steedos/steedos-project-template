@@ -9,16 +9,10 @@ module.exports = {
 	// Available values: trace, debug, info, warn, error, fatal
 	logLevel: "info",
 
-    transporter: process.env.TRANSPORTER,
+	transporter: process.env.TRANSPORTER,
 
 	// Called after broker started.
 	started(broker) {
-		broker.createService(require("@steedos/service-community"));
-	},
-	settings: {
-		cron:{
-			instancerecordqueue_interval: 10000
-		}
 	}
 	
 };
