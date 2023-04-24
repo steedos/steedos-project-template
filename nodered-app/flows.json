@@ -356,7 +356,7 @@
         "type": "function",
         "z": "2276d6559d8cdc4c",
         "name": "function me",
-        "func": "msg.emit(\"api.me.called\", msg.payload);\n\nmsg.payload = msg.meta.user\nreturn msg",
+        "func": "msg.emit(\"api.me.called\", msg.payload);\n\nmsg.payload = msg.meta\nreturn msg",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
@@ -964,7 +964,7 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 615,
+        "x": 745,
         "y": 300,
         "wires": [
             [
@@ -986,7 +986,7 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 960,
+        "x": 1060,
         "y": 300,
         "wires": []
     },
@@ -1009,8 +1009,8 @@
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "",
-        "payloadType": "date",
+        "payload": "{\"username\":\"张三\",\"password\":\"123456\"}",
+        "payloadType": "json",
         "x": 110,
         "y": 120,
         "wires": [
@@ -1082,7 +1082,7 @@
         "z": "342436a8ef373844",
         "name": "",
         "events": "change",
-        "x": 860,
+        "x": 820,
         "y": 200,
         "wires": [
             [
@@ -1110,7 +1110,7 @@
         "payloadType": "str",
         "topic": "topic",
         "topicType": "msg",
-        "x": 210,
+        "x": 140,
         "y": 420,
         "wires": [
             [
@@ -1195,7 +1195,8 @@
         "tosidebar": true,
         "console": false,
         "tostatus": false,
-        "complete": "false",
+        "complete": "payload",
+        "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
         "x": 860,
