@@ -7,16 +7,15 @@
   ],
   "scripts": {
     "docker": "docker-compose up",
-    "start": "moleculer-runner steedos-packages/*/package.service.js --hot --repl",
-    "repl": "moleculer-runner --repl",
-    "nodered": "node-red --settings nodered.config.js"
+    "start": "moleculer-runner steedos-packages/*/package.service.js --config steedos.config.js --hot --repl",
+    "repl": "moleculer-runner  --config steedos.config.js --repl"
   },
   "dependencies": {
-    "@steedos/node-red-contrib-steedos": "^2.4.0",
-    "@steedos/service-object-mixin": "^2.5.0-beta.13",
-    "@steedos/service-package-loader": "^2.5.0-beta.13",
+    "@steedos/service-object-mixin": "^2.5.0-beta.17",
+    "@steedos/service-package-loader": "^2.5.0-beta.17",
     "dotenv-flow": "^3.2.0",
+    "ioredis": "^5.3.1",
     "moleculer-repl": "^0.7.3",
-    "node-red": "^3.0.2"
+    "nats": "^2.13.1"
   }
 }

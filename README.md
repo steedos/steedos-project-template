@@ -60,5 +60,9 @@ yarn start
 - 接收和推送消息
 
 ```bash
-yarn nodered
+cd nodered-app
+yarn
+yarn start
 ```
+
+打开浏览器，访问 http://127.0.0.1:1880 ，进入 Node-RED。

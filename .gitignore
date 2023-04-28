@@ -14,7 +14,6 @@ logs
 
 .env.local
 .steedos
-.node-red
 
 yarn.lock
-*.backup
+package-lock.json
