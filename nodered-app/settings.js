@@ -13,5 +13,7 @@ module.exports = {
     userDir: path.join(__dirname, '.node-red'),
     functionGlobalContext: {
         lodash
-    } 
+    },
+    httpStatic: path.join(__dirname, 'public'),
+    httpAdminRoot: "/admin"
 };
