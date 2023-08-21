@@ -3,7 +3,7 @@ version: "3.9"
 services:
 
   steedos:
-    image: ecr.aws.steedos.cn/dockerhub/steedos/steedos-community:2.5.11-beta.11
+    image: ecr.aws.steedos.cn/dockerhub/steedos/steedos-community:2.5.12-beta.17
     ports:
       - "5000:5000"
     env_file:
