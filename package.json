@@ -7,6 +7,8 @@
   ],
   "scripts": {
     "docker": "docker-compose up",
+    "start:db": "docker-compose up mongodb mongodb-init redis nats",
+    "start:platform": "cd steedos-platform && yarn start",
     "start": "moleculer-runner steedos-packages/*/package.service.js --config steedos.config.js --hot --repl",
     "repl": "moleculer-runner  --config steedos.config.js --repl"
   },

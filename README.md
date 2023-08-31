@@ -25,10 +25,20 @@
 开发软件包之前，先启动华炎魔方服务。
 
 1. 将 .env 复制为 .env.local，并修改相关配置参数。
+
 2. 使用 docker 启动华炎魔方。
 
 ```bash
 docker-compose up
+```
+
+3. 使用 nodejs 启动华炎魔方。
+
+使用 nodejs 启动华炎魔方，需在本地先安装 mongodb, redis 和 nats，或使用 docker 启动相关依赖服务。
+
+```bash
+yarn start:db
+yarn start:platform
 ```
 
 ## 访问华炎魔方
