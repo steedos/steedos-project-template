@@ -20,21 +20,29 @@
 
 # 快速向导
 
+## 配置环境变量
+
+创建 .env.local，[配置系统环境变量](https://docs.steedos.cn/zh-CN/deploy/steedos-config/) 。 
+
+```bash
+ROOT_URL=
+```
+
 ## 启动华炎魔方
 
 开发软件包之前，先启动华炎魔方服务。
 
-1. 将 .env 复制为 .env.local，并修改相关配置参数。
+1. 使用 docker 启动华炎魔方平台。
 
-2. 使用 docker 启动华炎魔方。
+推荐使用 docker 启动华炎魔方平台，会自动启动所有依赖服务。
 
 ```bash
 docker-compose up
 ```
 
-3. 使用 nodejs 启动华炎魔方。
+2. 使用 nodejs 启动华炎魔方平台。
 
-使用 nodejs 启动华炎魔方，需在本地先安装 mongodb, redis 和 nats，或使用 docker 启动相关依赖服务。
+也可以使用 nodejs 启动华炎魔方，需在本地先安装 mongodb, redis 和 nats，或使用 docker 启动相关依赖服务。
 
 ```bash
 yarn start:db
