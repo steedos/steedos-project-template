@@ -1,4 +1,4 @@
-Steedos Project Template
+华炎魔方模版项目
 ===
 
 <p align="center">
@@ -18,27 +18,61 @@ Steedos Project Template
 </h3>
 
 
-## 快速向导
+# 快速向导
 
-### 启动数据库 & 远程开发环境
+## 启动华炎魔方
+
+开发软件包之前，先启动华炎魔方服务。
+
+1. 将 .env 复制为 .env.local，并修改相关配置参数。
+
+2. 使用 docker 启动华炎魔方。
 
 ```bash
 docker-compose up
 ```
 
-### 访问远程开发环境
-打开浏览器，访问 http://127.0.0.1:5555/?folder=/home/workspace/steedos-project-template ，进入VS Code远程开发环境。
-在 VS Code 中打开文件夹 /home/workspace/steedos-project-template
+3. 使用 nodejs 启动华炎魔方。
 
-### 启动项目
+使用 nodejs 启动华炎魔方，需在本地先安装 mongodb, redis 和 nats，或使用 docker 启动相关依赖服务。
 
-在 VS Code 中进入控制台，输入启动命令。 
+```bash
+yarn start:db
+yarn start:platform
+```
+
+## 访问华炎魔方
+
+打开浏览器，访问 http://127.0.0.1:5000，进入华炎魔方。
+
+进入设置应用，可以：
+- 创建自定义对象
+- 创建应用
+- 创建微页面
+
+## 开发软件包
+
+可以使用微服务的方式扩展华炎魔方。可以参考 services 文件夹下的例子。
 
 ```bash
 yarn
 yarn start
 ```
 
-### 访问华炎魔方
+## 使用 Node-RED
 
-打开浏览器，访问 http://127.0.0.1:5000，进入华炎魔方。
+[Node-Red](https://nodered.org/) 是 IBM 开源的服务端低代码开发工具，提供了可视化的开发环境，开发华炎魔方微服务。
+
+- 创建定时任务
+- 自定义微服务
+- 自定义API
+- 自定义触发器
+- 接收和推送消息
+
+```bash
+cd nodered-app
+yarn
+yarn start
+```
+
+打开浏览器，访问 http://127.0.0.1:1880/admin ，进入 Node-RED。
