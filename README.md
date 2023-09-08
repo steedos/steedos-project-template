@@ -2,15 +2,14 @@
 ===
 
 <p align="center">
-<a href="./README_en.md">English</a>
-<a href="https://www.steedos.cn/docs/"> · 文档</a>
+<a href="https://docs.steedos.com/">文档</a>
 <a href="https://www.steedos.cn/videos/"> · 视频</a>
 <a href="https://demo.steedos.cn"> · 试用</a>
 </p>
 
 
 <p align="center" style="border-top: solid 1px #cccccc">
-  华炎魔方是 <a href="https://developer.salesforce.com/developer-centers/developer-experience" target="_blank">Salesforce Developer Experience (DX)</a> 的开源替代方案，将低代码技术与 <a href="https://www.steedos.cn/docs/deploy/devops"> DevOps 工具</a> 结合，实现敏捷开发的新高度。 
+  华炎魔方是 <a href="https://developer.salesforce.com/developer-centers/developer-experience" target="_blank">Salesforce Developer Experience (DX)</a> 的开源替代方案，将低代码技术与 <a href="https://www.steedos.cn/videos/devops"> DevOps 工具</a> 结合，实现敏捷开发的新高度。 
 </p>
 
 <h3 align="center">
