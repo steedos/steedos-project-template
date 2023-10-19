@@ -1,6 +1,6 @@
 const path = require('path');
 require('dotenv-flow').config({
-	path: path.join(__dirname, '..')
+	path: path.join(__dirname, '.')
 });
 
 // Moleculer Configuration
