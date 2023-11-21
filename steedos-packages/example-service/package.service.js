@@ -4,14 +4,14 @@ const packageLoader = require('@steedos/service-package-loader');
 module.exports = {
   name: "example-service",
 
-	mixins: [packageLoader],
+  mixins: [packageLoader],
 
   metadata: {
     $package: {
-        name: project.name,
-        version: project.version,
-        path: __dirname,
-        isPackage: true
+      name: project.name,
+      version: project.version,
+      path: __dirname,
+      isPackage: true
     }
   },
 
@@ -50,7 +50,9 @@ module.exports = {
           `},
           // 如果查询 GraphQL 需要带上当前用户的权限，需要传入 user 属性。
           {
-            user: ctx.meta.user
+            meta: {
+              user: ctx.meta.user
+            }
           }
         )
       },
@@ -60,16 +62,16 @@ module.exports = {
       rest: { method: 'GET', path: '/objectql' },
       async handler(ctx) {
         return await this.getObject('space_users').find(
-            {
-              filters: ['user', '=', ctx.meta.user.userId]
-            },
-            ctx.meta.user
+          {
+            filters: ['user', '=', ctx.meta.user.userId]
+          },
+          ctx.meta.user
         )
       }
     },
     // 使用微服务定义触发器
     spaceUsersBeforeUpdate: {
-      trigger: { listenTo: 'space_users', when: ['beforeUpdate', 'beforeInsert']},
+      trigger: { listenTo: 'space_users', when: ['beforeUpdate', 'beforeInsert'] },
       async handler(ctx) {
         this.broker.logger.info('spaceUsersBeforeUpdate', ctx)
       }
@@ -78,8 +80,8 @@ module.exports = {
   events: {
     "@space_users.updated": {
       handler(payload) {
-          // 监听人员修改事件
-          this.broker.logger.info(payload);
+        // 监听人员修改事件
+        this.broker.logger.info(payload);
       }
     }
   }
