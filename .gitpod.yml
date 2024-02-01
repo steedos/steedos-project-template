@@ -2,14 +2,18 @@ image: ecr.aws.steedos.cn/dockerhub/steedos/gitpod-workspace-base:2.2.5
 
 # List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/config-ports/
 ports:
-  - port: 5000
+  - port: 5000 # Steedos
     onOpen: ignore
     visibility: public
-  - port: 6379
-    onOpen: ignore
-  - port: 27017
+  - port: 1880 # Node-RED
     onOpen: ignore
     visibility: public
+  - port: 6379 # Redis
+    onOpen: ignore
+  - port: 9001 # Supervisor
+    onOpen: ignore
+  - port: 27017 # MongoDB
+    onOpen: ignore
     
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
