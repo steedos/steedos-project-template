@@ -20,6 +20,7 @@ tasks:
   - name: Node-RED
     command: |
       cd nodered-app
+      npm config set registry=https://registry.npmmirror.com
       npm i --no-optional 
       gp await-port 5000
       npm start
