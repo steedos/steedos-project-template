@@ -15,9 +15,9 @@ ports:
 tasks:
   - name: Node-RED
     command: |
-      gp await-port 6379
       cd nodered-app
       npm i --no-optional 
+      gp await-port 5000
       npm start
   - name: Steedos Platform
     command: |
