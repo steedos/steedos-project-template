@@ -1,0 +1,16 @@
+{
+  "name": "steedos-platform",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "steedos start --config steedos.config.js"
+  },
+  "dependencies": {
+    "@steedos/service-community": "^2.6"
+  },
+  "resolutions": {
+    "@azure/core-rest-pipeline": "1.12.1",
+    "@azure/core-util": "1.5.0"
+  }
+}

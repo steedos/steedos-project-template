@@ -15,5 +15,4 @@ module.exports = {
         lodash
     },
     httpStatic: path.join(__dirname, 'public'),
-    httpAdminRoot: "/admin"
 };
