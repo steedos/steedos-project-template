@@ -21,6 +21,21 @@
         }
     },
     {
+      "label": "Run Init Script",
+      "type": "shell",
+      "command": "echo Run Init Script",
+      "linux": {
+        "command": "chmod +x init.sh && ./init.sh"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    },
+    {
       "label": "Install Steedos DX",
       "type": "shell",
       "command": "echo Please Install Steedos DX Extensions",
@@ -63,8 +78,7 @@
       },
       "runOptions": {
         "runOn": "folderOpen"
-      },
-      "dependsOn": "Start Platform"
+      }
     }
   ]
 }
