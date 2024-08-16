@@ -2,6 +2,25 @@
   "version": "2.0.0",
   "tasks": [
     {
+        "label": "mongodb-initialize-replica-set",
+        "type": "shell",
+        "command": "echo Mongodb Initialize ",
+        "linux": {
+          "command": "mongosh",
+          "args": [
+              "--eval",
+              "rs.initiate({ _id: \"steedos\", members: [{_id: 0, host: \"localhost:27017\"}]})"
+          ],
+        },
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "runOptions": {
+          "runOn": "folderOpen"
+        }
+    },
+    {
       "label": "Install Steedos DX",
       "type": "shell",
       "command": "echo Please Install Steedos DX Extensions",
@@ -32,23 +51,19 @@
       }
     },
     {
-        "label": "mongodb-initialize-replica-set",
-        "type": "shell",
-        "command": "echo Mongodb Initialize ",
-        "linux": {
-          "command": "mongosh",
-          "args": [
-              "--eval",
-              "rs.initiate({ _id: \"steedos\", members: [{_id: 0, host: \"localhost:27017\"}]})"
-          ],
-        },
-        "presentation": {
-          "reveal": "always",
-          "panel": "new"
-        },
-        "runOptions": {
-          "runOn": "folderOpen"
-        }
+      "label": "Start Project",
+      "type": "shell",
+      "command": "echo Start Project",
+      "linux": {
+        "command": "yarn start",
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
     }
   ]
 }
