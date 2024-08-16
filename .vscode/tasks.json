@@ -34,11 +34,14 @@
     {
         "label": "mongodb-initialize-replica-set",
         "type": "shell",
-        "command": "mongosh",
-        "args": [
-            "--eval",
-            "rs.initiate({ _id: 'steedos', members: [{_id: 0, host: 'mongodb:27017'}]})"
-        ],
+        "command": "echo Mongodb Initialize ",
+        "linux": {
+          "command": "mongosh",
+          "args": [
+              "--eval",
+              "rs.initiate({ _id: 'steedos', members: [{_id: 0, host: 'mongodb:27017'}]})"
+          ],
+        },
         "problemMatcher": [],
         "detail": "初始化 MongoDB 副本集"
     }
