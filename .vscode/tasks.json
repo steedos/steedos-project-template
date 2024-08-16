@@ -42,8 +42,13 @@
               "rs.initiate({ _id: 'steedos', members: [{_id: 0, host: 'mongodb:27017'}]})"
           ],
         },
-        "problemMatcher": [],
-        "detail": "初始化 MongoDB 副本集"
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "runOptions": {
+          "runOn": "folderOpen"
+        }
     }
   ]
 }
