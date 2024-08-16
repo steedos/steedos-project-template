@@ -49,6 +49,20 @@
       "runOptions": {
         "runOn": "folderOpen"
       }
+    },{
+      "label": "Run Init Yarn",
+      "type": "shell",
+      "command": "echo Run Yarn",
+      "linux": {
+        "command": "yarn"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
     },
     {
       "label": "Start Platform",
@@ -63,7 +77,8 @@
       },
       "runOptions": {
         "runOn": "folderOpen"
-      }
+      },
+      "dependsOn": "Run Init Yarn"
     },
     {
       "label": "Start Project",
@@ -78,7 +93,8 @@
       },
       "runOptions": {
         "runOn": "folderOpen"
-      }
+      },
+      "dependsOn": "Run Init Yarn"
     }
   ]
 }
