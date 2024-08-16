@@ -15,6 +15,21 @@
       "runOptions": {
         "runOn": "folderOpen"
       }
+    },
+    {
+      "label": "Start Platform",
+      "type": "shell",
+      "command": "echo Start Platform",
+      "linux": {
+        "command": "yarn start:platform",
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
     }
   ]
 }
