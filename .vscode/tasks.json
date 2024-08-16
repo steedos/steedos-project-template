@@ -63,7 +63,8 @@
       },
       "runOptions": {
         "runOn": "folderOpen"
-      }
+      },
+      "dependsOn": "Start Platform"
     }
   ]
 }
