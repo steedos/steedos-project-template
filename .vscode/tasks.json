@@ -39,7 +39,7 @@
           "command": "mongosh",
           "args": [
               "--eval",
-              "rs.initiate({ _id: 'steedos', members: [{_id: 0, host: 'localhost:27017'}]})"
+              "rs.initiate({ _id: \"steedos\", members: [{_id: 0, host: \"localhost:27017\"}]})"
           ],
         },
         "presentation": {
