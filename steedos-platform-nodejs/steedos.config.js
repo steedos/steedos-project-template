@@ -1,7 +1,10 @@
 const path = require('path');
 require('dotenv-flow').config({
-	path: path.join(__dirname, '..')
+	// path: path.join(__dirname, '..')
 });
+
+console.log('MONGO_URL:', process.env.MONGO_URL)
+console.log('MONGO_OPLOG_URL:', process.env.MONGO_OPLOG_URL)
 
 // Moleculer Configuration
 // https://moleculer.services/docs/0.14/configuration.html

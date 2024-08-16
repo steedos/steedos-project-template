@@ -6,6 +6,7 @@
   ],
   "repository": "git://github.com/steedos-labs/contract.git",
   "scripts": {
+    "start:platform": "cd steedos-platform-nodejs && yarn && yarn start",
     "start": "moleculer-runner steedos-packages/*/package.service.js --config steedos.config.js --hot --repl",
     "repl": "moleculer-runner --repl"
   },
