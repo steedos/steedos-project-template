@@ -12,22 +12,16 @@ services:
     command: sleep infinity
 
     # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
-    network_mode: service:db
+    network_mode: service:platform
 
     # Use "forwardPorts" in **devcontainer.json** to forward an app port locally. 
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 
-  db:
-    image: mongo:4.4
+  platform:
+    image: steedos/steedos-community:2.7
     restart: unless-stopped
-    command: "--bind_ip_all --replSet steedos --logpath /var/log/mongodb/mongod.log"
-    healthcheck:
-      test: echo 'db.runCommand("ping").ok' | mongo --quiet | grep 1
-      interval: 10s
-      timeout: 10s
-      retries: 5
     volumes:
-      - mongodb-data:/data/db
+      - steedos-storage:/steedos-storage
 
     # Uncomment to change startup options
     # environment:
@@ -39,4 +33,4 @@ services:
     # (Adding the "ports" property to this file will not forward from a Codespace.)
 
 volumes:
-  mongodb-data:
+  steedos-storage:
