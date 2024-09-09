@@ -21,11 +21,11 @@
 		}
 	},
 	"features": {
-		"ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1": {}
+		// "ghcr.io/bartventer/arch-devcontainer-features/docker-in-docker:1": {}
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [5000],
+	"forwardPorts": [5000, 80, 27017, 6379, 9001],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",
