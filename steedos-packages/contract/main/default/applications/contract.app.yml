@@ -1,0 +1,178 @@
+name: 演示应用
+code: contract
+defaultValueVariables:
+  - label: 全局变量
+    children:
+      - label: 用户ID
+        value: 'global[''userId'']'
+      - label: 工作区ID
+        value: 'global[''spaceId'']'
+      - label: 用户
+        children:
+          - label: 姓名
+            value: 'global[''user''][''name'']'
+          - label: 邮件
+            value: 'global[''user''][''email'']'
+          - label: 语言
+            value: 'global[''user''][''language'']'
+          - label: 简档
+            value: 'global[''user''][''profile'']'
+          - label: 权限集
+            value: 'global[''user''][''roles'']'
+          - label: 主部门ID
+            value: 'global[''user''][''organization''][''_id'']'
+          - label: 部门(含上级)
+            value: 'global[''user''][''organizations_parents'']'
+          - label: 主分部ID
+            value: 'global[''user''][''company_id'']'
+          - label: 分部(多选)
+            value: 'global[''user''][''company_ids'']'
+          - label: 人员ID
+            value: 'global[''user''][''spaceUserId'']'
+          - label: 是否是工作区管理员
+            value: 'global[''user''][''is_space_admin'']'
+description: 合同管理应用Demo
+enable_nav_schema: false
+icon_slds: code_set_bundle
+is_creator: true
+is_new_window: false
+is_use_ie: false
+is_use_iframe: false
+locked: false
+mobile: true
+showSidebar: true
+sort: 9100
+tab_groups:
+  - group_name: 合同管理
+    default_open: true
+  - group_name: 设置
+    default_open: true
+tab_items:
+  object_contract:
+    group: 合同管理
+    _id: 0a68c0ca-b316-4b22-b4f3-069345e8dd9b
+    index: 1
+  object_finance:
+    group: 合同管理
+    _id: a060edf0-8005-4822-90a3-ac7b1cd4daf5
+    index: 2
+  object_customer:
+    group: 合同管理
+    _id: ffbecc65-9c25-4c78-bb63-225556ebee54
+    index: 3
+  admin_objects:
+    group: 设置
+    _id: 0b8aaef3-e02a-4f4f-86aa-2c03957b848b
+    index: 4
+  admin_apps:
+    group: 设置
+    _id: b1a0c554-a6cb-4907-9ed6-e001f430e035
+    index: 5
+tabs:
+  - object_contract
+  - object_finance
+  - object_customer
+  - admin_objects
+  - admin_apps
+visible: true
+visibleOnVariables:
+  - label: 表单字段
+    children:
+      - label: 名称
+        value: name
+      - label: API 名称
+        value: code
+      - label: 图标
+        value: icon_slds
+      - label: 排序
+        value: sort
+      - label: 描述
+        value: description
+      - label: tab_groups.$.group_name
+        value: tab_groups.$.group_name
+      - label: tab_groups.$.default_open
+        value: tab_groups.$.default_open
+      - label: 在桌面中显示此应用
+        value: is_creator
+      - label: 在手机上显示此应用
+        value: mobile
+      - label: 启用
+        value: visible
+      - label: 显示左侧导航
+        value: showSidebar
+      - label: 自定义导航
+        value: nav_schema
+      - label: 外部链接
+        value: url
+      - label: 使用IE打开(需使用Steedos桌面客户端)
+        value: is_use_ie
+      - label: 使用iframe打开
+        value: is_use_iframe
+      - label: 在新窗口打开
+        value: is_new_window
+      - label: 链接脚本
+        value: on_click
+      - label: 验证域名
+        value: auth_name
+      - label: API 密钥
+        value: secret
+      - label: 桌面主菜单(已作废)
+        value: objects
+      - label: 手机主菜单(已作废)
+        value: mobile_objects
+      - label: 显示公式
+        value: visible_on
+      - label: 启用自定义导航
+        value: enable_nav_schema
+      - label: 系统
+        value: is_system
+      - label: from_code_id
+        value: from_code_id
+      - label: 所有者
+        value: owner
+      - label: 已锁定
+        value: locked
+      - label: 主分部
+        value: company_id
+      - label: 所属分部
+        value: company_ids
+      - label: 申请单审批状态
+        value: instance_state
+      - label: 创建时间
+        value: created
+      - label: 创建人
+        value: created_by
+      - label: 修改时间
+        value: modified
+      - label: 修改人
+        value: modified_by
+  - label: 全局变量
+    children:
+      - label: 用户ID
+        value: 'global[''userId'']'
+      - label: 工作区ID
+        value: 'global[''spaceId'']'
+      - label: 用户
+        children:
+          - label: 姓名
+            value: 'global[''user''][''name'']'
+          - label: 邮件
+            value: 'global[''user''][''email'']'
+          - label: 语言
+            value: 'global[''user''][''language'']'
+          - label: 简档
+            value: 'global[''user''][''profile'']'
+          - label: 权限集
+            value: 'global[''user''][''roles'']'
+          - label: 主部门ID
+            value: 'global[''user''][''organization''][''_id'']'
+          - label: 部门(含上级)
+            value: 'global[''user''][''organizations_parents'']'
+          - label: 主分部ID
+            value: 'global[''user''][''company_id'']'
+          - label: 分部(多选)
+            value: 'global[''user''][''company_ids'']'
+          - label: 人员ID
+            value: 'global[''user''][''spaceUserId'']'
+          - label: 是否是工作区管理员
+            value: 'global[''user''][''is_space_admin'']'

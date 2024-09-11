@@ -1,0 +1,36 @@
+name: pending
+columns:
+  - field: name
+  - field: amount
+  - field: pan
+  - field: actual
+  - field: contract
+  - field: created_by
+  - field: created
+crud_mode: table
+enable_amis_schema: false
+filter_scope: space
+filters: []
+is_enable: true
+label: 未收款
+locked: false
+mobile_columns:
+  - field: name
+  - field: amount
+  - field: pan
+  - field: actual
+  - field: contract
+scrolling_mode: standard
+searchable_fields:
+  - field: amount
+  - field: contract
+  - field: received
+  - field: pan
+  - field: actual
+shared_to: space
+show_count: false
+sort:
+  - field_name: created
+    order: desc
+sort_no: 100
+type: grid

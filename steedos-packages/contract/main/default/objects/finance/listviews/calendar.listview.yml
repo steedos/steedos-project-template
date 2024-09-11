@@ -1,0 +1,29 @@
+name: calendar
+filter_scope: space
+filters:
+  - - received
+    - '='
+    - false
+label: 日历视图
+options:
+  startDateExpr: pan
+  endDateExpr: pan
+  textExpr: name
+  allDayExpr: true
+  views:
+    - week
+    - month
+    - agenda
+  title:
+    - name
+    - amount
+    - pan
+    - contract
+  currentView: month
+  firstDayOfWeek: 1
+  startDayHour: 8
+  endDayHour: 18
+shared: true
+shared_to: space
+sort_no: 50
+type: calendar

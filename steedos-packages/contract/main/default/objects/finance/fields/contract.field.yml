@@ -1,0 +1,30 @@
+name: contract
+create: true
+enable_enhanced_lookup: true
+enable_thousands: true
+filterable: false
+filters:
+  - - status
+    - '='
+    - prograss
+generated: false
+hidden: false
+index: false
+inlineHelpText: >-
+  主/子表类型字段：我们可以通过创建一个“主/子表”类型字段来描述两个对象间的主从关系，比如 “收款记录” 都应该有对应的 “合同” 与之关联，此时我们可以在
+  ”收款记录“ 对象上建立一个 “合同” 字段，类型为主表/子表跟 “合同台账” 对象关联起来。
+is_name: false
+is_wide: false
+label: 合同
+multiple: false
+primary: false
+readonly: false
+reference_to: contract
+required: true
+searchable: false
+show_as_qr: false
+sort_no: 30
+static: false
+type: master_detail
+unique: false
+write_requires_master_read: true

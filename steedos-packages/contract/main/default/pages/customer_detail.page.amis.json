@@ -1,0 +1,64 @@
+{
+    "type": "steedos-record-service",
+    "body": [
+        {
+            "type": "steedos-record-detail-header",
+            "label": "标题面板",
+            "objectApiName": "${objectName}",
+            "recordId": "${recordId}",
+            "showBackButton": "${!_inDrawer}",
+            "id": "u:6b3828883017"
+        },
+        {
+            "type": "tabs",
+            "className": "steedos-record-tabs bg-white p-4 sm:m-2 sm:border sm:rounded",
+            "tabs": [
+                {
+                    "title": "详细",
+                    "className": "px-0 py-4",
+                    "body": [
+                        {
+                            "type": "steedos-object-form",
+                            "label": "对象表单",
+                            "objectApiName": "${objectName}",
+                            "recordId": "${recordId}",
+                            "appId": "${appId}",
+                            "id": "u:62a722d00eea"
+                        }
+                    ],
+                    "id": "u:5d4e7e3f6ecc"
+                },
+                {
+                    "title": "合同情况",
+                    "body": [
+                        {
+                            "type": "steedos-object-related-listview",
+                            "label": "相关表",
+                            "objectApiName": "${objectName}",
+                            "recordId": "${recordId}",
+                            "id": "u:b81540d23a81",
+                            "relatedObjectApiName": "contract"
+                        }
+                    ],
+                    "id": "u:1b7528581c81",
+                    "className": "p-xs"
+                }
+            ],
+            "id": "u:d9aaaea669c8"
+        }
+    ],
+    "regions": [
+        "body"
+    ],
+    "data": {},
+    "id": "page_customer_record_detail",
+    "name": "page_customer_record_detail",
+    "objectApiName": "${objectName}",
+    "bodyClassName": "",
+    "className": "object-detail-page steedos-record-content overflow-y-auto p-0 m-0 flex-1 h-full bg-gray-100",
+    "asideResizor": false,
+    "editorState": "default",
+    "pullRefresh": {
+        "disabled": true
+    }
+}

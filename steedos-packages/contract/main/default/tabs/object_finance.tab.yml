@@ -1,0 +1,8 @@
+name: object_finance
+desktop: true
+icon: contact_request
+label: 收款（日历视图）
+mobile: true
+object: finance
+permissions: []
+type: object

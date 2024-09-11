@@ -1,0 +1,36 @@
+name: all
+columns:
+  - field: name
+  - field: autonumber
+  - field: amount
+  - field: wskje
+  - field: customer
+  - field: contact
+  - field: phone
+  - field: start
+  - field: end
+  - field: status
+crud_mode: table
+filter_scope: space
+filters: []
+is_enable: true
+label: 所有
+mobile_columns:
+  - field: name
+  - field: autonumber
+  - field: customer
+  - field: status
+searchable_fields:
+  - field: name
+  - field: autonumber
+  - field: amount
+  - field: status
+  - field: customer
+  - field: owner
+shared_to: space
+sort:
+  - field_name: start
+    order: desc
+  - field_name: created
+    order: desc
+sort_no: 90

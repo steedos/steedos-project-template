@@ -1,0 +1,13 @@
+name: contract_details
+is_active: true
+label: 合同记录详情页
+locked: false
+object_name: contract
+pageAssignments:
+  - type: orgDefault
+    page: contract_details
+    desktop: true
+    mobile: true
+render_engine: amis
+type: record
+widgets: []

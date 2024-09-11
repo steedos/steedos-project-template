@@ -1,0 +1,9 @@
+name: name
+filterable: true
+filters: []
+index: true
+label: 客户名称
+required: true
+searchable: true
+sort_no: 10
+type: text

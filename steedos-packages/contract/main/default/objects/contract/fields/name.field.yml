@@ -1,0 +1,10 @@
+name: name
+filterable: true
+filters: []
+hidden: false
+index: true
+label: 合同名称
+required: true
+searchable: true
+sort_no: 10
+type: text

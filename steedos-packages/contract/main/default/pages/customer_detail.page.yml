@@ -1,0 +1,13 @@
+name: customer_detail
+is_active: true
+label: 客户记录详情页
+locked: false
+object_name: customer
+pageAssignments:
+  - type: orgDefault
+    page: customer_detail
+    desktop: true
+    mobile: true
+render_engine: amis
+type: record
+widgets: []

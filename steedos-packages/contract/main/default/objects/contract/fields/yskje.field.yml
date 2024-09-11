@@ -1,0 +1,34 @@
+name: yskje
+create: true
+data_type: currency
+description: 累计汇总类型字段：汇总收款记录子表中，已收款状态记录的所有收款金额。
+enable_enhanced_lookup: true
+enable_thousands: true
+filterable: false
+filters: []
+generated: false
+hidden: false
+index: false
+is_name: false
+is_wide: false
+label: 已收款金额
+multiple: false
+precision: 18
+primary: false
+readonly: false
+scale: 2
+searchable: false
+show_as_qr: false
+sort_no: 50
+sortable: true
+static: false
+summary_field: amount
+summary_filters:
+  - field: received
+    operation: '='
+    value: 'true'
+summary_object: finance
+summary_type: sum
+type: summary
+unique: false
+write_requires_master_read: false

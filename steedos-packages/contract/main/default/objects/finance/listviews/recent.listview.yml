@@ -1,0 +1,19 @@
+name: recent
+columns:
+  - field: name
+crud_mode: table
+filter_scope: space
+filters: []
+is_enable: true
+label: 最近查看
+searchable_fields:
+  - field: amount
+  - field: contract
+  - field: received
+  - field: pan
+  - field: actual
+shared_to: space
+sort:
+  - field_name: created
+    order: desc
+sort_no: 120

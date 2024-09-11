@@ -1,0 +1,33 @@
+name: recent
+columns:
+  - field: name
+  - field: autonumber
+  - field: amount
+  - field: status
+  - field: yskje
+  - field: wskje
+  - field: customer
+  - field: owner
+  - field: contact
+  - field: phone
+  - field: start
+  - field: end
+  - field: remark
+crud_mode: table
+filter_scope: space
+filters: []
+is_enable: true
+label: 最近查看
+searchable_fields:
+  - field: name
+  - field: autonumber
+  - field: amount
+  - field: status
+  - field: customer
+  - field: owner
+  - field: contact
+shared_to: space
+sort:
+  - field_name: created
+    order: desc
+sort_no: 110

@@ -1,0 +1,10 @@
+name: name
+filterable: true
+filters: []
+hidden: false
+index: true
+label: 收款说明
+required: true
+searchable: true
+sort_no: 10
+type: text

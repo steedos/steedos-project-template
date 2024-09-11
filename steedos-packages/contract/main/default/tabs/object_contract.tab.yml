@@ -1,0 +1,8 @@
+name: object_contract
+desktop: true
+icon: collection
+label: 合同（列表视图）
+mobile: true
+object: contract
+permissions: []
+type: object

@@ -1,0 +1,5 @@
+name: instance_state
+label: 申请单审批状态
+sort_no: 220
+type: select
+visible_on: '{{false}}'

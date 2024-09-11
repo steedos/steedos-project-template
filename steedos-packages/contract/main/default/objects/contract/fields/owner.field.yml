@@ -1,0 +1,8 @@
+name: owner
+enable_thousands: true
+hidden: false
+index: true
+label: 我方责任人
+required: true
+sort_no: 80
+sortable: true

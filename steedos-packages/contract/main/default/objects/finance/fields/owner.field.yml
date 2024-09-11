@@ -1,0 +1,4 @@
+name: owner
+label: 所有者
+sort_no: 110
+visible_on: '{{false}}'

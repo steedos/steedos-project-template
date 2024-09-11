@@ -1,0 +1,44 @@
+name: progress
+columns:
+  - field: name
+  - field: autonumber
+  - field: amount
+  - field: wskje
+  - field: customer
+  - field: contact
+  - field: phone
+  - field: start
+  - field: end
+crud_mode: table
+enable_amis_schema: false
+filter_scope: space
+filters:
+  - - status
+    - '='
+    - prograss
+is_enable: true
+label: 进行中
+locked: false
+mobile_columns:
+  - field: name
+  - field: autonumber
+  - field: customer
+  - field: amount
+scrolling_mode: standard
+searchable_fields:
+  - field: name
+  - field: autonumber
+  - field: amount
+  - field: status
+  - field: customer
+  - field: owner
+  - field: contact
+shared_to: space
+show_count: false
+sort:
+  - field_name: start
+    order: desc
+  - field_name: created
+    order: desc
+sort_no: 100
+type: grid

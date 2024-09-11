@@ -1,0 +1,57 @@
+{
+    "type": "steedos-record-service",
+    "body": [
+        {
+            "type": "steedos-record-detail-header",
+            "label": "标题面板",
+            "objectApiName": "${objectName}",
+            "recordId": "${recordId}",
+            "showBackButton": "${!_inDrawer}",
+            "id": "u:34b1f90acfa7"
+        },
+        {
+            "type": "tabs",
+            "className": "steedos-record-tabs bg-white p-4 sm:m-2 sm:border sm:rounded",
+            "tabs": [
+                {
+                    "title": "详细",
+                    "className": "px-0 py-4",
+                    "body": [
+                        {
+                            "type": "steedos-object-form",
+                            "label": "对象表单",
+                            "objectApiName": "${objectName}",
+                            "recordId": "${recordId}",
+                            "appId": "${appId}",
+                            "id": "u:168afe84a4d3"
+                        },
+                        {
+                            "type": "steedos-object-related-lists",
+                            "label": "相关列表",
+                            "objectApiName": "${objectName}",
+                            "recordId": "${recordId}",
+                            "appId": "${appId}",
+                            "id": "u:984acb9cb331"
+                        }
+                    ],
+                    "id": "u:5d4e7e3f6ecc"
+                }
+            ],
+            "id": "u:a36db0a47168"
+        }
+    ],
+    "regions": [
+        "body"
+    ],
+    "data": {},
+    "id": "page_contract_record_detail",
+    "name": "page_contract_record_detail",
+    "objectApiName": "${objectName}",
+    "bodyClassName": "",
+    "className": "object-detail-page steedos-record-content overflow-y-auto p-0 m-0 flex-1 h-full bg-gray-100",
+    "asideResizor": false,
+    "editorState": "default",
+    "pullRefresh": {
+        "disabled": true
+    }
+}

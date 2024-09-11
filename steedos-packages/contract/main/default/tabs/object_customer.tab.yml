@@ -1,0 +1,8 @@
+name: object_customer
+desktop: true
+icon: avatar
+label: 客户（分栏视图）
+mobile: true
+object: customer
+permissions: []
+type: object
