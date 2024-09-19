@@ -14,3 +14,15 @@ services:
       - .env.local
     volumes:
       - "./steedos-storage:/steedos-storage"
+
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: steedos
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: pg2024
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./steedos-storage/postgres_data:/var/lib/postgresql/data
