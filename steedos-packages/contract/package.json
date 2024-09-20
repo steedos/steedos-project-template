@@ -1,6 +1,6 @@
 {
     "name": "@steedos-demo/example",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "example",
     "main": "package.service.js",
     "scripts": {
