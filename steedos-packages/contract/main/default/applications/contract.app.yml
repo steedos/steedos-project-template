@@ -78,10 +78,14 @@ tab_items:
     group: 设置
     _id: b1a0c554-a6cb-4907-9ed6-e001f430e035
     index: 7
+  nodered:
+    group: 设置
+    _id: e525a0a3-9f1e-4110-b30b-a3f2a1416ce1
+    index: 8
   admin_datasources:
     group: 设置
     _id: 4faa324e-5e04-42ca-b64f-6db36329277e
-    index: 8
+    index: 9
 tabs:
   - object_contract
   - object_finance
@@ -90,6 +94,7 @@ tabs:
   - admin_objects
   - admin_flows
   - admin_apps
+  - nodered
   - admin_datasources
 visible: true
 visibleOnVariables:

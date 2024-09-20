@@ -1,0 +1,13 @@
+name: nodered
+desktop: true
+icon: incident
+is_new_window: true
+is_use_iframe: false
+label: Node-RED
+locked: false
+mobile: true
+permissions:
+  - permission: 'off'
+    permission_set: user
+type: url
+url: /flows
