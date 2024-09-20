@@ -1,8 +1,6 @@
 {
     "name": "my-steedos-service",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "",
-    "main": "package.service.js",
-    "dependencies": {
-    }
-  }
+    "main": "package.service.js"
+}
