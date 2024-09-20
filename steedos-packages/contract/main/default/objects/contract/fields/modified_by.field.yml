@@ -2,5 +2,5 @@ name: modified_by
 group: 系统信息
 hidden: false
 label: 修改人
-sort_no: 180
+sort_no: 200
 type: lookup

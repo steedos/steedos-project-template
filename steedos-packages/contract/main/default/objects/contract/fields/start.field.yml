@@ -16,7 +16,7 @@ readonly: false
 required: false
 searchable: false
 show_as_qr: false
-sort_no: 110
+sort_no: 120
 sortable: true
 static: false
 type: date

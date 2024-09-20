@@ -1,4 +1,5 @@
 name: owner
+description: 合同记录的owner所有者
 enable_thousands: true
 hidden: false
 index: true

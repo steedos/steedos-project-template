@@ -5,6 +5,8 @@ auto_fill_mapping:
   - from: phone
     to: phone
 create: true
+description: >-
+  相关表类型字段，当我们需要描述两个对象之间的关联关系时，可以在其中一个对象中创建一个“相关表关系”类型字段来关联两个对象，比如在创建合同时需要选择客户信息，这种情况就可以在合同对象表上创建一个“客户”相关表类型字段去关联客户信息。
 enable_enhanced_lookup: false
 enable_thousands: true
 filterable: false
@@ -12,8 +14,6 @@ filters: []
 generated: false
 hidden: false
 index: false
-inlineHelpText: >-
-  相关表类型字段，当我们需要描述两个对象之间的关联关系时，可以在其中一个对象中创建一个“相关表关系”类型字段来关联两个对象，比如在创建合同时需要选择客户信息，这种情况就可以在合同对象表上创建一个“客户”相关表类型字段去关联客户信息。
 is_name: false
 is_wide: false
 label: 客户

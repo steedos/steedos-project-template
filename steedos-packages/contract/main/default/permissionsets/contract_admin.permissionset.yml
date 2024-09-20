@@ -1,0 +1,9 @@
+name: contract_admin
+enable_MFA: false
+label: 合同管理员
+locked: false
+login_expiration_in_days: 90
+logout_other_clients: false
+phone_login_expiration_in_days: 90
+phone_logout_other_clients: false
+type: permission_set

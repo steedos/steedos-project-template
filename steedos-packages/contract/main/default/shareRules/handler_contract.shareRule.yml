@@ -1,0 +1,8 @@
+name: handler_contract
+active: true
+allowEdit: false
+description: 合同经办人能够查看到经办的合同记录。
+entry_criteria: '{{$user.roles.indexOf(''user'') > -1}}'
+locked: false
+object_name: contract
+record_filter: '{{["deal","=",$user.userId]}}'

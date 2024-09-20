@@ -1,0 +1,36 @@
+rules:
+  - name: contract_approved_reminder
+    active: false
+    description: |-
+      审批通过过执行以下操作：
+      1、合同状态变更为进行中；
+      2、提醒合同经办人员合同审批通过。
+    formula: instance_state == 'approved'
+    label: 合同审批通过后执行相应动作
+    locked: false
+    object_name: contract
+    trigger_type: onCreateOrTriggeringUpdate
+    updates_field_actions:
+      - prograss_contract
+    workflow_notifications_actions:
+      - contract_approved
+fieldUpdates:
+  - name: prograss_contract
+    field_name: status
+    formula: '"prograss"'
+    label: 合同状态变更为进行中
+    object_name: contract
+    operation: formula
+    reevaluate_on_change: true
+    target_object: contract
+    undirect: true
+notifications:
+  - name: contract_approved
+    assigned_user_field:
+      - deal
+    body: name&“-请及时确认合同执行情况”
+    label: 合同审批通过提醒
+    locked: false
+    object_name: contract
+    title: '"合同审批通过提醒"'
+outboundMessages: []

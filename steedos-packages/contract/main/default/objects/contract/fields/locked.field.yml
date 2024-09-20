@@ -1,5 +1,5 @@
 name: locked
 label: 已锁定
-sort_no: 190
+sort_no: 210
 type: boolean
 visible_on: '{{false}}'

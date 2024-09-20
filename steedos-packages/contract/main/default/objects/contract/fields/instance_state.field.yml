@@ -1,5 +1,6 @@
 name: instance_state
+hidden: false
 label: 申请单审批状态
-sort_no: 220
+sort_no: 140
 type: select
-visible_on: '{{false}}'
+visible_on: '{{true}}'

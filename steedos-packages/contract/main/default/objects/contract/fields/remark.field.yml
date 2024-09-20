@@ -17,7 +17,7 @@ required: false
 rows: 2
 searchable: false
 show_as_qr: false
-sort_no: 130
+sort_no: 150
 sortable: false
 static: false
 type: textarea

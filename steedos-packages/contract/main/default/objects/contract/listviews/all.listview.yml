@@ -10,6 +10,7 @@ columns:
   - field: start
   - field: end
   - field: status
+  - field: instance_state
 crud_mode: table
 filter_scope: space
 filters: []

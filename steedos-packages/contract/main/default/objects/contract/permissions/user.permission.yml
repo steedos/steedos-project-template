@@ -73,8 +73,8 @@ field_permissions:
     readable: true
     editable: true
   - field: yskje
-    readable: true
-    editable: true
+    readable: false
+    editable: false
   - field: wskje
-    readable: true
-    editable: true
+    readable: false
+    editable: false

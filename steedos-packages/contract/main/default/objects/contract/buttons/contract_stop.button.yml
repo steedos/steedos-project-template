@@ -1,0 +1,106 @@
+name: contract_stop
+amis_schema: |-
+  {
+      "type": "service",
+      "body": [
+          {
+              "type": "button",
+              "label": "终止",
+              "id": "u:contract_archiving",
+              "editorState": "default",
+              "visibleOn": "${record.status== \"prograss\" && record.instance_state== \"approved\"}",
+              "onEvent": {
+                  "click": {
+                      "weight": 0,
+                      "actions": [
+                          {
+                              "ignoreError": false,
+                              "actionType": "dialog",
+                              "expression": "",
+                              "dialog": {
+                                  "type": "dialog",
+                                  "title": "合同终止确认",
+                                  "body": [
+                                      {
+                                          "type": "tpl",
+                                          "tpl": "<p>请确认是否终止合同？</p>",
+                                          "id": "u:0e4348db3ba2",
+                                          "editorState": "default"
+                                      }
+                                  ],
+                                  "id": "u:4f658fce1fce",
+                                  "actions": [
+                                      {
+                                          "type": "button",
+                                          "actionType": "cancel",
+                                          "label": "取消",
+                                          "id": "u:ae3375e06e80"
+                                      },
+                                      {
+                                          "type": "button",
+                                          "actionType": "confirm",
+                                          "label": "确定",
+                                          "primary": true,
+                                          "id": "u:4315515d6e23",
+                                          "editorState": "default",
+                                          "onEvent": {
+                                              "click": {
+                                                  "weight": 0,
+                                                  "actions": [
+                                                      {
+                                                          "ignoreError": false,
+                                                          "actionType": "ajax",
+                                                          "outputVar": "responseResult",
+                                                          "options": {},
+                                                          "api": {
+                                                              "url": "/api/v1/contract/${recordId}",
+                                                              "method": "put",
+                                                              "requestAdaptor": "api.data = {\n    \"doc\": {\n        \"status\": \"discard\"\n    }\n}\nreturn api",
+                                                              "adaptor": "",
+                                                              "messages": {}
+                                                          }
+                                                      },
+                                                      {
+                                                          "ignoreError": false,
+                                                          "actionType": "refresh"
+                                                      }
+                                                  ]
+                                              }
+                                          }
+                                      }
+                                  ],
+                                  "showCloseButton": true,
+                                  "closeOnOutside": false,
+                                  "closeOnEsc": false,
+                                  "showErrorMsg": true,
+                                  "showLoading": true,
+                                  "draggable": false,
+                                  "actionType": "dialog"
+                              }
+                          }
+                      ]
+                  }
+              }
+          }
+      ],
+      "regions": [
+          "body"
+      ],
+      "data": {
+          "context": {},
+          "dataComponentId": "",
+          "record_id": "",
+          "record": {},
+          "permissions": {}
+      },
+      "id": "u:57f237c598cd",
+      "bodyClassName": "p-0",
+      "dsType": "api",
+      "definitions": {}
+  }
+is_enable: true
+label: 终止
+locked: false
+'on': record_only
+type: amis_button
+visible: true

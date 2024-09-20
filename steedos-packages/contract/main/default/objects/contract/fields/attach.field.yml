@@ -17,7 +17,7 @@ readonly: false
 required: false
 searchable: false
 show_as_qr: false
-sort_no: 140
+sort_no: 160
 static: false
 type: file
 unique: false
