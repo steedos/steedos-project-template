@@ -1,0 +1,8 @@
+name: modified_by
+disabled: true
+group: ''
+label: 修改人
+readonly: true
+reference_to: users
+sort_no: 9999
+type: lookup

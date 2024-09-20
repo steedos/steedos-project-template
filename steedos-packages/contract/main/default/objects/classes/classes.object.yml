@@ -1,0 +1,24 @@
+name: classes
+custom: true
+enable_api: true
+enable_audit: false
+enable_dataloader: true
+enable_enhanced_lookup: true
+enable_events: false
+enable_files: false
+enable_form_tabs: false
+enable_inline_edit: true
+enable_instances: false
+enable_lock_detail: true
+enable_notes: false
+enable_split: false
+enable_tasks: false
+enable_tree: false
+enable_workflow: true
+field_groups:
+  - group_name: 通用
+icon: agent_home
+is_enable: true
+label: 班级
+locked: false
+version: 2

@@ -1,0 +1,27 @@
+name: id
+amis:
+  name: id
+  id: 'u:5979ad2d5455'
+create: true
+enable_enhanced_lookup: true
+enable_thousands: true
+filterable: false
+generated: true
+group: 通用
+hidden: false
+index: false
+is_name: false
+is_wide: false
+label: id
+multiple: false
+primary: true
+readonly: false
+required: false
+searchable: false
+show_as_qr: false
+sort_no: 200
+sortable: true
+static: false
+type: text
+unique: false
+write_requires_master_read: false

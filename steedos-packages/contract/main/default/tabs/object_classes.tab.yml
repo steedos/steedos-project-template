@@ -1,0 +1,8 @@
+name: object_classes
+desktop: true
+icon: agent_home
+label: 班级
+mobile: true
+object: classes
+permissions: []
+type: object

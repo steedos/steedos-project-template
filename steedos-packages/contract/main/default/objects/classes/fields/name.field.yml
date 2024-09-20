@@ -1,0 +1,9 @@
+name: name
+filterable: true
+filters: []
+index: true
+label: 班级
+required: true
+searchable: true
+sort_no: 10
+type: text

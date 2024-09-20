@@ -1,0 +1,27 @@
+name: grade
+amis:
+  name: grade
+  id: 'u:2ff92c4b38ba'
+create: true
+enable_enhanced_lookup: true
+enable_thousands: true
+filterable: false
+generated: false
+group: 通用
+hidden: false
+index: false
+is_name: false
+is_wide: false
+label: 年级
+multiple: false
+primary: false
+readonly: false
+required: false
+searchable: false
+show_as_qr: false
+sort_no: 150
+sortable: true
+static: false
+type: text
+unique: false
+write_requires_master_read: false

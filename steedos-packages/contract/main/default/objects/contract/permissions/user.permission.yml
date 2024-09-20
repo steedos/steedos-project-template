@@ -11,4 +11,70 @@ modifyAllRecords: false
 permission_set_id: user
 viewAllFiles: true
 viewAllRecords: false
-field_permissions: []
+field_permissions:
+  - field: name
+    readable: true
+    editable: true
+  - field: autonumber
+    readable: true
+    editable: true
+  - field: amount
+    readable: true
+    editable: true
+  - field: remark
+    readable: true
+    editable: true
+  - field: start
+    readable: true
+    editable: true
+  - field: end
+    readable: true
+    editable: true
+  - field: customer
+    readable: true
+    editable: true
+  - field: contact
+    readable: true
+    editable: true
+  - field: phone
+    readable: true
+    editable: true
+  - field: created
+    readable: true
+    editable: false
+  - field: created_by
+    readable: true
+    editable: false
+  - field: modified
+    readable: true
+    editable: false
+  - field: modified_by
+    readable: true
+    editable: false
+  - field: owner
+    readable: true
+    editable: true
+  - field: locked
+    readable: true
+    editable: true
+  - field: company_id
+    readable: true
+    editable: true
+  - field: company_ids
+    readable: true
+    editable: true
+  - field: instance_state
+    readable: true
+    editable: false
+  - field: attach
+    readable: true
+    editable: true
+  - field: status
+    readable: true
+    editable: true
+  - field: yskje
+    readable: true
+    editable: true
+  - field: wskje
+    readable: true
+    editable: true

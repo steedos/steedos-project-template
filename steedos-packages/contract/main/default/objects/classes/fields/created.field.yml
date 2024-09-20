@@ -1,0 +1,8 @@
+name: created
+disabled: true
+group: ''
+label: 创建时间
+readonly: true
+sort_no: 9999
+sortable: true
+type: datetime

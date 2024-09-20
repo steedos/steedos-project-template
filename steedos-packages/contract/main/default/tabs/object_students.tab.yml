@@ -1,0 +1,8 @@
+name: object_students
+desktop: true
+icon: avatar
+label: 学生
+mobile: true
+object: students
+permissions: []
+type: object

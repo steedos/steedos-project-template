@@ -1,0 +1,8 @@
+name: modified
+disabled: true
+group: ''
+label: 修改时间
+readonly: true
+sort_no: 9999
+sortable: true
+type: datetime
