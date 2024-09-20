@@ -1,0 +1,23 @@
+{
+    "name": "@steedos-demo/example",
+    "version": "0.0.1",
+    "description": "example",
+    "main": "package.service.js",
+    "scripts": {
+        "build": "webpack --config webpack.config.js",
+        "build:watch": "webpack --config webpack.config.js --watch"
+    },
+    "devDependencies": {
+        "webpack": "^5.88.2",
+        "webpack-cli": "^5.1.4",
+        "webpack-node-externals": "^3.0.0"
+    },
+    "author": "",
+    "private": false,
+    "license": "MIT",
+    "publishConfig": {
+        "access": "public"
+    },
+    "homepage": "https://developer.steedos.com",
+    "gitHead": "24d4f3c614efb07e373e34a97bef04e8a5929a5b"
+}
