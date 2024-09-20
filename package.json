@@ -8,7 +8,9 @@
   "scripts": {
     "start:platform": "cd steedos-platform-nodejs && yarn && yarn start",
     "start": "moleculer-runner steedos-packages/*/package.service.js --config steedos.config.js --hot --repl",
-    "repl": "moleculer-runner --repl"
+    "repl": "moleculer-runner --repl",
+    "version:latest": "yarn build && lerna version --force-publish --exact",
+    "publish:latest": "lerna publish from-package --registry https://registry.npmjs.org"
   },
   "dependencies": {
     "@steedos/service-package-loader": "^2.5",
