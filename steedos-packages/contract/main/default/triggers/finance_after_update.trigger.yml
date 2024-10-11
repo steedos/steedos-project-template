@@ -1,0 +1,15 @@
+name: finance_after_update
+listenTo: finance
+when:
+  - afterUpdate
+isEnabled: true
+handler: |-
+  const { id, doc, spaceId, userId } = ctx.params;
+
+  if (doc.actual) {    
+    this.getObject('finance').update(id, {
+      received:true
+    })
+  }
+
+locked: false
