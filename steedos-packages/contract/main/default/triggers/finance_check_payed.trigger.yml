@@ -1,0 +1,22 @@
+name: finance_check_payed
+listenTo: finance
+when:
+  - beforeInsert
+isEnabled: true
+handler: |-
+  const { id, doc, spaceId, userId } = ctx.params;
+
+  if (doc.contract) {
+    let totalAmount = doc.amount ;
+    let financePayment = await this.getObject('finance').find({ filters: [['contract', '=', doc.contract]] });
+    for (const rPayment of financePayment) {
+      totalAmount = totalAmount + rPayment.amount ;
+    }
+    
+    const contractObjItem = await this.getObject("contract").findOne(doc.contract,{ fields: ['name', 'amount'] });
+    if (totalAmount > contractObjItem.amount) {
+      throw new Error("付款单的累计金额应不大于合同的总金额，请作相应调整。")
+    }
+  }
+
+locked: false
