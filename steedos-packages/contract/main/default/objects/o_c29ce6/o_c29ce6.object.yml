@@ -1,0 +1,14 @@
+name: o_c29ce6
+custom: true
+enable_api: true
+enable_dataloader: true
+enable_enhanced_lookup: true
+enable_inline_edit: true
+enable_lock_detail: true
+enable_workflow: true
+field_groups:
+  - group_name: 通用
+icon: account
+is_enable: true
+label: 演示对象
+version: 2

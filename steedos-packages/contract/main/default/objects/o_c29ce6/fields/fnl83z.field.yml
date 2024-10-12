@@ -1,0 +1,9 @@
+name: fnl83z
+amis:
+  name: fnl83z
+  id: 'u:2c517bdedba1'
+group: 通用
+label: 相关表关系
+reference_to: o_5f25f7
+sort_no: 150
+type: lookup

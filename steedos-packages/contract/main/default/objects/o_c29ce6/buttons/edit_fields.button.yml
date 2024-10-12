@@ -1,0 +1,92 @@
+name: edit_fields
+amis_schema: |-
+  {
+      "type": "service",
+      "body": [
+          {
+              "type": "button",
+              "label": "编辑指定字段",
+              "id": "u:edit_fields",
+              "editorState": "default",
+              "onEvent": {
+                  "click": {
+                      "weight": 0,
+                      "actions": [
+                          {
+                              "ignoreError": false,
+                              "actionType": "dialog",
+                              "dialog": {
+                                  "type": "dialog",
+                                  "title": "编辑指定字段",
+                                  "body": [
+                                      {
+                                          "type": "steedos-object-form",
+                                          "label": "对象表单",
+                                          "objectApiName": "${objectName}",
+                                          "recordId": "${recordId}",
+                                          "mode": "edit",
+                                          "enableInitApi": false,
+                                          "className": "",
+                                          "id": "u:6687918933cd",
+                                          "fields": [
+                                              "f6zcq2"
+                                          ]
+                                      }
+                                  ],
+                                  "id": "u:3a1d0939a54f",
+                                  "actions": [
+                                      {
+                                          "type": "button",
+                                          "actionType": "cancel",
+                                          "label": "取消",
+                                          "id": "u:393aea744b75"
+                                      },
+                                      {
+                                          "type": "button",
+                                          "actionType": "confirm",
+                                          "label": "确定",
+                                          "primary": true,
+                                          "id": "u:d9e5b7d06bff"
+                                      }
+                                  ],
+                                  "showCloseButton": true,
+                                  "closeOnOutside": false,
+                                  "closeOnEsc": false,
+                                  "showErrorMsg": true,
+                                  "showLoading": true,
+                                  "draggable": false,
+                                  "size": "md",
+                                  "actionType": "dialog"
+                              }
+                          }
+                      ]
+                  }
+              }
+          }
+      ],
+      "regions": [
+          "body"
+      ],
+      "data": {
+          "context": {},
+          "dataComponentId": "",
+          "record_id": "",
+          "record": {},
+          "permissions": {}
+      },
+      "bodyClassName": "p-0",
+      "id": "u:f15586c3e460",
+      "dsType": "api",
+      "asideResizor": false,
+      "editorState": "default",
+      "pullRefresh": {
+          "disabled": true
+      },
+      "definitions": {}
+  }
+is_enable: true
+label: 编辑指定字段
+locked: false
+'on': record_only
+type: amis_button
+visible: true

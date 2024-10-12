@@ -49,6 +49,7 @@ tab_groups:
     default_open: true
   - group_name: 设置
     default_open: true
+  - group_name: 自定义按钮
 tab_items:
   object_contract:
     group: 合同管理
@@ -86,6 +87,10 @@ tab_items:
     group: 设置
     _id: 4faa324e-5e04-42ca-b64f-6db36329277e
     index: 9
+  object_o_c29ce6:
+    group: 自定义按钮
+  object_o_5f25f7:
+    group: 自定义按钮
 tabs:
   - object_contract
   - object_finance

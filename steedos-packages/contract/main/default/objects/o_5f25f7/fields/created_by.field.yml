@@ -1,0 +1,9 @@
+name: created_by
+amis: {}
+disabled: true
+group: 通用
+label: 创建人
+readonly: true
+reference_to: users
+sort_no: 400
+type: lookup

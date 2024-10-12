@@ -1,0 +1,17 @@
+name: company_ids
+amis:
+  name: company_ids
+  id: 'u:e3247314436e'
+description: ''
+enable_thousands: true
+group: 通用
+hidden: false
+index: true
+inlineHelpText: ''
+label: 所属分部
+multiple: true
+reference_to: company
+sort_no: 350
+sortable: true
+type: lookup
+visible_on: '{{false}}'

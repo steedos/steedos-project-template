@@ -1,0 +1,7 @@
+name: fei9bs
+amis:
+  id: 'u:3ad945310b1f'
+label: 主/子表关系
+reference_to: o_c29ce6
+sort_no: 550
+type: master_detail

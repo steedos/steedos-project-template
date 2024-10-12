@@ -1,0 +1,11 @@
+name: name
+amis:
+  id: 'u:c9780b886161'
+filterable: true
+group: 通用
+index: true
+label: 名称
+required: true
+searchable: true
+sort_no: 50
+type: text

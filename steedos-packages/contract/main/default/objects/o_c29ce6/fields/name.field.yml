@@ -1,0 +1,12 @@
+name: name
+amis:
+  name: name
+  id: 'u:483131d33647'
+filterable: true
+group: 通用
+index: true
+label: 文本
+required: true
+searchable: true
+sort_no: 50
+type: text

@@ -1,0 +1,13 @@
+name: f6zcq2
+amis:
+  name: f6zcq2
+  id: 'u:0ba71f30cd61'
+group: 通用
+label: 选择
+options:
+  - label: 选项1
+    value: v1
+  - label: 选项2
+    value: v2
+sort_no: 100
+type: select

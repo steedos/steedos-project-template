@@ -1,0 +1,10 @@
+name: created_by
+amis:
+  name: created_by
+disabled: true
+group: 通用
+label: 创建人
+readonly: true
+reference_to: users
+sort_no: 500
+type: lookup

@@ -1,0 +1,62 @@
+name: update_recordmany
+amis_schema: |-
+  {
+      "type": "service",
+      "body": [
+          {
+              "type": "button",
+              "label": "批处理按钮",
+              "id": "u:update_recordmany",
+              "editorState": "default",
+              "onEvent": {
+                  "click": {
+                      "weight": 0,
+                      "actions": [
+                          {
+                              "ignoreError": false,
+                              "actionType": "custom",
+                              "args": {},
+                              "script": "\ntry {\n  const listViewRef = SteedosUI.getRef(event.data.scopeId).getComponentById(`listview_${event.data.objectName}`);\n\n  const selectedItems = listViewRef.props.store.toJSON().selectedItems;\n\n  console.log('selectedItems', selectedItems);\n  event.setData({ ...event.data, selectedItems: selectedItems });\n\n} catch (e) { \n  console.log(\"selectedItems error:\",e)\n}"
+                          },
+                          {
+                              "ignoreError": false,
+                              "actionType": "toast",
+                              "args": {
+                                  "msgType": "info",
+                                  "position": "top-right",
+                                  "closeButton": true,
+                                  "showIcon": true,
+                                  "msg": "您选中的记录是: ${event.data.selectedItems|pick:name|json}",
+                                  "className": "theme-toast-action-scope"
+                              }
+                          }
+                      ]
+                  }
+              }
+          }
+      ],
+      "regions": [
+          "body"
+      ],
+      "data": {
+          "context": {},
+          "dataComponentId": "",
+          "record_id": "",
+          "record": {},
+          "permissions": {}
+      },
+      "id": "u:dafb9cfe6977",
+      "bodyClassName": "p-0",
+      "dsType": "api",
+      "asideResizor": false,
+      "editorState": "default",
+      "pullRefresh": {
+          "disabled": true
+      }
+  }
+is_enable: true
+label: 批处理按钮
+locked: false
+'on': list
+type: amis_button
+visible: true

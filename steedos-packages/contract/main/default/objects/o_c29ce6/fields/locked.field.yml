@@ -1,0 +1,13 @@
+name: locked
+amis:
+  name: locked
+  id: 'u:eebe02ba391e'
+description: ''
+enable_thousands: true
+group: 通用
+hidden: false
+inlineHelpText: ''
+label: 已锁定
+sort_no: 250
+type: boolean
+visible_on: '{{false}}'

@@ -1,0 +1,69 @@
+name: update_recordone
+amis_schema: |-
+  {
+      "type": "service",
+      "body": [
+          {
+              "type": "button",
+              "label": "变更单条记录",
+              "id": "u:update_recordone",
+              "editorState": "default",
+              "confirmText": "将记录的选择值修改为「选项1」?",
+              "onEvent": {
+                  "click": {
+                      "weight": 0,
+                      "actions": [
+                          {
+                              "ignoreError": false,
+                              "actionType": "ajax",
+                              "args": {},
+                              "outputVar": "responseResult",
+                              "options": {},
+                              "api": {
+                                  "url": "/api/v1/${objectName}/${recordId}",
+                                  "method": "put",
+                                  "requestAdaptor": "api.data = {\n    doc: {\n        \"f6zcq2\": \"v1\"\n    }\n};\nreturn api;",
+                                  "adaptor": "",
+                                  "messages": {}
+                              }
+                          },
+                          {
+                              "actionType": "broadcast",
+                              "args": {
+                                  "eventName": "@data.changed.o_c29ce6"
+                              },
+                              "data": {
+                                  "objectName": "o_c29ce6"
+                              }
+                          }
+                      ]
+                  }
+              },
+              "visibleOn": "${record.f6zcq2 != 'v1'}"
+          }
+      ],
+      "regions": [
+          "body"
+      ],
+      "data": {
+          "context": {},
+          "dataComponentId": "",
+          "record_id": "",
+          "record": {},
+          "permissions": {}
+      },
+      "id": "u:92980e1b18f5",
+      "bodyClassName": "p-0",
+      "dsType": "api",
+      "asideResizor": false,
+      "editorState": "default",
+      "pullRefresh": {
+          "disabled": true
+      }
+  }
+is_enable: true
+label: 变更单条记录
+locked: false
+'on': record_only
+type: amis_button
+visible: true

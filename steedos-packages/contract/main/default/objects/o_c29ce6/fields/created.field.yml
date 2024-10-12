@@ -1,0 +1,11 @@
+name: created
+amis:
+  name: created
+  id: 'u:260562293692'
+disabled: true
+group: 通用
+label: 创建时间
+readonly: true
+sort_no: 450
+sortable: true
+type: datetime

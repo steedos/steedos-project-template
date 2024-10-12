@@ -1,0 +1,9 @@
+name: modified_by
+amis: {}
+disabled: true
+group: 通用
+label: 修改人
+readonly: true
+reference_to: users
+sort_no: 500
+type: lookup
