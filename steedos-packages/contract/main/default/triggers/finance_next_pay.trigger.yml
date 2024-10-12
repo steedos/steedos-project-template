@@ -1,0 +1,31 @@
+name: finance_next_pay
+listenTo: finance
+when:
+  - afterInsert
+  - afterUpdate
+isEnabled: true
+handler: |-
+  const { id, doc, spaceId, userId } = ctx.params;
+
+    let financePayment = await this.getObject('finance').find({ 
+      filters: [['contract', '=', doc.contract] ,['received', '!=', true] ],  
+      sort: 'pan asc'  
+    }); 
+    let nextPay = "";
+    if (Object.keys(financePayment).length > 0) {
+      for (const rPayment of financePayment) {
+        if (rPayment.pan) {
+          nextPay = rPayment.pan ;
+          break;
+        }
+      }
+    }
+
+    if (!nextPay) {
+      this.getObject('contract').update(doc.contract, {next:null});
+      //console.log('改数据库:', "清next的值") ;
+    } else {
+      this.getObject('contract').update(doc.contract, {next:nextPay});
+    }
+
+locked: false
