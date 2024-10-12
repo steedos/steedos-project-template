@@ -7,7 +7,7 @@ isEnabled: true
 handler: |-
   const { id, doc, spaceId, userId } = ctx.params;
 
-    let financePayment = await this.getObject('finance').find({ 
+    let financePayment = await ctx.getObject('finance').find({ 
       filters: [['contract', '=', doc.contract] ,['received', '!=', true] ],  
       sort: 'pan asc'  
     }); 
@@ -22,10 +22,10 @@ handler: |-
     }
 
     if (!nextPay) {
-      this.getObject('contract').update(doc.contract, {next:null});
+      ctx.getObject('contract').update(doc.contract, {next:null});
       //console.log('改数据库:', "清next的值") ;
     } else {
-      this.getObject('contract').update(doc.contract, {next:nextPay});
+      ctx.getObject('contract').update(doc.contract, {next:nextPay});
     }
 
 locked: false
