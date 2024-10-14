@@ -1,0 +1,69 @@
+name: finance_payed
+amis_schema: |-
+  {
+      "type": "service",
+      "body": [
+          {
+              "type": "button",
+              "label": "已收到",
+              "id": "u:update_recordone",
+              "editorState": "default",
+              "confirmText": "该项收款确认已到账?",
+              "onEvent": {
+                  "click": {
+                      "weight": 0,
+                      "actions": [
+                          {
+                              "ignoreError": false,
+                              "actionType": "ajax",
+                              "args": {},
+                              "outputVar": "responseResult",
+                              "options": {},
+                              "api": {
+                                  "url": "/api/v1/${objectName}/${recordId}",
+                                  "method": "put",
+                                  "requestAdaptor": "api.data = {\n    doc: {\n        \"received\": true\n    }\n};\nreturn api;",
+                                  "adaptor": "",
+                                  "messages": {}
+                              }
+                          },
+                          {
+                              "actionType": "broadcast",
+                              "args": {
+                                  "eventName": "@data.changed.finance"
+                              },
+                              "data": {
+                                  "objectName": "finance"
+                              }
+                          }
+                      ]
+                  }
+              },
+              "visibleOn": "${record.received != true}"
+          }
+      ],
+      "regions": [
+          "body"
+      ],
+      "data": {
+          "context": {},
+          "dataComponentId": "",
+          "record_id": "",
+          "record": {},
+          "permissions": {}
+      },
+      "id": "u:92980e1b18f5",
+      "bodyClassName": "p-0",
+      "dsType": "api",
+      "asideResizor": false,
+      "editorState": "default",
+      "pullRefresh": {
+          "disabled": true
+      }
+  }
+is_enable: true
+label: 已收到
+locked: false
+'on': record_only
+type: amis_button
+visible: true
