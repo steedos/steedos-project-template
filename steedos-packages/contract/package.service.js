@@ -9,3 +9,12 @@
 
 const service = require("./dist/index.js");
 module.exports = service;
+
+/**
+   * Settings
+   */
+settings: {
+    packageInfo: {
+        isUnmanaged:true
+    }
+}
