@@ -13,8 +13,10 @@ module.exports = service;
 /**
    * Settings
    */
-settings: {
-    packageInfo: {
-        isUnmanaged:true
-    }
-}
+
+
+// settings: {
+//     packageInfo: {
+//         isUnmanaged:true
+//     }
+// }
