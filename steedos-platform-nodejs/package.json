@@ -7,7 +7,7 @@
     "start": "steedos start --config steedos.config.js"
   },
   "dependencies": {
-    "@steedos/service-community": "^2.7.9"
+    "@steedos/service-community": "^2.7.10-beta.12"
   },
   "resolutions": {
     "@azure/core-auth": "1.5.0",

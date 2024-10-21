@@ -14,7 +14,7 @@
     "publish:latest": "lerna publish from-package --registry https://registry.npmjs.org"
   },
   "dependencies": {
-    "@steedos/service-package-loader": "^2.5",
+    "@steedos/service-package-loader": "^2.7.10-beta.12",
     "bcryptjs": "^2.4.3",
     "dotenv-flow": "^3.2.0",
     "moleculer-repl": "^0.7.3",

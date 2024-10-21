@@ -3,7 +3,7 @@ version: "3.9"
 services:
 
   steedos:
-    image: steedos/steedos-community:2.7.10-beta.11
+    image: steedos/steedos-community:2.7.10-beta.12
     ports:
       - "5000:5000"    # Steedos
       - "27017:27017"  # MongoDB
