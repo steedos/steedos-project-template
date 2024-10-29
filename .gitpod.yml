@@ -5,9 +5,6 @@ ports:
   - port: 5000 # Steedos
     onOpen: ignore
     visibility: public
-  - port: 1880 # Node-RED
-    onOpen: ignore
-    visibility: public
   - port: 6379 # Redis
     onOpen: ignore
   - port: 9001 # Supervisor
@@ -17,13 +14,6 @@ ports:
     
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - name: Node-RED
-    command: |
-      cd nodered-app
-      npm config set registry=https://registry.npmmirror.com
-      npm i --no-optional 
-      gp await-port 5000
-      npm start
   - name: Steedos Platform
     command: |
       echo "ROOT_URL=$(gp url 5000)" >> steedos-platform/.env.local

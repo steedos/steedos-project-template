@@ -1,7 +1,0 @@
-.env.local
-
-.node-red
-*.backup
-
-yarn.lock
-package-lock.json
