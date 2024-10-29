@@ -1,9 +1,8 @@
 # Steedos DX 项目模板
 
-Steedos 开发者体验 (DX) 是一种全新的方式，用于在 Steedos 低代码平台上管理和开发应用程序的整个生命周期。它结合了低代码平台的最佳实践，实现了源代码驱动的开发、团队协作治理，以及为 Steedos 上的自定义应用开发提供了新的敏捷性。
+Steedos 开发者体验 (DX) 是一种全新的方式，用于在 Steedos 低代码平台上管理和开发应用程序的整个生命周期。它实现了源代码驱动的开发、团队协作治理，以及为 Steedos 上的自定义应用开发提供了新的敏捷性。
 
-- [什么是 Steedos DX](https://docs.steedos.com/developer/setup/steedos-dx)
-- [什么是 Steedos Package](https://docs.steedos.com/developer/package/overview)
+- [什么是 Steedos DX](https://docs.steedos.cn/developer)
 
 # 入门指南
 
@@ -30,18 +29,9 @@ docker-compose up
 
 Steedos 包使用 [Moleculer](https://moleculer.services/docs) 微服务框架，通过配置统一的 Transporter 连接微服务。
 
-[Moleculer Transporter](https://moleculer.services/docs/0.14/networking) 是一个重要的模块，如果您在多个节点上运行服务，它会与其他节点通信。它传输事件，处理请求和响应等。如果服务的多个实例在不同节点上运行，请求将会在它们之间负载均衡。
-
 ```bash
 TRANSPORTER=redis://127.0.0.1:6379
 ```
-:::提示
-请确保您配置的 TRANSPORTER 与您希望连接的 Steedos 服务器匹配，并且网络是互联的。
-:::
-
-:::警告
-在生产环境中运行时，请务必配置 Redis 密码。
-:::
 
 ### 设置元数据服务器
 
@@ -78,7 +68,3 @@ yarn
 ```bash
 yarn start
 ```
-
-:::提示
-请注意，Steedos DX 项目支持多包开发，上述命令会同时启动 steedos-packages 文件夹下的所有包。
-:::
