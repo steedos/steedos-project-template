@@ -7,12 +7,13 @@ module.exports = {
 	namespace: "steedos",
 	// Default log level for built-in console logger. It can be overwritten in logger options above.
 	// Available values: trace, debug, info, warn, error, fatal
-	logLevel: "info",
+	logLevel: "warn",
 
     transporter: process.env.TRANSPORTER,
 
 	// Called after broker started.
 	started(broker) {
+		broker.createService(require("@steedos/service-community"));
 	},
 
 };

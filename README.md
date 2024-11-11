@@ -1,3 +1,10 @@
+<!--
+ * @Author: baozhoutao@steedos.com
+ * @Date: 2024-11-11 10:52:35
+ * @LastEditors: baozhoutao@steedos.com
+ * @LastEditTime: 2024-11-11 13:12:04
+ * @Description: 
+-->
 # Steedos DX 项目模板
 
 Steedos 开发者体验 (DX) 是一种全新的方式，用于在 Steedos 低代码平台上管理和开发应用程序的整个生命周期。它实现了源代码驱动的开发、团队协作治理，以及为 Steedos 上的自定义应用开发提供了新的敏捷性。
@@ -11,8 +18,8 @@ Steedos 开发者体验 (DX) 是一种全新的方式，用于在 Steedos 低代
 首先，您必须运行 Steedos 平台。
 
 ```bash
-cd steedos-platform
-docker-compose up
+yarn
+yarn start
 ```
 
 ### 注册管理员账户
