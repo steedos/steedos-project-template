@@ -22,5 +22,8 @@
   },
   "devDependencies": {
     "lerna": "^5.4.0"
+  },
+  "resolutions": {
+    "mingo": "6.4.10"
   }
 }
