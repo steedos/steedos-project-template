@@ -23,7 +23,7 @@ services:
       - "traefik.http.routers.traefik.rule=Host(`traefik.localhost`)"  # 访问 Traefik Dashboard
       - "traefik.http.routers.traefik.service=api@internal"
 
-  # 集群模式下附件不应该保存在本地，应该配置外部mongodb数据库和S3存储
+  # 集群模式下附件不应该保存在本地，应该配置外部mongodb数据库、S3存储、Log存储
   steedos:
     image: steedos/steedos-enterprise:2.7
     deploy:
