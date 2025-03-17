@@ -9,8 +9,9 @@ services:
       - "27017:27017"  # MongoDB
       - "9001:9001"    # Supervisor
       - "6379:6379"    # Redis
-    env_file:
-      - .env
-      - .env.local
+    # env_file:
+    #   - .env.local
+    environment:
+      - PORT=5000
     volumes:
       - "./steedos-storage:/steedos-storage"
