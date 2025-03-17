@@ -2,15 +2,72 @@ version: "3.9"
 
 services:
 
+  traefik:
+    image: traefik:v2.10
+    command:
+      - "--api.dashboard=true"                       # 启用 Traefik Dashboard
+      - "--providers.docker=true"                    # 启用 Docker 提供者
+      - "--providers.docker.exposedbydefault=false"  # 只代理有 `traefik.enable=true` 标签的服务
+      - "--entrypoints.web.address=:80"              # 监听 80 端口
+    ports:
+      - "5000:80"         # Traefik 代理 HTTP 请求
+      - "8080:8080"     # Traefik Dashboard
+    deploy:
+      mode: global      # 运行在每个 Swarm 节点上
+      restart_policy:
+        condition: on-failure
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"  # 让 Traefik 访问 Docker API
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.traefik.rule=Host(`traefik.localhost`)"  # 访问 Traefik Dashboard
+      - "traefik.http.routers.traefik.service=api@internal"
+
   steedos:
     image: steedos/steedos-enterprise:2.7
-    ports:
-      - "5000:5000"    # Steedos
-      - "27017:27017"  # MongoDB
-      - "9001:9001"    # Supervisor
-      - "6379:6379"    # Redis
+    deploy:
+      mode: replicated
+      replicas: 2
     env_file:
-      - .env
       - .env.local
+    environment:
+      - PORT=5000
+      - MONGO_URL=mongodb://root:steedos@mongodb:27017/steedos?authSource=admin
+      - MONGO_OPLOG_URL=mongodb://root:steedos@mongodb:27017/local?authSource=admin
+      - STEEDOS_LICENSE=8b7f5cafc3cd0d5241379078d635294cf740fe33a0c10e33dfcf2a386748bd0c67e16878a41e001b2eb51ea7230127b2a3d1eaf21a32a9143ca41973e0efc41fc7e7244cfe55bfe9058eddcfd426eff9629329b095e192ad68ffd9e5febfe7c7235e2b4d325081c3a131485696cb7ca28c12f2e9540403f6b685c0655a3360fc831a2abbd718d044c6db4e747771df3cc6f7c242df7ec980428938b1a2fdcad51d65db3286b2c1eb41009df1c7ba26062a6381a8c2294ded20f134357ef88d157304f2dd4f40c6ea4eb0b497463a96a96bc22a506e2f175498ccd80a8175fde613b6c0364d210fa364e5789c0bb33ec47dfa3bd22916af928c32e18889fa94424d8120c767b477e51a2edb032b978b8fedebf84eaa1134def40c64fd402d692384483be9b847816dabd78ac7018b13a835007526101a92f3623718a993c4ed13e1d3866e618bb184a6a03aba3a2f8da39ec9addedba1c7270690f40f64076a5ec04e642fe7143d1cb8267cb8c2e9e2274d34fa7873978ee9bbd0059d2c926aec23a8083b3b02732e2b7f5b0c32018a2c0d3fd1a6c3ee5ae46489603c19ded52579b68b53350ce5570669ec1058105074464cba1d6aa0ce2af07da54e56ff7ba3f57b7162287611cdc4ccb4b8e0a41bc42636111c923f183b708adb3e47f0eec3fedc1524f838958714554dcdc248e90d55ee5cfc0b3680fc2d3e3e718c69e981,2022-0001
+
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.steedos.rule=PathPrefix(`/`)"  # 所有路径访问
+      - "traefik.http.routers.steedos.entrypoints=web"
+      - "traefik.http.services.steedos.loadbalancer.server.port=5000"  # Steedos 容器监听 5000 端口
+
+    # volumes:
+    #   - "./steedos-storage:/steedos-storage"
+
+
+  mongodb:
+    image: bitnami/mongodb:7.0.15
+    ports:
+      - 27017:27017
+    environment:
+      - MONGODB_REPLICA_SET_MODE=primary
+      - MONGODB_ROOT_PASSWORD=steedos
+      - MONGODB_PORT_NUMBER=27017
+      - MONGODB_INITIAL_PRIMARY_HOST=mongodb
+      - MONGODB_INITIAL_PRIMARY_PORT_NUMBER=27017
+      - MONGODB_REPLICA_SET_NAME=steedos
+      - MONGODB_REPLICA_SET_KEY=steedos
+      - MONGODB_ENABLE_JOURNAL=true
+      - MONGODB_ADVERTISED_HOSTNAME=localhost
+    healthcheck:
+      test: echo 'rs.status().ok' | mongo admin -u root -p steedos --quiet | grep 1
+      interval: 10s
+      timeout: 10s
+      retries: 5
     volumes:
-      - "./steedos-storage:/steedos-storage"
+      - 'steedos-mongodb-data:/bitnami/mongodb'
+
+volumes:
+  steedos-mongodb-data:
+    driver: local
