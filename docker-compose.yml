@@ -1,0 +1,58 @@
+services:
+
+  steedos:
+    image: steedos/templates:3.0.0
+    build: 
+      context: ./
+      dockerfile: ./Dockerfile
+    deploy:
+      replicas: 1
+    ports:
+      - "80:80"
+    volumes:
+      - './steedos-storage:/steedos-storage'
+      - './.steedos:/app/.steedos'
+    environment:
+      - STEEDOS_LICENSE=
+      - ROOT_URL=http://127.0.0.1
+      - TRANSPORTER=redis://redis:6379
+      - CACHER=redis://redis:6379/1
+      - MONGO_URL=mongodb://mongodb:27017/templates
+      - STEEDOS_ENABLE_WORKFLOW=true
+
+  redis:
+    image: redis:6.2.10
+    command: "redis-server --save \"\" --appendonly no --loglevel warning"
+    ports:
+      - "6379:6379"
+ 
+  mongodb:
+    image: mongodb/mongodb-community-server:7.0-ubi8
+    ports:
+      - 27017:27017
+    command: ["mongod", "--replSet", "steedos", "--bind_ip_all"]
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh --quiet | grep 1
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    volumes:
+      - 'steedos-mongodb:/data/db'
+
+  mongo-init-replica:
+    image: mongodb/mongodb-community-server:7.0-ubi8
+    depends_on:
+      mongodb:
+        condition: service_healthy
+    entrypoint:
+      - /bin/bash
+      - -c
+      - |
+        echo "=> Waiting for MongoDB to be available ...";
+        sleep 2
+        mongosh --host mongodb:27017 --eval "rs.initiate({ _id: 'steedos', members: [{_id: 0, host: 'mongodb:27017'}]})" 
+        echo "=> Replica set initiated."
+
+volumes:
+  steedos-mongodb:
+    driver: local

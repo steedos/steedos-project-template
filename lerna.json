@@ -1,0 +1,8 @@
+{
+  "packages": [
+    "steedos-packages/*"
+  ],
+  "useNx": false,
+  "version": "2.7.0",
+  "npmClient": "yarn"
+}

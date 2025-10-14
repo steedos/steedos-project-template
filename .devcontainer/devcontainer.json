@@ -1,0 +1,14 @@
+{
+  "name": "Steedos Dev Container",
+  "forwardPorts": [5100],  // 修改为你项目需要暴露的端口
+  "postCreateCommand": "",
+  "postStartCommand": "yarn install && yarn build",
+  "features": {},
+  "customizations": {
+    "vscode": {
+        "extensions": [
+            "redhat.vscode-yaml", "steedos.steedosdx-vscode"
+        ]
+    }
+  }
+}
