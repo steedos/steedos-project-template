@@ -27,7 +27,7 @@ services:
       - "6379:6379"
  
   mongodb:
-    image: mongodb/mongodb-community-server:7.0-ubi8
+    image: mongo:7.0
     ports:
       - 27017:27017
     command: ["mongod", "--replSet", "steedos", "--bind_ip_all"]
@@ -40,7 +40,7 @@ services:
       - 'steedos-mongodb:/data/db'
 
   mongo-init-replica:
-    image: mongodb/mongodb-community-server:7.0-ubi8
+    image: mongo:7.0
     depends_on:
       mongodb:
         condition: service_healthy
