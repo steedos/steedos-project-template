@@ -1,14 +1,26 @@
 services:
 
+  traefik:
+    image: traefik:v2.10
+    command:
+      - "--api.dashboard=true"
+      - "--entrypoints.web.address=:80"
+      - "--providers.docker=true"
+    ports:
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      
   steedos:
-    image: steedos/templates:3.0.0
-    build: 
-      context: ./
-      dockerfile: ./Dockerfile
+    image: steedos/steedos-platform:3.0.0
     deploy:
       replicas: 1
     ports:
       - "80:80"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.all.rule=PathPrefix(`/`)"
+      - "traefik.http.services.app1.loadbalancer.server.port=80"
     volumes:
       - './steedos-storage:/steedos-storage'
       - './.steedos:/app/.steedos'
@@ -17,8 +29,7 @@ services:
       - ROOT_URL=http://127.0.0.1
       - TRANSPORTER=redis://redis:6379
       - CACHER=redis://redis:6379/1
-      - MONGO_URL=mongodb://mongodb:27017/templates
-      - STEEDOS_ENABLE_WORKFLOW=true
+      - MONGO_URL=mongodb://mongodb:27017/steedos
 
   redis:
     image: redis:6.2.10
