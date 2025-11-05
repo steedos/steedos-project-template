@@ -1,34 +1,39 @@
 services:
 
   traefik:
-    image: traefik:v2.10
+    image: traefik:v3.5
     command:
-      - "--api.dashboard=true"
-      - "--entrypoints.web.address=:80"
+      - "--api.insecure=true"
       - "--providers.docker=true"
+      - "--entrypoints.web.address=:80"
     ports:
       - "80:80"
+      - "8080:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       
   steedos:
-    image: steedos/steedos-platform:3.0.0
-    deploy:
-      replicas: 1
+    image: steedos/steedos-enterprise:3.0.0-beta.126
+    # deploy:
+    #   replicas: 1
     ports:
-      - "80:80"
+      - "5100:80"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://localhost:5100/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.all.rule=PathPrefix(`/`)"
-      - "traefik.http.services.app1.loadbalancer.server.port=80"
+      - traefik.enable=true
+      - traefik.http.routers.steedos.rule=PathPrefix(`/`)
+      - traefik.http.routers.steedos.entrypoints=web
+      - traefik.http.services.steedos.loadbalancer.server.port=80
     volumes:
       - './steedos-storage:/steedos-storage'
       - './.steedos:/app/.steedos'
     environment:
       - STEEDOS_LICENSE=
       - ROOT_URL=http://127.0.0.1
-      - TRANSPORTER=redis://redis:6379
-      - CACHER=redis://redis:6379/1
       - MONGO_URL=mongodb://mongodb:27017/steedos
 
   redis:
