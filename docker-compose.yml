@@ -14,10 +14,10 @@ services:
       
   steedos:
     image: steedos/steedos-enterprise:3.0.0-beta.126
-    # deploy:
-    #   replicas: 1
-    ports:
-      - "5100:80"
+    deploy:
+      replicas: 2
+    # ports:
+    #   - "5100:80"
     healthcheck:
       test: ["CMD", "wget", "--spider", "-q", "http://localhost:5100/"]
       interval: 30s
