@@ -28,6 +28,9 @@ services:
       - traefik.http.routers.steedos.rule=PathPrefix(`/`)
       - traefik.http.routers.steedos.entrypoints=web
       - traefik.http.services.steedos.loadbalancer.server.port=80
+      # Sticky session to keep socket.io stable
+      - traefik.http.services.steedos.loadbalancer.sticky.cookie=true
+      - traefik.http.services.steedos.loadbalancer.sticky.cookie.name=steedos_session
     volumes:
       - './steedos-storage:/steedos-storage'
       - './.steedos:/app/.steedos'
