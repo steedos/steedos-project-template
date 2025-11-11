@@ -49,7 +49,17 @@ services:
     image: mongo:7.0
     ports:
       - 27017:27017
-    command: ["mongod", "--replSet", "steedos", "--bind_ip_all"]
+    command: >
+      bash -c "
+        mongod --replSet steedos --bind_ip_all --quiet --logpath /var/log/mongodb/mongodb.log --logappend &
+        echo '=> Waiting for MongoDB to start ...';
+        until mongosh --eval 'db.runCommand(\"ping\").ok' --quiet | grep 1; do
+          sleep 2;
+        done;
+        echo '=> Initiating replica set ...';
+        mongosh --eval 'rs.initiate({_id: \"steedos\", members: [{_id: 0, host: \"localhost:27017\"}]})';
+        wait
+      "
     healthcheck:
       test: echo 'db.runCommand("ping").ok' | mongosh --quiet | grep 1
       interval: 10s
@@ -57,20 +67,6 @@ services:
       retries: 5
     volumes:
       - 'steedos-mongodb:/data/db'
-
-  mongo-init-replica:
-    image: mongo:7.0
-    depends_on:
-      mongodb:
-        condition: service_healthy
-    entrypoint:
-      - /bin/bash
-      - -c
-      - |
-        echo "=> Waiting for MongoDB to be available ...";
-        sleep 2
-        mongosh --host mongodb:27017 --eval "rs.initiate({ _id: 'steedos', members: [{_id: 0, host: 'mongodb:27017'}]})" 
-        echo "=> Replica set initiated."
 
 volumes:
   steedos-mongodb:
