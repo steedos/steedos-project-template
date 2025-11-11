@@ -11,7 +11,7 @@
 您可以在本地安装 mongodb 和 redis，或者使用 docker 快速启动。
 
 ```bash
-yarn start:db
+docker-compose up mongodb redis
 ```
 
 
@@ -21,11 +21,11 @@ yarn start:db
 
 ```bash
 yarn
+yarn build
 ```
 
 ### 运行 Steedos
 
 ```bash
-yarn build
 yarn start
 ```

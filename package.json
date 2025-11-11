@@ -6,13 +6,13 @@
     "steedos-packages/*"
   ],
   "scripts": {
-    "start:db": "docker-compose up mongodb redis mongo-init-replica",
+    "start:db": "docker-compose up mongodb redis",
     "start": "steedos start",
     "build": "lerna run build",
     "i18n:en": "yarn steedos i18n en"
   },
   "dependencies": {
-    "@steedos/server": "3.0.0-beta.131"
+    "@steedos/server": "3.0.0-beta.136"
   },
   "devDependencies": {
     "lerna": "^5.4.0",
