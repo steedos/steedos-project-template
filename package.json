@@ -7,15 +7,12 @@
   ],
   "scripts": {
     "start:db": "docker-compose up mongodb redis",
-    "start": "steedos start",
-    "build": "lerna run build",
-    "i18n:en": "yarn steedos i18n en"
+    "start": "steedos start"
   },
   "dependencies": {
-    "@steedos/server": "3.0.0-beta.136"
+    "@steedos/server": "3.0.0-beta.159"
   },
   "devDependencies": {
-    "lerna": "^5.4.0",
     "moleculer-repl": "^0.7.4",
     "ts-jest": "^29.0.3",
     "ts-node": "^10.9.1",
